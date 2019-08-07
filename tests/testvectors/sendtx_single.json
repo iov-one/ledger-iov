@@ -1,0 +1,23 @@
+[
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:iov-lovenet",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:fa8c2a18b2854ab65207c0c727b825b6dbaa29379e6b2bb35ac778bfaa881e92"
+        }
+      },
+      "sender": "string:tiov1w0ckuuwss78k45n9x8shg3f2ajgkr6x5xdlje2",
+      "recipient": "string:tiov1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqzx8n0d",
+      "amount": {
+        "quantity": "string:0",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:CASH"
+      }
+    },
+    "nonce": 0,
+    "bytes": "00cafe000b696f762d6c6f76656e657400000000000000009a03380a020801121473f16e71d0878f6ad26531e174452aec9161e8d41a14000000000000000000000000000000000000000022061a0443415348"
+  }
+]

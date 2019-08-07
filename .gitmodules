@@ -1,0 +1,9 @@
+[submodule "src/ledger"]
+	path = src/ledger
+	url = https://github.com/jleni/ledger-iov-app.git
+[submodule "deps/nanos-secure-sdk"]
+	path = deps/nanos-secure-sdk
+	url = https://github.com/LedgerHQ/nanos-secure-sdk.git
+[submodule "tests/jsonlib"]
+	path = tests/jsonlib
+	url = https://github.com/nlohmann/json
