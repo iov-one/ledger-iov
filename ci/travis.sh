@@ -11,9 +11,19 @@ pip --version
 #
 # Install dependencies
 #
-sudo apt-get update
-sudo apt-get install -y build-essential git wget cmake libssl-dev libgmp-dev autoconf libtool
-make deps
+case "$(uname -s)" in
+  Linux*)
+    sudo apt-get update
+    sudo apt-get install -y build-essential git wget cmake libssl-dev libgmp-dev autoconf libtool
+    make deps
+    ;;
+  Darwin*)
+    make deps
+    ;;
+  *)
+    echo "OS not recognized"
+    ;;
+esac
 
 #
 # Build Ledger app
