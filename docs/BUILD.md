@@ -45,6 +45,12 @@ Setup a Python 3 development environment as follows:
 - `export PATH="/usr/local/opt/python/libexec/bin:$PATH"`
 - In zsh only: `rehash`
 
+#### Ubuntu
+
+- Install Python 3: `sudo apt-get install -y python3 python3-pip`
+- `export PATH="$(pwd)/scripts/python3-ubuntu:$PATH"`
+- In zsh only: `rehash`
+
 ### Other dependencies
 
 In most cases, `make deps` should be able to install all dependencies:
