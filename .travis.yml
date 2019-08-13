@@ -1,0 +1,18 @@
+os:
+  - linux
+  - osx
+
+dist: bionic
+sudo: required
+language: generic
+
+script:
+  - ./ci/travis.sh
+
+# whitelist long living branches to avoid testing feature branches twice (as branch and as pull request)
+branches:
+  only:
+    - master
+
+notifications:
+  email: false
