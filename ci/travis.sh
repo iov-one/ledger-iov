@@ -37,7 +37,7 @@ fold_end
 fold_start "install-dependencies"
 if [[ "${TRAVIS_OS_NAME:-}" == "linux" ]]; then
   sudo apt-get install -y build-essential git wget cmake libssl-dev libgmp-dev autoconf libtool
-  make deps
+  sudo make deps
 else
   brew install libusb
   make deps

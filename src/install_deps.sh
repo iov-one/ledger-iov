@@ -20,7 +20,7 @@ SCRIPT_DIR=$(cd $(dirname $0) && pwd)
 os_string="$(uname -s)"
 case "${os_string}" in
 	Linux*)
-		sudo apt-get install libusb-1.0.0 libudev-dev
+		apt-get install libusb-1.0.0 libudev-dev
 		pip3 install -U setuptools
 		pip3 install -U --no-cache ledgerblue ecpy
 		;;
