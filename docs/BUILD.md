@@ -33,9 +33,21 @@ Additionally you will need to:
 brew install libusb
 ```
 
-#### Other dependencies
+### Python 3 development environment
 
-You will need to have python 3. In most cases, `make deps` should be able to install all dependencies:
+The unversioned `python` and `pip` commands need to point to Python 3 versions. This is unconvenient
+but something we cannot easily change due to external code and scripts.
+Setup a Python 3 development environment as follows:
+
+#### Mac+brew
+
+- Install Python 3: `brew install python`
+- `export PATH="/usr/local/opt/python/libexec/bin:$PATH"`
+- In zsh only: `rehash`
+
+### Other dependencies
+
+In most cases, `make deps` should be able to install all dependencies:
 
 ```bash
 make deps
