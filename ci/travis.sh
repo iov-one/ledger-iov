@@ -27,11 +27,8 @@ fold_end
 # Setup python
 #
 fold_start "setup-python"
-shopt -s expand_aliases
-alias python="python3"
-alias pip="pip3"
-python --version
-pip --version
+python3 --version
+pip3 --version
 fold_end
 
 #
