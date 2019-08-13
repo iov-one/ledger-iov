@@ -29,20 +29,14 @@ fold_end
 # Install dependencies
 #
 fold_start "install-dependencies"
-case "$(uname -s)" in
-  Linux*)
-    sudo apt-get update
-    sudo apt-get install -y build-essential git wget cmake libssl-dev libgmp-dev autoconf libtool
-    make deps
-    ;;
-  Darwin*)
-    brew install libusb
-    make deps
-    ;;
-  *)
-    echo "OS not recognized"
-    ;;
-esac
+if [[ "${TRAVIS_OS_NAME:-}" == "linux" ]]; then
+  sudo apt-get update
+  sudo apt-get install -y build-essential git wget cmake libssl-dev libgmp-dev autoconf libtool
+  make deps
+else
+  brew install libusb
+  make deps
+fi
 fold_end
 
 #
