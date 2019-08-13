@@ -45,10 +45,10 @@ fi
 fold_end
 
 #
-# Build Ledger app
+# Build
 #
 fold_start "build"
-cmake .
+cmake -DDISABLE_DOCKER_BUILDS=ON .
 make
 fold_end
 

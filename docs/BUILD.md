@@ -66,7 +66,7 @@ This is useful when you want to make changes to libraries, run unit tests, etc. 
 
 **Compile**
 ```
-cmake . && make
+cmake -DDISABLE_DOCKER_BUILDS=ON . && make
 ```
 **Run unit tests**
 ```
