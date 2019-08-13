@@ -18,6 +18,7 @@ case "$(uname -s)" in
     make deps
     ;;
   Darwin*)
+    brew install libusb
     make deps
     ;;
   *)
