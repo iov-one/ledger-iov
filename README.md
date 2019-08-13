@@ -1,6 +1,6 @@
 # Ledger-IOV
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-[![CircleCI](https://circleci.com/gh/ZondaX/ledger-iov.svg?style=shield)](https://circleci.com/gh/ZondaX/ledger-iov)
+[![Build Status](https://travis-ci.com/iov-one/ledger-iov.svg?branch=master)](https://travis-ci.com/iov-one/ledger-iov)
 
 This repository contains the Ledger Nano S/X app for IOV
 
