@@ -21,7 +21,7 @@ Please install docker CE. The instructions can be found here: https://docs.docke
 #### Ubuntu Dependencies
 Install the following packages:
 ```
-sudo apt update && apt-get -y install build-essential git sudo wget cmake libssl-dev libgmp-dev autoconf libtool
+sudo apt update && apt-get -y install build-essential git wget cmake libssl-dev libgmp-dev autoconf libtool
 ```
 
 #### OSX Dependencies
