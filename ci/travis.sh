@@ -17,6 +17,10 @@ function fold_end() {
 # Setup python
 #
 fold_start "setup-python"
+if [[ "${TRAVIS_OS_NAME:-}" == "linux" ]]; then
+  alias python='/usr/bin/python3'
+  alias pip='/usr/bin/pip3'
+fi
 python --version
 pip --version
 fold_end
