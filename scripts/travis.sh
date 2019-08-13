@@ -19,7 +19,10 @@ function fold_end() {
 fold_start "install-apt-packages"
 if [[ "${TRAVIS_OS_NAME:-}" == "linux" ]]; then
   sudo apt-get update
-  sudo apt-get install -y python3 python3-pip
+  sudo apt-get install -y \
+    python3 python3-pip \
+    build-essential git wget cmake libssl-dev libgmp-dev autoconf libtool \
+    libusb-1.0.0 libudev-dev
 fi
 fold_end
 
@@ -42,8 +45,7 @@ if [[ "$MODE" == "unit" ]]; then
   #
   fold_start "install-dependencies"
   if [[ "${TRAVIS_OS_NAME:-}" == "linux" ]]; then
-    sudo apt-get install -y build-essential git wget cmake libssl-dev libgmp-dev autoconf libtool
-    sudo make deps
+    make deps
   else
     brew install libusb
     make deps
