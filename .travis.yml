@@ -7,6 +7,16 @@ dist: bionic
 sudo: required
 language: generic
 
+env:
+  matrix:
+    - MODE=unit
+    - MODE=ledger
+
+matrix:
+  exclude:
+    - os: osx
+      env: MODE=ledger
+
 services:
   - docker
 

@@ -31,31 +31,38 @@ python3 --version
 pip3 --version
 fold_end
 
-#
-# Install dependencies
-#
-fold_start "install-dependencies"
-if [[ "${TRAVIS_OS_NAME:-}" == "linux" ]]; then
-  sudo apt-get install -y build-essential git wget cmake libssl-dev libgmp-dev autoconf libtool
-  sudo make deps
+if [[ "$MODE" == "unit" ]]; then
+  #
+  # Install dependencies
+  #
+  fold_start "install-dependencies"
+  if [[ "${TRAVIS_OS_NAME:-}" == "linux" ]]; then
+    sudo apt-get install -y build-essential git wget cmake libssl-dev libgmp-dev autoconf libtool
+    sudo make deps
+  else
+    brew install libusb
+    make deps
+  fi
+  fold_end
+
+  #
+  # Build
+  #
+  fold_start "build"
+  cmake -DDISABLE_DOCKER_BUILDS=ON .
+  make
+  fold_end
+
+  #
+  # Run tests
+  #
+  fold_start "test"
+  export GTEST_COLOR=1
+  ctest -VV
+  fold_end
+elif [[ "$MODE" == "ledger" ]]; then
+  echo "TODO"
 else
-  brew install libusb
-  make deps
+  echo "Unsupported MODE value"
+  exit 1
 fi
-fold_end
-
-#
-# Build
-#
-fold_start "build"
-cmake -DDISABLE_DOCKER_BUILDS=ON .
-make
-fold_end
-
-#
-# Run tests
-#
-fold_start "test"
-export GTEST_COLOR=1
-ctest -VV
-fold_end
