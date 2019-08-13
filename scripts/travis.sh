@@ -27,8 +27,13 @@ fold_end
 # Setup python
 #
 fold_start "setup-python"
-python3 --version
-pip3 --version
+if [[ "${TRAVIS_OS_NAME:-}" == "linux" ]]; then
+  export PATH="$(pwd)/scripts/python3-ubuntu:$PATH"
+else
+  export PATH="/usr/local/opt/python/libexec/bin:$PATH"
+fi
+python --version
+pip --version
 fold_end
 
 if [[ "$MODE" == "unit" ]]; then
