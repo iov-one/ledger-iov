@@ -18,6 +18,7 @@ function fold_end() {
 #
 fold_start "setup-python"
 if [[ "${TRAVIS_OS_NAME:-}" == "linux" ]]; then
+  shopt -s expand_aliases
   alias python='/usr/bin/python3'
   alias pip='/usr/bin/pip3'
 fi
