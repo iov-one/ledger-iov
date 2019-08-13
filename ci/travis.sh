@@ -61,7 +61,12 @@ if [[ "$MODE" == "unit" ]]; then
   ctest -VV
   fold_end
 elif [[ "$MODE" == "ledger" ]]; then
-  echo "TODO"
+  #
+  # Build
+  #
+  fold_start "build"
+  make
+  fold_end
 else
   echo "Unsupported MODE value"
   exit 1
