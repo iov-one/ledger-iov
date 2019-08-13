@@ -3,8 +3,12 @@ os:
   - osx
 
 dist: bionic
+
 sudo: required
 language: generic
+
+services:
+  - docker
 
 before_script:
 # Make variables and function from Travis available in our script
