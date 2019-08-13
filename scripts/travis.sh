@@ -28,7 +28,7 @@ fold_end
 #
 fold_start "setup-python"
 if [[ "${TRAVIS_OS_NAME:-}" == "linux" ]]; then
-  export PATH="$(pwd)/scripts/python3-ubuntu:$PATH"
+  export PATH="$PWD/scripts/python3-ubuntu:$PATH"
 else
   export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 fi
