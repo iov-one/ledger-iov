@@ -27,7 +27,9 @@ using json = nlohmann::json;
 // Testcases: https://gist.github.com/webmaster128/5304649b21dc080cadd9e6484d07b1d2
 
 TEST(TestCases, Json) {
-    std::ifstream inFile("testvectors/sendtx_single.json");
+    std::ifstream inFile("tests/testvectors/sendtx_single.json");
+    ASSERT_TRUE(inFile.is_open()) << "Check that your working directory is pointing to the test directory";
+
     json j;
     inFile >> j;
     std::cout << std::endl;
@@ -37,11 +39,12 @@ TEST(TestCases, Json) {
     EXPECT_EQ(j[0].size(), 3);
 
     EXPECT_EQ(j[0]["bytes"].size(), 1);
-    EXPECT_EQ(j[0]["nonce"].size(), 1);
-    EXPECT_EQ(j[0]["transaction"].size(), 5);
+    EXPECT_EQ(j[0]["bytes"], "00cafe000b696f762d6c6f76656e657400000000000000009a03380a020801121473f16e71d0878f6ad26531e174452aec9161e8d41a14000000000000000000000000000000000000000022061a0443415348");
 
-    EXPECT_EQ(j[0]["bytes"].get<std::string>(),
-        std::string("00cafe000b696f762d6c6f76656e657400000000000000009a03380a02080"
-                    "1121473f16e71d0878f6ad26531e174452aec9161e8d41a1400000000000000000"
-                    "0000000000000000000000022061a0443415348"));
+    EXPECT_EQ(j[0]["nonce"].size(), 1);
+    EXPECT_EQ(j[0]["nonce"], 0);
+
+    EXPECT_EQ(j[0]["transaction"].size(), 5);
+    EXPECT_EQ(j[0]["transaction"]["amount"].size(), 3);
+    EXPECT_EQ(j[0]["transaction"]["amount"]["quantity"], "string:0");
 }
