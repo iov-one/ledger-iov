@@ -278,7 +278,7 @@ TEST(Protobuf, SendMsg) {
 
     ASSERT_EQ(sendmsg.metadata.schema, 1);
     char tmp[bufferSize];
-    parser_arrayToString(tmp, bufferSize, sendmsg.source, sendmsg.sourceLen);
+    parser_arrayToString(tmp, bufferSize, sendmsg.sourcePtr, sendmsg.sourceLen);
     // FIXME: What are these?
     //ASSERT_STREQ(tmp, "");
 }
