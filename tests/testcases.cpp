@@ -19,6 +19,9 @@
 #include <iostream>
 #include <nlohmann/json.hpp>
 #include <fstream>
+#include <hexutils.h>
+#include <lib/parser_impl.h>
+#include <lib/parser.h>
 
 using ::testing::TestWithParam;
 using ::testing::Values;
@@ -39,7 +42,8 @@ TEST(TestCases, Json) {
     EXPECT_EQ(j[0].size(), 3);
 
     EXPECT_EQ(j[0]["bytes"].size(), 1);
-    EXPECT_EQ(j[0]["bytes"], "00cafe000b696f762d6c6f76656e657400000000000000009a03380a020801121473f16e71d0878f6ad26531e174452aec9161e8d41a14000000000000000000000000000000000000000022061a0443415348");
+    EXPECT_EQ(j[0]["bytes"],
+              "00cafe000b696f762d6c6f76656e657400000000000000009a03380a020801121473f16e71d0878f6ad26531e174452aec9161e8d41a14000000000000000000000000000000000000000022061a0443415348");
 
     EXPECT_EQ(j[0]["nonce"].size(), 1);
     EXPECT_EQ(j[0]["nonce"], 0);
@@ -47,4 +51,65 @@ TEST(TestCases, Json) {
     EXPECT_EQ(j[0]["transaction"].size(), 5);
     EXPECT_EQ(j[0]["transaction"]["amount"].size(), 3);
     EXPECT_EQ(j[0]["transaction"]["amount"]["quantity"], "string:0");
+}
+
+void checkJsonTx(parser_context_t *ctx, json &j, uint64_t index) {
+    auto tx = j[index]["transaction"];
+    char tmpBuf[100];
+
+    parser_arrayToString(tmpBuf, 100, parser_tx_obj.chainID, parser_tx_obj.chainIDLen);
+    EXPECT_EQ(tx["creator"]["chainId"], "string:" + std::string(tmpBuf));
+
+    parser_getAddress(parser_tx_obj.chainID, parser_tx_obj.chainIDLen, tmpBuf, 100,
+                      parser_tx_obj.sendmsg.sourcePtr, parser_tx_obj.sendmsg.sourceLen);
+    EXPECT_EQ(tx["sender"], "string:" + std::string(tmpBuf));
+
+    parser_getAddress(parser_tx_obj.chainID, parser_tx_obj.chainIDLen, tmpBuf, 100,
+                      parser_tx_obj.sendmsg.destinationPtr, parser_tx_obj.sendmsg.destinationLen);
+    EXPECT_EQ(tx["recipient"], "string:" + std::string(tmpBuf));
+
+    parser_arrayToString(tmpBuf, 100,
+                         parser_tx_obj.sendmsg.amount.tickerPtr, parser_tx_obj.sendmsg.amount.tickerLen);
+    EXPECT_EQ(tx["amount"]["tokenTicker"], "string:" + std::string(tmpBuf));
+
+    EXPECT_EQ(j[index]["nonce"], *parser_tx_obj.nonce);
+}
+
+TEST(TestCases, SingleJson) {
+    std::ifstream inFile("tests/testvectors/sendtx_single.json");
+    ASSERT_TRUE(inFile.is_open()) << "Check that your working directory is pointing to the test directory";
+
+    json j;
+    inFile >> j;
+    uint8_t buffer[200];
+    std::string s = j[0]["bytes"];
+    uint16_t bufferSize = parseHexString(s.c_str(), buffer);
+
+    parser_context_t ctx;
+    parser_error_t err = parser_parse(&ctx, buffer, bufferSize);
+    ASSERT_EQ(err, parser_ok) << parser_getErrorDescription(err);
+
+    checkJsonTx(&ctx, j, 0);
+}
+
+TEST(TestCases, BigJson) {
+    std::ifstream inFile("tests/testvectors/sendtx_tests.json");
+    ASSERT_TRUE(inFile.is_open()) << "Check that your working directory is pointing to the test directory";
+
+    json j;
+    inFile >> j;
+    uint8_t buffer[200];
+
+    for (size_t i = 0; i < j.size(); i++) {
+        std::string s = j[i]["bytes"];
+        uint16_t bufferSize = parseHexString(s.c_str(), buffer);
+
+        std::cout << std::setw(4) << j[i] << std::endl;
+
+        parser_context_t ctx;
+        parser_error_t err = parser_parse(&ctx, buffer, bufferSize);
+        ASSERT_EQ(err, parser_ok) << parser_getErrorDescription(err);
+
+        checkJsonTx(&ctx, j, i);
+    }
 }
