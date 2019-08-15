@@ -53,7 +53,7 @@ TEST(TestCases, Json) {
     EXPECT_EQ(j[0]["transaction"]["amount"]["quantity"], "string:0");
 }
 
-void checkJsonTx(parser_context_t *ctx, json &j, uint64_t index) {
+void checkJsonTx(json &j, uint64_t index) {
     auto tx = j[index]["transaction"];
     char tmpBuf[100];
 
@@ -68,9 +68,30 @@ void checkJsonTx(parser_context_t *ctx, json &j, uint64_t index) {
                       parser_tx_obj.sendmsg.destinationPtr, parser_tx_obj.sendmsg.destinationLen);
     EXPECT_EQ(tx["recipient"], "string:" + std::string(tmpBuf));
 
+    //// Check amount
+    parser_formatAmount(tmpBuf, 100, &parser_tx_obj.sendmsg.amount);
+    EXPECT_EQ(tx["amount"]["quantity"], "string:" + std::string(tmpBuf));
+
     parser_arrayToString(tmpBuf, 100,
                          parser_tx_obj.sendmsg.amount.tickerPtr, parser_tx_obj.sendmsg.amount.tickerLen);
     EXPECT_EQ(tx["amount"]["tokenTicker"], "string:" + std::string(tmpBuf));
+
+    //// Check fees
+    parser_formatAmount(tmpBuf, 100, &parser_tx_obj.fees.coin);
+    if (tx["fee"]["tokens"]["quantity"].is_null() == false) {
+        EXPECT_EQ(tx["fee"]["tokens"]["quantity"], "string:" + std::string(tmpBuf));
+    } else {
+        EXPECT_EQ("string:0", "string:" + std::string(tmpBuf));
+    }
+
+    parser_arrayToString(tmpBuf, 100,
+                         parser_tx_obj.fees.coin.tickerPtr, parser_tx_obj.fees.coin.tickerLen);
+    if (tx["fee"]["tokens"]["tokenTicker"].is_null() == false) {
+        EXPECT_EQ(tx["fee"]["tokens"]["tokenTicker"], "string:" + std::string(tmpBuf));
+    } else {
+        EXPECT_EQ("string:", "string:" + std::string(tmpBuf));
+    }
+
 
     EXPECT_EQ(j[index]["nonce"], parser_tx_obj.nonce);
 }
@@ -89,7 +110,7 @@ TEST(TestCases, SingleJson) {
     parser_error_t err = parser_parse(&ctx, buffer, bufferSize);
     ASSERT_EQ(err, parser_ok) << parser_getErrorDescription(err);
 
-    checkJsonTx(&ctx, j, 0);
+    checkJsonTx(j, 0);
 }
 
 class JsonTests : public ::testing::TestWithParam<int> {
@@ -115,7 +136,9 @@ public:
 
 json JsonTests::j;
 
-INSTANTIATE_TEST_CASE_P(JsonTestCases, JsonTests, ::testing::Range(0, 432));
+INSTANTIATE_TEST_CASE_P
+
+(JsonTestCases, JsonTests, ::testing::Range(0, 432));
 
 TEST_P(JsonTests, CheckParser) {
     uint8_t buffer[200];
@@ -130,5 +153,5 @@ TEST_P(JsonTests, CheckParser) {
     parser_error_t err = parser_parse(&ctx, buffer, bufferSize);
     ASSERT_EQ(err, parser_ok) << parser_getErrorDescription(err);
 
-    checkJsonTx(&ctx, j, i);
+    checkJsonTx(j, i);
 }
