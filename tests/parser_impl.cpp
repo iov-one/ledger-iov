@@ -20,6 +20,7 @@
 #include <hexutils.h>
 #include <nlohmann/json.hpp>
 #include <lib/parser.h>
+#include <bech32.h>
 #include "lib/parser_impl.h"
 
 using ::testing::TestWithParam;
@@ -236,31 +237,6 @@ TEST(Protobuf, SendMsg) {
                   "121473f16e71d0878f6ad26531e174452aec9161e8d4"
                   "1a14000000000000000000000000000000000000000022061a0443415348";
 
-//    {
-//        "transaction": {
-//            "sender": "string:tiov1w0ckuuwss78k45n9x8shg3f2ajgkr6x5xdlje2",
-//                "recipient": "string:tiov1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqzx8n0d",
-//                "amount": {
-//                "quantity": "string:0",
-//                    "fractionalDigits": 9,
-//                    "tokenTicker": "string:CASH"
-//            },
-//            "fee": {
-//                "tokens": {
-//                    "quantity": "string:0",
-//                        "fractionalDigits": 9,
-//                        "tokenTicker": "string:CASH"
-//                }
-//            }
-//        },
-//        "nonce": 0,
-//            "bytes": "00cafe000b696f762d6c6f76656e657400000000000000000a1e121473f16e71d0878f6ad26531e174452aec9161e8d41a061a04434153489a03380a020801121473f16e71d0878f6ad26531e174452aec9161e8d41a14000000000000000000000000000000000000000022061a0443415348"
-//    },
-//    1 [2]: 0
-//    2 [2]: 4
-//    3 [2]: 26
-//    4 [2]: 48
-
     uint8_t buffer[200];
     uint16_t bufferSize = parseHexString(pbtx, buffer);
     EXPECT_EQ(bufferSize, 56);
@@ -276,9 +252,23 @@ TEST(Protobuf, SendMsg) {
     ASSERT_EQ(sendmsg.memoLen, 0);
     ASSERT_EQ(sendmsg.refLen, 0);
 
-    ASSERT_EQ(sendmsg.metadata.schema, 1);
     char tmp[bufferSize];
-    parser_arrayToString(tmp, bufferSize, sendmsg.sourcePtr, sendmsg.sourceLen);
-    // FIXME: What are these?
-    //ASSERT_STREQ(tmp, "");
+
+    ASSERT_EQ(sendmsg.metadata.schema, 1);
+
+    err = parser_getAddress((const uint8_t *) "x", 1, tmp, bufferSize, sendmsg.sourcePtr, sendmsg.sourceLen);
+    ASSERT_EQ(err, parser_ok) << parser_getErrorDescription(err);
+    ASSERT_STREQ(tmp, "tiov1w0ckuuwss78k45n9x8shg3f2ajgkr6x5xdlje2");
+
+    err = parser_getAddress((const uint8_t *) "x", 1, tmp, bufferSize, sendmsg.destinationPtr, sendmsg.destinationLen);
+    ASSERT_EQ(err, parser_ok) << parser_getErrorDescription(err);
+    ASSERT_STREQ(tmp, "tiov1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqzx8n0d");
+
+    ASSERT_EQ(sendmsg.amount.whole, 0);
+    ASSERT_EQ(sendmsg.amount.fractional, 0);
+    ASSERT_EQ(sendmsg.amount.tickerLen, 4);
+
+    parser_arrayToString(tmp, bufferSize, sendmsg.amount.tickerPtr, sendmsg.amount.tickerLen);
+    ASSERT_EQ(err, parser_ok) << parser_getErrorDescription(err);
+    ASSERT_STREQ(tmp, "CASH");
 }

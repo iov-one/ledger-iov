@@ -29,7 +29,9 @@ string(APPEND CMAKE_LINKER_FLAGS_DEBUG " -fsanitize=address -fno-omit-frame-poin
 ##############################################################
 #  static libs
 file(GLOB_RECURSE LIB_SRC
+        src/ledger/deps/ledger-zxlib/src/bech32.c
         src/ledger/deps/ledger-zxlib/src/hexutils.c
+        src/ledger/deps/ledger-zxlib/src/segwit_addr.c
         src/ledger/src/lib/crypto.c
         src/ledger/src/lib/parser.c
         src/ledger/src/lib/parser_impl.c
