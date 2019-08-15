@@ -28,29 +28,35 @@ using json = nlohmann::json;
 void dumpUI() {
     uint8_t numFields = parser_getNumItems(nullptr);
 
-#define KEY_LEN 60
-#define VALUE_LEN 60
+#define KEY_LEN 30
+#define VALUE_LEN 30
     char key[KEY_LEN];
     char value[VALUE_LEN];
 
     std::stringstream ss;
 
     for (int idx = 0; idx < numFields; idx++) {
-        uint8_t pageCount;
-        parser_error_t err = parser_getItem(nullptr, idx,
-                                            key, KEY_LEN,
-                                            value, VALUE_LEN,
-                                            0, &pageCount);
+        uint8_t pageIdx = 0;
+        uint8_t pageCount = 1;
 
-        if (err != parser_ok) {
-            ss << "ERR " << parser_getErrorDescription(err) << std::endl;
-            break;
+        while(pageIdx < pageCount) {
+            parser_error_t err = parser_getItem(nullptr, idx,
+                                                key, KEY_LEN,
+                                                value, VALUE_LEN,
+                                                pageIdx, &pageCount);
+
+            if (err != parser_ok) {
+                ss << "ERR " << parser_getErrorDescription(err) << std::endl;
+                break;
+            }
+
+            ss << idx << "| (" << (int)pageIdx << "|" << (int)pageCount << ") ";
+            ss << key << " ";
+            ss << value << " ";
+            ss << std::endl;
+
+            pageIdx++;
         }
-
-        ss << idx << "| ";
-        ss << key << " ";
-        ss << value << " ";
-        ss << std::endl;
     }
 
     std::cout << ss.str() << std::endl;
