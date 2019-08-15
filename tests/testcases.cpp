@@ -72,7 +72,7 @@ void checkJsonTx(parser_context_t *ctx, json &j, uint64_t index) {
                          parser_tx_obj.sendmsg.amount.tickerPtr, parser_tx_obj.sendmsg.amount.tickerLen);
     EXPECT_EQ(tx["amount"]["tokenTicker"], "string:" + std::string(tmpBuf));
 
-    EXPECT_EQ(j[index]["nonce"], *parser_tx_obj.nonce);
+    EXPECT_EQ(j[index]["nonce"], parser_tx_obj.nonce);
 }
 
 TEST(TestCases, SingleJson) {
@@ -92,24 +92,43 @@ TEST(TestCases, SingleJson) {
     checkJsonTx(&ctx, j, 0);
 }
 
-TEST(TestCases, BigJson) {
-    std::ifstream inFile("tests/testvectors/sendtx_tests.json");
-    ASSERT_TRUE(inFile.is_open()) << "Check that your working directory is pointing to the test directory";
+class JsonTests : public ::testing::TestWithParam<int> {
+public:
+    static json j;
 
-    json j;
-    inFile >> j;
-    uint8_t buffer[200];
+    static void SetUpTestCase() {
+        std::ifstream inFile("tests/testvectors/sendtx_tests.json");
+        ASSERT_TRUE(inFile.is_open()) << "Check that your working directory is pointing to the test directory";
+        inFile >> j;
 
-    for (size_t i = 0; i < j.size(); i++) {
-        std::string s = j[i]["bytes"];
-        uint16_t bufferSize = parseHexString(s.c_str(), buffer);
-
-        std::cout << std::setw(4) << j[i] << std::endl;
-
-        parser_context_t ctx;
-        parser_error_t err = parser_parse(&ctx, buffer, bufferSize);
-        ASSERT_EQ(err, parser_ok) << parser_getErrorDescription(err);
-
-        checkJsonTx(&ctx, j, i);
+        std::cout << "Number of testcases: " << j.size() << std::endl;
     }
+
+    struct PrintToStringParamName {
+        std::string operator()(const ::testing::TestParamInfo<int> &p) const {
+            std::stringstream ss;
+            ss << "TestCase" << p.param;
+            return ss.str();
+        }
+    };
+};
+
+json JsonTests::j;
+
+INSTANTIATE_TEST_CASE_P(JsonTestCases, JsonTests, ::testing::Range(0, 432));
+
+TEST_P(JsonTests, CheckParser) {
+    uint8_t buffer[200];
+    size_t i = GetParam();
+
+    std::string s = j[i]["bytes"];
+    uint16_t bufferSize = parseHexString(s.c_str(), buffer);
+
+    std::cout << std::setw(4) << j[i] << std::endl;
+
+    parser_context_t ctx;
+    parser_error_t err = parser_parse(&ctx, buffer, bufferSize);
+    ASSERT_EQ(err, parser_ok) << parser_getErrorDescription(err);
+
+    checkJsonTx(&ctx, j, i);
 }

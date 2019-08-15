@@ -222,7 +222,7 @@ TEST(Protobuf, Header) {
 
     ASSERT_STREQ(chainID, "iov-lovenet");
 
-    ASSERT_EQ(*parser_tx_obj.nonce, 0);
+    ASSERT_EQ(parser_tx_obj.nonce, 0);
     ASSERT_EQ(ctx.offset, bufferSize);
 
     ASSERT_EQ(parser_tx_obj.feesLen, 0);
