@@ -22,6 +22,7 @@
 #include <hexutils.h>
 #include <lib/parser_impl.h>
 #include <lib/parser.h>
+#include <lib/iov.h>
 
 using ::testing::TestWithParam;
 using ::testing::Values;

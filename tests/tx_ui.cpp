@@ -25,11 +25,11 @@
 
 using json = nlohmann::json;
 
-void dumpUI() {
+std::string dumpUI() {
     uint8_t numFields = parser_getNumItems(nullptr);
 
-#define KEY_LEN 30
-#define VALUE_LEN 30
+#define KEY_LEN 33
+#define VALUE_LEN 36
     char key[KEY_LEN];
     char value[VALUE_LEN];
 
@@ -51,7 +51,7 @@ void dumpUI() {
             }
 
             ss << idx << "| (" << (int)pageIdx << "|" << (int)pageCount << ") ";
-            ss << key << " ";
+            ss << std::setw(KEY_LEN) << std::left << key << " ";
             ss << value << " ";
             ss << std::endl;
 
@@ -59,7 +59,7 @@ void dumpUI() {
         }
     }
 
-    std::cout << ss.str() << std::endl;
+    return ss.str();
 }
 
 TEST(UI, SingleJson) {
@@ -76,6 +76,7 @@ TEST(UI, SingleJson) {
     parser_error_t err = parser_parse(&ctx, buffer, bufferSize);
     ASSERT_EQ(err, parser_ok) << parser_getErrorDescription(err);
 
-    std::cout << std::endl;
-    dumpUI();
+    std::string output = dumpUI();
+
+    std::cout << std::endl << output << std::endl;
 }
