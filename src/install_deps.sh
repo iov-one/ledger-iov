@@ -20,13 +20,12 @@ SCRIPT_DIR=$(cd $(dirname $0) && pwd)
 os_string="$(uname -s)"
 case "${os_string}" in
 	Linux*)
-		apt-get install libusb-1.0.0 libudev-dev
-		pip3 install -U setuptools
-		pip3 install -U --no-cache ledgerblue ecpy
+		pip install --user -U setuptools
+		pip install --user -U --no-cache ledgerblue ecpy
 		;;
 	Darwin*)
 		brew install libusb
-		pip3 install -U ledgerblue ecpy
+		pip install -U ledgerblue ecpy
 		;;
 	*)
 		echo "OS not recognized"

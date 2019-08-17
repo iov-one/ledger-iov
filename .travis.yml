@@ -28,7 +28,7 @@ before_script:
 - export -f travis_nanoseconds travis_fold travis_time_start travis_time_finish
 
 script:
-  - ./ci/travis.sh
+  - ./scripts/travis.sh
 
 # whitelist long living branches to avoid testing feature branches twice (as branch and as pull request)
 branches:
