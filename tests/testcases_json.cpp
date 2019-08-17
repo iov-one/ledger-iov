@@ -58,7 +58,9 @@ void checkJsonTx(json &j, uint64_t index) {
     auto tx = j[index]["transaction"];
     char tmpBuf[100];
 
-    parser_arrayToString(tmpBuf, 100, parser_tx_obj.chainID, parser_tx_obj.chainIDLen);
+    parser_arrayToString(tmpBuf, 100,
+                         parser_tx_obj.chainID, parser_tx_obj.chainIDLen,
+                         0, nullptr);
     EXPECT_EQ(tx["creator"]["chainId"], "string:" + std::string(tmpBuf));
 
     parser_getAddress(parser_tx_obj.chainID, parser_tx_obj.chainIDLen, tmpBuf, 100,
@@ -74,7 +76,8 @@ void checkJsonTx(json &j, uint64_t index) {
     EXPECT_EQ(tx["amount"]["quantity"], "string:" + std::string(tmpBuf));
 
     parser_arrayToString(tmpBuf, 100,
-                         parser_tx_obj.sendmsg.amount.tickerPtr, parser_tx_obj.sendmsg.amount.tickerLen);
+                         parser_tx_obj.sendmsg.amount.tickerPtr, parser_tx_obj.sendmsg.amount.tickerLen,
+                         0, nullptr);
     EXPECT_EQ(tx["amount"]["tokenTicker"], "string:" + std::string(tmpBuf));
 
     //// Check fees
@@ -86,7 +89,9 @@ void checkJsonTx(json &j, uint64_t index) {
     }
 
     parser_arrayToString(tmpBuf, 100,
-                         parser_tx_obj.fees.coin.tickerPtr, parser_tx_obj.fees.coin.tickerLen);
+                         parser_tx_obj.fees.coin.tickerPtr, parser_tx_obj.fees.coin.tickerLen,
+                         0, nullptr);
+
     if (tx["fee"]["tokens"]["tokenTicker"].is_null() == false) {
         EXPECT_EQ(tx["fee"]["tokens"]["tokenTicker"], "string:" + std::string(tmpBuf));
     } else {

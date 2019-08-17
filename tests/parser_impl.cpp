@@ -218,7 +218,9 @@ TEST(Protobuf, Header) {
     char chainID[bufferSize];
     ASSERT_EQ(parser_tx_obj.chainIDLen, 11);
 
-    parser_arrayToString(chainID, bufferSize, parser_tx_obj.chainID, parser_tx_obj.chainIDLen);
+    parser_arrayToString(chainID, bufferSize,
+                         parser_tx_obj.chainID, parser_tx_obj.chainIDLen,
+                         0, nullptr);
 
     ASSERT_STREQ(chainID, "iov-lovenet");
 
@@ -268,7 +270,9 @@ TEST(Protobuf, SendMsg) {
     ASSERT_EQ(sendmsg.amount.fractional, 0);
     ASSERT_EQ(sendmsg.amount.tickerLen, 4);
 
-    parser_arrayToString(tmp, bufferSize, sendmsg.amount.tickerPtr, sendmsg.amount.tickerLen);
+    parser_arrayToString(tmp, bufferSize,
+                         sendmsg.amount.tickerPtr, sendmsg.amount.tickerLen,
+                         0, nullptr);
     ASSERT_EQ(err, parser_ok) << parser_getErrorDescription(err);
     ASSERT_STREQ(tmp, "CASH");
 }
