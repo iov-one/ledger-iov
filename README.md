@@ -20,8 +20,4 @@ The following document describes how to build the apps: [Build instructions](doc
 
 ## Specifications
 
-### IOV App
-
-- [APDU Protocol](https://github.com/zondax/ledger-iov/tree/master/docs/APDUSPEC.md)
-- [Transaction format](https://github.com/zondax/ledger-iov/tree/master/docs/TXSPEC.md)
-- [User interface](https://github.com/zondax/ledger-iov/tree/master/docs/UISPEC.md)
+- [APDU Protocol](https://github.com/iov-one/ledger-iov-app/tree/master/docs/APDUSPEC.md)
