@@ -10,7 +10,7 @@
         }
       },
       "sender": "string:iov1htg9tcktel7xx0nacakuz9ydd6dzm6lak3hwfr",
-      "recipient": "string:tiov1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqzx8n0d",
+      "recipient": "string:iov1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqvnwh0u",
       "memo": "string:some text",
       "amount": {
         "quantity": "string:1000000000",
