@@ -31,7 +31,7 @@ using json = nlohmann::json;
 // Testcases: https://gist.github.com/webmaster128/5304649b21dc080cadd9e6484d07b1d2
 
 TEST(TestCases, Json) {
-    std::ifstream inFile("tests/testvectors/sendtx_single.json");
+    std::ifstream inFile("testvectors/sendtx_single.json");
     ASSERT_TRUE(inFile.is_open()) << "Check that your working directory is pointing to the test directory";
 
     json j;
@@ -103,7 +103,7 @@ void checkJsonTx(json &j, uint64_t index) {
 }
 
 TEST(TestCases, SingleJson) {
-    std::ifstream inFile("tests/testvectors/sendtx_single.json");
+    std::ifstream inFile("testvectors/sendtx_single.json");
     ASSERT_TRUE(inFile.is_open()) << "Check that your working directory is pointing to the test directory";
 
     json j;
@@ -124,7 +124,7 @@ public:
     static json j;
 
     static void SetUpTestCase() {
-        std::ifstream inFile("tests/testvectors/sendtx_tests.json");
+        std::ifstream inFile("testvectors/sendtx_tests.json");
         ASSERT_TRUE(inFile.is_open()) << "Check that your working directory is pointing to the test directory";
         inFile >> j;
 
