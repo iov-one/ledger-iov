@@ -44,14 +44,14 @@ TEST(TestCases, Json) {
 
     EXPECT_EQ(j[0]["bytes"].size(), 1);
     EXPECT_EQ(j[0]["bytes"],
-              "00cafe000b696f762d6c6f76656e657400000000000000009a03380a020801121473f16e71d0878f6ad26531e174452aec9161e8d41a14000000000000000000000000000000000000000022061a0443415348");
+              "00cafe000b696f762d6d61696e6e657400000000000000000a231214bad055e2cbcffc633e7dc76dc1148d6e9a2debfd1a0b1080c2d72f1a04434153489a03450a0208011214bad055e2cbcffc633e7dc76dc1148d6e9a2debfd1a140000000000000000000000000000000000000000220808011a04434153482a09736f6d652074657874");
 
     EXPECT_EQ(j[0]["nonce"].size(), 1);
     EXPECT_EQ(j[0]["nonce"], 0);
 
-    EXPECT_EQ(j[0]["transaction"].size(), 5);
+    EXPECT_EQ(j[0]["transaction"].size(), 7);
     EXPECT_EQ(j[0]["transaction"]["amount"].size(), 3);
-    EXPECT_EQ(j[0]["transaction"]["amount"]["quantity"], "string:0");
+    EXPECT_EQ(j[0]["transaction"]["amount"]["quantity"], "string:1000000000");
 }
 
 void checkJsonTx(json &j, uint64_t index) {
@@ -144,11 +144,13 @@ json JsonTests::j;
 
 INSTANTIATE_TEST_CASE_P
 
-(JsonTestCases, JsonTests, ::testing::Range(0, 432));
+(JsonTestCases, JsonTests, ::testing::Range(0, 288));
 
 TEST_P(JsonTests, CheckParser) {
     uint8_t buffer[200];
     size_t i = GetParam();
+
+    std::cout << std::setw(4) << j[i] << std::endl;
 
     std::string s = j[i]["bytes"];
     uint16_t bufferSize = parseHexString(s.c_str(), buffer);
