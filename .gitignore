@@ -57,3 +57,14 @@ dkms.conf
 \.idea/
 /tmp/
 /deps/nano2-sdk/
+
+# Created by cmake
+googletest-download/
+googletest-src/
+googletest-build/
+CMakeFiles/
+CMakeCache.txt
+unittests
+*.cmake
+cmake/
+Testing/
