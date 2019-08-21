@@ -166,14 +166,11 @@ TEST(Protobuf, Enumeration) {
     parser_error_t err;
     parser_init(&ctx, buffer, bufferSize);
 
-    std::cout << std::endl;
     uint64_t v;
 
     while (ctx.offset < ctx.bufferSize) {
         err = _readRawVarint(&ctx, &v);
         EXPECT_EQ(err, parser_ok);
-        std::cout << (int) FIELD_NUM(v) << " [" << (int) WIRE_TYPE(v) << "]: ";
-        std::cout << (int) ctx.offset << std::endl;
 
         switch (WIRE_TYPE(v)) {
             case WIRE_TYPE_VARINT: {
@@ -244,6 +241,7 @@ TEST(Protobuf, SendMsg) {
     EXPECT_EQ(bufferSize, 56);
 
     parser_sendmsg_t sendmsg;
+    parser_sendmsgInit(&sendmsg);
     parser_error_t err = parser_readPB_SendMsg(buffer, bufferSize, &sendmsg);
     ASSERT_EQ(err, parser_ok) << parser_getErrorDescription(err);
 
@@ -258,11 +256,13 @@ TEST(Protobuf, SendMsg) {
 
     ASSERT_EQ(sendmsg.metadata.schema, 1);
 
-    err = parser_getAddress((const uint8_t *) "x", 1, tmp, bufferSize, sendmsg.sourcePtr, sendmsg.sourceLen);
+    err = parser_getAddress((const uint8_t *) "x", 1,
+                            tmp, bufferSize, sendmsg.sourcePtr, sendmsg.sourceLen);
     ASSERT_EQ(err, parser_ok) << parser_getErrorDescription(err);
     ASSERT_STREQ(tmp, "tiov1w0ckuuwss78k45n9x8shg3f2ajgkr6x5xdlje2");
 
-    err = parser_getAddress((const uint8_t *) "x", 1, tmp, bufferSize, sendmsg.destinationPtr, sendmsg.destinationLen);
+    err = parser_getAddress((const uint8_t *) "x", 1,
+                            tmp, bufferSize, sendmsg.destinationPtr, sendmsg.destinationLen);
     ASSERT_EQ(err, parser_ok) << parser_getErrorDescription(err);
     ASSERT_STREQ(tmp, "tiov1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqzx8n0d");
 

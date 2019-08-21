@@ -150,12 +150,8 @@ TEST_P(JsonTests, CheckParser) {
     uint8_t buffer[200];
     size_t i = GetParam();
 
-    std::cout << std::setw(4) << j[i] << std::endl;
-
     std::string s = j[i]["bytes"];
     uint16_t bufferSize = parseHexString(s.c_str(), buffer);
-
-    std::cout << std::setw(4) << j[i] << std::endl;
 
     parser_context_t ctx;
     parser_error_t err = parser_parse(&ctx, buffer, bufferSize);
