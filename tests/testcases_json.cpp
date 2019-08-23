@@ -113,7 +113,8 @@ TEST(TestCases, SingleJson) {
     uint16_t bufferSize = parseHexString(s.c_str(), buffer);
 
     parser_context_t ctx;
-    parser_error_t err = parser_parse(&ctx, buffer, bufferSize);
+    bool_t isMainnet = bool_true;
+    parser_error_t err = parser_parse(&ctx, buffer, bufferSize, isMainnet);
     ASSERT_EQ(err, parser_ok) << parser_getErrorDescription(err);
 
     checkJsonTx(j, 0);
@@ -154,7 +155,8 @@ TEST_P(JsonTests, CheckParser) {
     uint16_t bufferSize = parseHexString(s.c_str(), buffer);
 
     parser_context_t ctx;
-    parser_error_t err = parser_parse(&ctx, buffer, bufferSize);
+    bool_t isMainnet = bool_true;
+    parser_error_t err = parser_parse(&ctx, buffer, bufferSize, isMainnet);
     ASSERT_EQ(err, parser_ok) << parser_getErrorDescription(err);
 
     checkJsonTx(j, i);
