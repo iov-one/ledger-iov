@@ -73,8 +73,7 @@ TEST(UI, SingleJson) {
     uint16_t bufferSize = parseHexString(s.c_str(), buffer);
 
     parser_context_t ctx;
-    const bool_t isMainnet = bool_true;
-    parser_error_t err = parser_parse(&ctx, buffer, bufferSize, isMainnet);
+    parser_error_t err = parser_parse(&ctx, buffer, bufferSize);
     ASSERT_EQ(err, parser_ok) << parser_getErrorDescription(err);
 
     std::string output = dumpUI();
