@@ -9,13 +9,17 @@ language: generic
 
 env:
   matrix:
-    - MODE=unit
-    - MODE=ledger
+    - MODE=unit NET=mainnet
+    - MODE=unit NET=testnet
+    - MODE=ledger NET=mainnet
+    - MODE=ledger NET=testnet
 
 matrix:
   exclude:
     - os: osx
-      env: MODE=ledger
+      env: MODE=ledger NET=mainnet
+    - os: osx
+      env: MODE=ledger NET=testnet
 
 services:
   - docker
