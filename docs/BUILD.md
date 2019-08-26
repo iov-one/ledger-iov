@@ -78,6 +78,17 @@ The following command will upload the application to the ledger. _Warning: The a
 ```
 make load          # Builds and loads the app to the device
 ```
+
+## Testnet builds
+
+The app is built for mainnet by default. To enable the testnet mode, set
+the environment variable `TESTNET_ENABLED`. E.g.
+
+```
+TESTNET_ENABLED=1 make build
+TESTNET_ENABLED=1 make load
+```
+
 ### Developers (building C++ Code / Tests)
 
 This is useful when you want to make changes to libraries, run unit tests, etc. It will build all common libraries and unit tests.
