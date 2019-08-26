@@ -39,6 +39,10 @@ python --version
 pip --version
 fold_end
 
+if [[ "$NET" == "testnet" ]]; then
+  export TESTNET_ENABLED=1
+fi
+
 if [[ "$MODE" == "unit" ]]; then
   #
   # Install dependencies

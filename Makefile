@@ -40,28 +40,28 @@ build: check_python
 	-e BOLOS_SDK=$(DOCKER_BOLOS_SDK) -e BOLOS_ENV=/opt/bolos \
 	-u $(shell id -u) -v $(shell pwd):/project \
 	$(DOCKER_IMAGE) \
-	make -C /project/src/ledger TESTNET_ENABLED=1
+	make -C /project/src/ledger
 
 build2: check_python
 	docker run -i --rm \
 	-e BOLOS_SDK=$(DOCKER_BOLOS_SDK2) -e BOLOS_ENV=/opt/bolos \
 	-u $(shell id -u) -v $(shell pwd):/project \
 	$(DOCKER_IMAGE2) \
-	make -C /project/src/ledger TESTNET_ENABLED=1
+	make -C /project/src/ledger
 
 clean: check_python
 	BOLOS_SDK=$(CURDIR)/deps/nanos-secure-sdk BOLOS_ENV=/opt/bolos \
-	make -C $(LEDGER_SRC) clean TESTNET_ENABLED=1
+	make -C $(LEDGER_SRC) clean
 
 load: check_python build
 	SCP_PRIVKEY=$(SCP_PRIVKEY) \
 	BOLOS_SDK=$(CURDIR)/deps/nanos-secure-sdk BOLOS_ENV=/opt/bolos \
-	make -C $(LEDGER_SRC) load TESTNET_ENABLED=1
+	make -C $(LEDGER_SRC) load
 
 load2: check_python build2
 	SCP_PRIVKEY=$(SCP_PRIVKEY) \
 	BOLOS_SDK=$(CURDIR)/deps/nano2-sdk BOLOS_ENV=/opt/bolos \
-	make -C $(LEDGER_SRC) load TESTNET_ENABLED=1
+	make -C $(LEDGER_SRC) load
 
 delete: check_python
 	SCP_PRIVKEY=$(SCP_PRIVKEY) \
