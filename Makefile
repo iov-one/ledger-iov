@@ -38,6 +38,7 @@ deps: check_python
 build: check_python
 	docker run -i --rm \
 	-e BOLOS_SDK=$(DOCKER_BOLOS_SDK) -e BOLOS_ENV=/opt/bolos \
+	-e TESTNET_ENABLED \
 	-u $(shell id -u) -v $(shell pwd):/project \
 	$(DOCKER_IMAGE) \
 	make -C /project/src/ledger
@@ -45,6 +46,7 @@ build: check_python
 build2: check_python
 	docker run -i --rm \
 	-e BOLOS_SDK=$(DOCKER_BOLOS_SDK2) -e BOLOS_ENV=/opt/bolos \
+	-e TESTNET_ENABLED \
 	-u $(shell id -u) -v $(shell pwd):/project \
 	$(DOCKER_IMAGE2) \
 	make -C /project/src/ledger
