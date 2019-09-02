@@ -144,7 +144,7 @@ json JsonTests::j;
 
 INSTANTIATE_TEST_CASE_P
 
-(JsonTestCases, JsonTests, ::testing::Range(0, 288));
+(JsonTestCases, JsonTests, ::testing::Range(0, 432));
 
 TEST_P(JsonTests, CheckParser) {
     uint8_t buffer[200];
