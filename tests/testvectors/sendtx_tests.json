@@ -3,6 +3,354 @@
     "transaction": {
       "kind": "string:bcp/send",
       "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "amount": {
+        "quantity": "string:0",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:CASH"
+      }
+    },
+    "nonce": 0,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f31323300000000000000009a03380a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae822061a0443415348"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "memo": "string:",
+      "amount": {
+        "quantity": "string:0",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:CASH"
+      }
+    },
+    "nonce": 0,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f31323300000000000000009a03380a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae822061a0443415348"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "memo": "string:some text",
+      "amount": {
+        "quantity": "string:0",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:CASH"
+      }
+    },
+    "nonce": 0,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f31323300000000000000009a03430a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae822061a04434153482a09736f6d652074657874"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "memo": "string:text with emoji: 🐎",
+      "amount": {
+        "quantity": "string:0",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:CASH"
+      }
+    },
+    "nonce": 0,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f31323300000000000000009a034f0a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae822061a04434153482a1574657874207769746820656d6f6a693a20f09f908e"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "amount": {
+        "quantity": "string:1",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:CASH"
+      }
+    },
+    "nonce": 0,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f31323300000000000000009a033a0a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae8220810011a0443415348"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "memo": "string:",
+      "amount": {
+        "quantity": "string:1",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:CASH"
+      }
+    },
+    "nonce": 0,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f31323300000000000000009a033a0a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae8220810011a0443415348"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "memo": "string:some text",
+      "amount": {
+        "quantity": "string:1",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:CASH"
+      }
+    },
+    "nonce": 0,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f31323300000000000000009a03450a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae8220810011a04434153482a09736f6d652074657874"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "memo": "string:text with emoji: 🐎",
+      "amount": {
+        "quantity": "string:1",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:CASH"
+      }
+    },
+    "nonce": 0,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f31323300000000000000009a03510a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae8220810011a04434153482a1574657874207769746820656d6f6a693a20f09f908e"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "amount": {
+        "quantity": "string:1000000000",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:CASH"
+      }
+    },
+    "nonce": 0,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f31323300000000000000009a033a0a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae8220808011a0443415348"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "memo": "string:",
+      "amount": {
+        "quantity": "string:1000000000",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:CASH"
+      }
+    },
+    "nonce": 0,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f31323300000000000000009a033a0a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae8220808011a0443415348"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "memo": "string:some text",
+      "amount": {
+        "quantity": "string:1000000000",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:CASH"
+      }
+    },
+    "nonce": 0,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f31323300000000000000009a03450a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae8220808011a04434153482a09736f6d652074657874"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "memo": "string:text with emoji: 🐎",
+      "amount": {
+        "quantity": "string:1000000000",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:CASH"
+      }
+    },
+    "nonce": 0,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f31323300000000000000009a03510a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae8220808011a04434153482a1574657874207769746820656d6f6a693a20f09f908e"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "amount": {
+        "quantity": "string:7400000000",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:IOV"
+      }
+    },
+    "nonce": 0,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f31323300000000000000009a033f0a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae8220d0807108088debe011a03494f56"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "memo": "string:",
+      "amount": {
+        "quantity": "string:7400000000",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:IOV"
+      }
+    },
+    "nonce": 0,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f31323300000000000000009a033f0a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae8220d0807108088debe011a03494f56"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "memo": "string:some text",
+      "amount": {
+        "quantity": "string:7400000000",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:IOV"
+      }
+    },
+    "nonce": 0,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f31323300000000000000009a034a0a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae8220d0807108088debe011a03494f562a09736f6d652074657874"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "memo": "string:text with emoji: 🐎",
+      "amount": {
+        "quantity": "string:7400000000",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:IOV"
+      }
+    },
+    "nonce": 0,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f31323300000000000000009a03560a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae8220d0807108088debe011a03494f562a1574657874207769746820656d6f6a693a20f09f908e"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
         "chainId": "string:iov-lovenet",
         "pubkey": {
           "algo": "string:ed25519",
@@ -694,6 +1042,466 @@
     },
     "nonce": 0,
     "bytes": "00cafe000b696f762d6d61696e6e657400000000000000009a03560a0208011214bad055e2cbcffc633e7dc76dc1148d6e9a2debfd1a14020daec62066ec82a5a1b40378d87457ed88e4fc220d0807108088debe011a03494f562a1574657874207769746820656d6f6a693a20f09f908e"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "amount": {
+        "quantity": "string:0",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:CASH"
+      },
+      "fee": {
+        "tokens": {
+          "quantity": "string:0",
+          "fractionalDigits": 9,
+          "tokenTicker": "string:CASH"
+        }
+      }
+    },
+    "nonce": 0,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f31323300000000000000000a1e1214f70778bd52f4c625227c4a2f5f01b244f7523ae81a061a04434153489a03380a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae822061a0443415348"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "memo": "string:",
+      "amount": {
+        "quantity": "string:0",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:CASH"
+      },
+      "fee": {
+        "tokens": {
+          "quantity": "string:0",
+          "fractionalDigits": 9,
+          "tokenTicker": "string:CASH"
+        }
+      }
+    },
+    "nonce": 0,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f31323300000000000000000a1e1214f70778bd52f4c625227c4a2f5f01b244f7523ae81a061a04434153489a03380a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae822061a0443415348"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "memo": "string:some text",
+      "amount": {
+        "quantity": "string:0",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:CASH"
+      },
+      "fee": {
+        "tokens": {
+          "quantity": "string:0",
+          "fractionalDigits": 9,
+          "tokenTicker": "string:CASH"
+        }
+      }
+    },
+    "nonce": 0,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f31323300000000000000000a1e1214f70778bd52f4c625227c4a2f5f01b244f7523ae81a061a04434153489a03430a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae822061a04434153482a09736f6d652074657874"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "memo": "string:text with emoji: 🐎",
+      "amount": {
+        "quantity": "string:0",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:CASH"
+      },
+      "fee": {
+        "tokens": {
+          "quantity": "string:0",
+          "fractionalDigits": 9,
+          "tokenTicker": "string:CASH"
+        }
+      }
+    },
+    "nonce": 0,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f31323300000000000000000a1e1214f70778bd52f4c625227c4a2f5f01b244f7523ae81a061a04434153489a034f0a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae822061a04434153482a1574657874207769746820656d6f6a693a20f09f908e"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "amount": {
+        "quantity": "string:1",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:CASH"
+      },
+      "fee": {
+        "tokens": {
+          "quantity": "string:0",
+          "fractionalDigits": 9,
+          "tokenTicker": "string:CASH"
+        }
+      }
+    },
+    "nonce": 0,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f31323300000000000000000a1e1214f70778bd52f4c625227c4a2f5f01b244f7523ae81a061a04434153489a033a0a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae8220810011a0443415348"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "memo": "string:",
+      "amount": {
+        "quantity": "string:1",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:CASH"
+      },
+      "fee": {
+        "tokens": {
+          "quantity": "string:0",
+          "fractionalDigits": 9,
+          "tokenTicker": "string:CASH"
+        }
+      }
+    },
+    "nonce": 0,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f31323300000000000000000a1e1214f70778bd52f4c625227c4a2f5f01b244f7523ae81a061a04434153489a033a0a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae8220810011a0443415348"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "memo": "string:some text",
+      "amount": {
+        "quantity": "string:1",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:CASH"
+      },
+      "fee": {
+        "tokens": {
+          "quantity": "string:0",
+          "fractionalDigits": 9,
+          "tokenTicker": "string:CASH"
+        }
+      }
+    },
+    "nonce": 0,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f31323300000000000000000a1e1214f70778bd52f4c625227c4a2f5f01b244f7523ae81a061a04434153489a03450a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae8220810011a04434153482a09736f6d652074657874"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "memo": "string:text with emoji: 🐎",
+      "amount": {
+        "quantity": "string:1",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:CASH"
+      },
+      "fee": {
+        "tokens": {
+          "quantity": "string:0",
+          "fractionalDigits": 9,
+          "tokenTicker": "string:CASH"
+        }
+      }
+    },
+    "nonce": 0,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f31323300000000000000000a1e1214f70778bd52f4c625227c4a2f5f01b244f7523ae81a061a04434153489a03510a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae8220810011a04434153482a1574657874207769746820656d6f6a693a20f09f908e"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "amount": {
+        "quantity": "string:1000000000",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:CASH"
+      },
+      "fee": {
+        "tokens": {
+          "quantity": "string:0",
+          "fractionalDigits": 9,
+          "tokenTicker": "string:CASH"
+        }
+      }
+    },
+    "nonce": 0,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f31323300000000000000000a1e1214f70778bd52f4c625227c4a2f5f01b244f7523ae81a061a04434153489a033a0a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae8220808011a0443415348"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "memo": "string:",
+      "amount": {
+        "quantity": "string:1000000000",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:CASH"
+      },
+      "fee": {
+        "tokens": {
+          "quantity": "string:0",
+          "fractionalDigits": 9,
+          "tokenTicker": "string:CASH"
+        }
+      }
+    },
+    "nonce": 0,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f31323300000000000000000a1e1214f70778bd52f4c625227c4a2f5f01b244f7523ae81a061a04434153489a033a0a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae8220808011a0443415348"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "memo": "string:some text",
+      "amount": {
+        "quantity": "string:1000000000",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:CASH"
+      },
+      "fee": {
+        "tokens": {
+          "quantity": "string:0",
+          "fractionalDigits": 9,
+          "tokenTicker": "string:CASH"
+        }
+      }
+    },
+    "nonce": 0,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f31323300000000000000000a1e1214f70778bd52f4c625227c4a2f5f01b244f7523ae81a061a04434153489a03450a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae8220808011a04434153482a09736f6d652074657874"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "memo": "string:text with emoji: 🐎",
+      "amount": {
+        "quantity": "string:1000000000",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:CASH"
+      },
+      "fee": {
+        "tokens": {
+          "quantity": "string:0",
+          "fractionalDigits": 9,
+          "tokenTicker": "string:CASH"
+        }
+      }
+    },
+    "nonce": 0,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f31323300000000000000000a1e1214f70778bd52f4c625227c4a2f5f01b244f7523ae81a061a04434153489a03510a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae8220808011a04434153482a1574657874207769746820656d6f6a693a20f09f908e"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "amount": {
+        "quantity": "string:7400000000",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:IOV"
+      },
+      "fee": {
+        "tokens": {
+          "quantity": "string:0",
+          "fractionalDigits": 9,
+          "tokenTicker": "string:CASH"
+        }
+      }
+    },
+    "nonce": 0,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f31323300000000000000000a1e1214f70778bd52f4c625227c4a2f5f01b244f7523ae81a061a04434153489a033f0a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae8220d0807108088debe011a03494f56"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "memo": "string:",
+      "amount": {
+        "quantity": "string:7400000000",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:IOV"
+      },
+      "fee": {
+        "tokens": {
+          "quantity": "string:0",
+          "fractionalDigits": 9,
+          "tokenTicker": "string:CASH"
+        }
+      }
+    },
+    "nonce": 0,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f31323300000000000000000a1e1214f70778bd52f4c625227c4a2f5f01b244f7523ae81a061a04434153489a033f0a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae8220d0807108088debe011a03494f56"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "memo": "string:some text",
+      "amount": {
+        "quantity": "string:7400000000",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:IOV"
+      },
+      "fee": {
+        "tokens": {
+          "quantity": "string:0",
+          "fractionalDigits": 9,
+          "tokenTicker": "string:CASH"
+        }
+      }
+    },
+    "nonce": 0,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f31323300000000000000000a1e1214f70778bd52f4c625227c4a2f5f01b244f7523ae81a061a04434153489a034a0a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae8220d0807108088debe011a03494f562a09736f6d652074657874"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "memo": "string:text with emoji: 🐎",
+      "amount": {
+        "quantity": "string:7400000000",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:IOV"
+      },
+      "fee": {
+        "tokens": {
+          "quantity": "string:0",
+          "fractionalDigits": 9,
+          "tokenTicker": "string:CASH"
+        }
+      }
+    },
+    "nonce": 0,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f31323300000000000000000a1e1214f70778bd52f4c625227c4a2f5f01b244f7523ae81a061a04434153489a03560a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae8220d0807108088debe011a03494f562a1574657874207769746820656d6f6a693a20f09f908e"
   },
   {
     "transaction": {
@@ -1619,6 +2427,466 @@
     "transaction": {
       "kind": "string:bcp/send",
       "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "amount": {
+        "quantity": "string:0",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:CASH"
+      },
+      "fee": {
+        "tokens": {
+          "quantity": "string:100000000",
+          "fractionalDigits": 9,
+          "tokenTicker": "string:CASH"
+        }
+      }
+    },
+    "nonce": 0,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f31323300000000000000000a231214f70778bd52f4c625227c4a2f5f01b244f7523ae81a0b1080c2d72f1a04434153489a03380a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae822061a0443415348"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "memo": "string:",
+      "amount": {
+        "quantity": "string:0",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:CASH"
+      },
+      "fee": {
+        "tokens": {
+          "quantity": "string:100000000",
+          "fractionalDigits": 9,
+          "tokenTicker": "string:CASH"
+        }
+      }
+    },
+    "nonce": 0,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f31323300000000000000000a231214f70778bd52f4c625227c4a2f5f01b244f7523ae81a0b1080c2d72f1a04434153489a03380a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae822061a0443415348"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "memo": "string:some text",
+      "amount": {
+        "quantity": "string:0",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:CASH"
+      },
+      "fee": {
+        "tokens": {
+          "quantity": "string:100000000",
+          "fractionalDigits": 9,
+          "tokenTicker": "string:CASH"
+        }
+      }
+    },
+    "nonce": 0,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f31323300000000000000000a231214f70778bd52f4c625227c4a2f5f01b244f7523ae81a0b1080c2d72f1a04434153489a03430a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae822061a04434153482a09736f6d652074657874"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "memo": "string:text with emoji: 🐎",
+      "amount": {
+        "quantity": "string:0",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:CASH"
+      },
+      "fee": {
+        "tokens": {
+          "quantity": "string:100000000",
+          "fractionalDigits": 9,
+          "tokenTicker": "string:CASH"
+        }
+      }
+    },
+    "nonce": 0,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f31323300000000000000000a231214f70778bd52f4c625227c4a2f5f01b244f7523ae81a0b1080c2d72f1a04434153489a034f0a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae822061a04434153482a1574657874207769746820656d6f6a693a20f09f908e"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "amount": {
+        "quantity": "string:1",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:CASH"
+      },
+      "fee": {
+        "tokens": {
+          "quantity": "string:100000000",
+          "fractionalDigits": 9,
+          "tokenTicker": "string:CASH"
+        }
+      }
+    },
+    "nonce": 0,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f31323300000000000000000a231214f70778bd52f4c625227c4a2f5f01b244f7523ae81a0b1080c2d72f1a04434153489a033a0a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae8220810011a0443415348"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "memo": "string:",
+      "amount": {
+        "quantity": "string:1",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:CASH"
+      },
+      "fee": {
+        "tokens": {
+          "quantity": "string:100000000",
+          "fractionalDigits": 9,
+          "tokenTicker": "string:CASH"
+        }
+      }
+    },
+    "nonce": 0,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f31323300000000000000000a231214f70778bd52f4c625227c4a2f5f01b244f7523ae81a0b1080c2d72f1a04434153489a033a0a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae8220810011a0443415348"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "memo": "string:some text",
+      "amount": {
+        "quantity": "string:1",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:CASH"
+      },
+      "fee": {
+        "tokens": {
+          "quantity": "string:100000000",
+          "fractionalDigits": 9,
+          "tokenTicker": "string:CASH"
+        }
+      }
+    },
+    "nonce": 0,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f31323300000000000000000a231214f70778bd52f4c625227c4a2f5f01b244f7523ae81a0b1080c2d72f1a04434153489a03450a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae8220810011a04434153482a09736f6d652074657874"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "memo": "string:text with emoji: 🐎",
+      "amount": {
+        "quantity": "string:1",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:CASH"
+      },
+      "fee": {
+        "tokens": {
+          "quantity": "string:100000000",
+          "fractionalDigits": 9,
+          "tokenTicker": "string:CASH"
+        }
+      }
+    },
+    "nonce": 0,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f31323300000000000000000a231214f70778bd52f4c625227c4a2f5f01b244f7523ae81a0b1080c2d72f1a04434153489a03510a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae8220810011a04434153482a1574657874207769746820656d6f6a693a20f09f908e"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "amount": {
+        "quantity": "string:1000000000",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:CASH"
+      },
+      "fee": {
+        "tokens": {
+          "quantity": "string:100000000",
+          "fractionalDigits": 9,
+          "tokenTicker": "string:CASH"
+        }
+      }
+    },
+    "nonce": 0,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f31323300000000000000000a231214f70778bd52f4c625227c4a2f5f01b244f7523ae81a0b1080c2d72f1a04434153489a033a0a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae8220808011a0443415348"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "memo": "string:",
+      "amount": {
+        "quantity": "string:1000000000",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:CASH"
+      },
+      "fee": {
+        "tokens": {
+          "quantity": "string:100000000",
+          "fractionalDigits": 9,
+          "tokenTicker": "string:CASH"
+        }
+      }
+    },
+    "nonce": 0,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f31323300000000000000000a231214f70778bd52f4c625227c4a2f5f01b244f7523ae81a0b1080c2d72f1a04434153489a033a0a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae8220808011a0443415348"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "memo": "string:some text",
+      "amount": {
+        "quantity": "string:1000000000",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:CASH"
+      },
+      "fee": {
+        "tokens": {
+          "quantity": "string:100000000",
+          "fractionalDigits": 9,
+          "tokenTicker": "string:CASH"
+        }
+      }
+    },
+    "nonce": 0,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f31323300000000000000000a231214f70778bd52f4c625227c4a2f5f01b244f7523ae81a0b1080c2d72f1a04434153489a03450a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae8220808011a04434153482a09736f6d652074657874"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "memo": "string:text with emoji: 🐎",
+      "amount": {
+        "quantity": "string:1000000000",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:CASH"
+      },
+      "fee": {
+        "tokens": {
+          "quantity": "string:100000000",
+          "fractionalDigits": 9,
+          "tokenTicker": "string:CASH"
+        }
+      }
+    },
+    "nonce": 0,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f31323300000000000000000a231214f70778bd52f4c625227c4a2f5f01b244f7523ae81a0b1080c2d72f1a04434153489a03510a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae8220808011a04434153482a1574657874207769746820656d6f6a693a20f09f908e"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "amount": {
+        "quantity": "string:7400000000",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:IOV"
+      },
+      "fee": {
+        "tokens": {
+          "quantity": "string:100000000",
+          "fractionalDigits": 9,
+          "tokenTicker": "string:CASH"
+        }
+      }
+    },
+    "nonce": 0,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f31323300000000000000000a231214f70778bd52f4c625227c4a2f5f01b244f7523ae81a0b1080c2d72f1a04434153489a033f0a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae8220d0807108088debe011a03494f56"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "memo": "string:",
+      "amount": {
+        "quantity": "string:7400000000",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:IOV"
+      },
+      "fee": {
+        "tokens": {
+          "quantity": "string:100000000",
+          "fractionalDigits": 9,
+          "tokenTicker": "string:CASH"
+        }
+      }
+    },
+    "nonce": 0,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f31323300000000000000000a231214f70778bd52f4c625227c4a2f5f01b244f7523ae81a0b1080c2d72f1a04434153489a033f0a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae8220d0807108088debe011a03494f56"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "memo": "string:some text",
+      "amount": {
+        "quantity": "string:7400000000",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:IOV"
+      },
+      "fee": {
+        "tokens": {
+          "quantity": "string:100000000",
+          "fractionalDigits": 9,
+          "tokenTicker": "string:CASH"
+        }
+      }
+    },
+    "nonce": 0,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f31323300000000000000000a231214f70778bd52f4c625227c4a2f5f01b244f7523ae81a0b1080c2d72f1a04434153489a034a0a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae8220d0807108088debe011a03494f562a09736f6d652074657874"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "memo": "string:text with emoji: 🐎",
+      "amount": {
+        "quantity": "string:7400000000",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:IOV"
+      },
+      "fee": {
+        "tokens": {
+          "quantity": "string:100000000",
+          "fractionalDigits": 9,
+          "tokenTicker": "string:CASH"
+        }
+      }
+    },
+    "nonce": 0,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f31323300000000000000000a231214f70778bd52f4c625227c4a2f5f01b244f7523ae81a0b1080c2d72f1a04434153489a03560a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae8220d0807108088debe011a03494f562a1574657874207769746820656d6f6a693a20f09f908e"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
         "chainId": "string:iov-lovenet",
         "pubkey": {
           "algo": "string:ed25519",
@@ -2539,6 +3807,354 @@
     "transaction": {
       "kind": "string:bcp/send",
       "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "amount": {
+        "quantity": "string:0",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:CASH"
+      }
+    },
+    "nonce": 1,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f31323300000000000000019a03380a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae822061a0443415348"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "memo": "string:",
+      "amount": {
+        "quantity": "string:0",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:CASH"
+      }
+    },
+    "nonce": 1,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f31323300000000000000019a03380a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae822061a0443415348"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "memo": "string:some text",
+      "amount": {
+        "quantity": "string:0",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:CASH"
+      }
+    },
+    "nonce": 1,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f31323300000000000000019a03430a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae822061a04434153482a09736f6d652074657874"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "memo": "string:text with emoji: 🐎",
+      "amount": {
+        "quantity": "string:0",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:CASH"
+      }
+    },
+    "nonce": 1,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f31323300000000000000019a034f0a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae822061a04434153482a1574657874207769746820656d6f6a693a20f09f908e"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "amount": {
+        "quantity": "string:1",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:CASH"
+      }
+    },
+    "nonce": 1,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f31323300000000000000019a033a0a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae8220810011a0443415348"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "memo": "string:",
+      "amount": {
+        "quantity": "string:1",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:CASH"
+      }
+    },
+    "nonce": 1,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f31323300000000000000019a033a0a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae8220810011a0443415348"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "memo": "string:some text",
+      "amount": {
+        "quantity": "string:1",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:CASH"
+      }
+    },
+    "nonce": 1,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f31323300000000000000019a03450a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae8220810011a04434153482a09736f6d652074657874"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "memo": "string:text with emoji: 🐎",
+      "amount": {
+        "quantity": "string:1",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:CASH"
+      }
+    },
+    "nonce": 1,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f31323300000000000000019a03510a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae8220810011a04434153482a1574657874207769746820656d6f6a693a20f09f908e"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "amount": {
+        "quantity": "string:1000000000",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:CASH"
+      }
+    },
+    "nonce": 1,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f31323300000000000000019a033a0a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae8220808011a0443415348"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "memo": "string:",
+      "amount": {
+        "quantity": "string:1000000000",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:CASH"
+      }
+    },
+    "nonce": 1,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f31323300000000000000019a033a0a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae8220808011a0443415348"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "memo": "string:some text",
+      "amount": {
+        "quantity": "string:1000000000",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:CASH"
+      }
+    },
+    "nonce": 1,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f31323300000000000000019a03450a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae8220808011a04434153482a09736f6d652074657874"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "memo": "string:text with emoji: 🐎",
+      "amount": {
+        "quantity": "string:1000000000",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:CASH"
+      }
+    },
+    "nonce": 1,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f31323300000000000000019a03510a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae8220808011a04434153482a1574657874207769746820656d6f6a693a20f09f908e"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "amount": {
+        "quantity": "string:7400000000",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:IOV"
+      }
+    },
+    "nonce": 1,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f31323300000000000000019a033f0a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae8220d0807108088debe011a03494f56"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "memo": "string:",
+      "amount": {
+        "quantity": "string:7400000000",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:IOV"
+      }
+    },
+    "nonce": 1,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f31323300000000000000019a033f0a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae8220d0807108088debe011a03494f56"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "memo": "string:some text",
+      "amount": {
+        "quantity": "string:7400000000",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:IOV"
+      }
+    },
+    "nonce": 1,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f31323300000000000000019a034a0a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae8220d0807108088debe011a03494f562a09736f6d652074657874"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "memo": "string:text with emoji: 🐎",
+      "amount": {
+        "quantity": "string:7400000000",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:IOV"
+      }
+    },
+    "nonce": 1,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f31323300000000000000019a03560a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae8220d0807108088debe011a03494f562a1574657874207769746820656d6f6a693a20f09f908e"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
         "chainId": "string:iov-lovenet",
         "pubkey": {
           "algo": "string:ed25519",
@@ -3230,6 +4846,466 @@
     },
     "nonce": 1,
     "bytes": "00cafe000b696f762d6d61696e6e657400000000000000019a03560a0208011214bad055e2cbcffc633e7dc76dc1148d6e9a2debfd1a14020daec62066ec82a5a1b40378d87457ed88e4fc220d0807108088debe011a03494f562a1574657874207769746820656d6f6a693a20f09f908e"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "amount": {
+        "quantity": "string:0",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:CASH"
+      },
+      "fee": {
+        "tokens": {
+          "quantity": "string:0",
+          "fractionalDigits": 9,
+          "tokenTicker": "string:CASH"
+        }
+      }
+    },
+    "nonce": 1,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f31323300000000000000010a1e1214f70778bd52f4c625227c4a2f5f01b244f7523ae81a061a04434153489a03380a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae822061a0443415348"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "memo": "string:",
+      "amount": {
+        "quantity": "string:0",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:CASH"
+      },
+      "fee": {
+        "tokens": {
+          "quantity": "string:0",
+          "fractionalDigits": 9,
+          "tokenTicker": "string:CASH"
+        }
+      }
+    },
+    "nonce": 1,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f31323300000000000000010a1e1214f70778bd52f4c625227c4a2f5f01b244f7523ae81a061a04434153489a03380a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae822061a0443415348"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "memo": "string:some text",
+      "amount": {
+        "quantity": "string:0",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:CASH"
+      },
+      "fee": {
+        "tokens": {
+          "quantity": "string:0",
+          "fractionalDigits": 9,
+          "tokenTicker": "string:CASH"
+        }
+      }
+    },
+    "nonce": 1,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f31323300000000000000010a1e1214f70778bd52f4c625227c4a2f5f01b244f7523ae81a061a04434153489a03430a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae822061a04434153482a09736f6d652074657874"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "memo": "string:text with emoji: 🐎",
+      "amount": {
+        "quantity": "string:0",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:CASH"
+      },
+      "fee": {
+        "tokens": {
+          "quantity": "string:0",
+          "fractionalDigits": 9,
+          "tokenTicker": "string:CASH"
+        }
+      }
+    },
+    "nonce": 1,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f31323300000000000000010a1e1214f70778bd52f4c625227c4a2f5f01b244f7523ae81a061a04434153489a034f0a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae822061a04434153482a1574657874207769746820656d6f6a693a20f09f908e"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "amount": {
+        "quantity": "string:1",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:CASH"
+      },
+      "fee": {
+        "tokens": {
+          "quantity": "string:0",
+          "fractionalDigits": 9,
+          "tokenTicker": "string:CASH"
+        }
+      }
+    },
+    "nonce": 1,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f31323300000000000000010a1e1214f70778bd52f4c625227c4a2f5f01b244f7523ae81a061a04434153489a033a0a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae8220810011a0443415348"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "memo": "string:",
+      "amount": {
+        "quantity": "string:1",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:CASH"
+      },
+      "fee": {
+        "tokens": {
+          "quantity": "string:0",
+          "fractionalDigits": 9,
+          "tokenTicker": "string:CASH"
+        }
+      }
+    },
+    "nonce": 1,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f31323300000000000000010a1e1214f70778bd52f4c625227c4a2f5f01b244f7523ae81a061a04434153489a033a0a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae8220810011a0443415348"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "memo": "string:some text",
+      "amount": {
+        "quantity": "string:1",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:CASH"
+      },
+      "fee": {
+        "tokens": {
+          "quantity": "string:0",
+          "fractionalDigits": 9,
+          "tokenTicker": "string:CASH"
+        }
+      }
+    },
+    "nonce": 1,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f31323300000000000000010a1e1214f70778bd52f4c625227c4a2f5f01b244f7523ae81a061a04434153489a03450a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae8220810011a04434153482a09736f6d652074657874"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "memo": "string:text with emoji: 🐎",
+      "amount": {
+        "quantity": "string:1",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:CASH"
+      },
+      "fee": {
+        "tokens": {
+          "quantity": "string:0",
+          "fractionalDigits": 9,
+          "tokenTicker": "string:CASH"
+        }
+      }
+    },
+    "nonce": 1,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f31323300000000000000010a1e1214f70778bd52f4c625227c4a2f5f01b244f7523ae81a061a04434153489a03510a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae8220810011a04434153482a1574657874207769746820656d6f6a693a20f09f908e"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "amount": {
+        "quantity": "string:1000000000",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:CASH"
+      },
+      "fee": {
+        "tokens": {
+          "quantity": "string:0",
+          "fractionalDigits": 9,
+          "tokenTicker": "string:CASH"
+        }
+      }
+    },
+    "nonce": 1,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f31323300000000000000010a1e1214f70778bd52f4c625227c4a2f5f01b244f7523ae81a061a04434153489a033a0a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae8220808011a0443415348"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "memo": "string:",
+      "amount": {
+        "quantity": "string:1000000000",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:CASH"
+      },
+      "fee": {
+        "tokens": {
+          "quantity": "string:0",
+          "fractionalDigits": 9,
+          "tokenTicker": "string:CASH"
+        }
+      }
+    },
+    "nonce": 1,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f31323300000000000000010a1e1214f70778bd52f4c625227c4a2f5f01b244f7523ae81a061a04434153489a033a0a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae8220808011a0443415348"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "memo": "string:some text",
+      "amount": {
+        "quantity": "string:1000000000",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:CASH"
+      },
+      "fee": {
+        "tokens": {
+          "quantity": "string:0",
+          "fractionalDigits": 9,
+          "tokenTicker": "string:CASH"
+        }
+      }
+    },
+    "nonce": 1,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f31323300000000000000010a1e1214f70778bd52f4c625227c4a2f5f01b244f7523ae81a061a04434153489a03450a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae8220808011a04434153482a09736f6d652074657874"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "memo": "string:text with emoji: 🐎",
+      "amount": {
+        "quantity": "string:1000000000",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:CASH"
+      },
+      "fee": {
+        "tokens": {
+          "quantity": "string:0",
+          "fractionalDigits": 9,
+          "tokenTicker": "string:CASH"
+        }
+      }
+    },
+    "nonce": 1,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f31323300000000000000010a1e1214f70778bd52f4c625227c4a2f5f01b244f7523ae81a061a04434153489a03510a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae8220808011a04434153482a1574657874207769746820656d6f6a693a20f09f908e"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "amount": {
+        "quantity": "string:7400000000",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:IOV"
+      },
+      "fee": {
+        "tokens": {
+          "quantity": "string:0",
+          "fractionalDigits": 9,
+          "tokenTicker": "string:CASH"
+        }
+      }
+    },
+    "nonce": 1,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f31323300000000000000010a1e1214f70778bd52f4c625227c4a2f5f01b244f7523ae81a061a04434153489a033f0a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae8220d0807108088debe011a03494f56"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "memo": "string:",
+      "amount": {
+        "quantity": "string:7400000000",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:IOV"
+      },
+      "fee": {
+        "tokens": {
+          "quantity": "string:0",
+          "fractionalDigits": 9,
+          "tokenTicker": "string:CASH"
+        }
+      }
+    },
+    "nonce": 1,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f31323300000000000000010a1e1214f70778bd52f4c625227c4a2f5f01b244f7523ae81a061a04434153489a033f0a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae8220d0807108088debe011a03494f56"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "memo": "string:some text",
+      "amount": {
+        "quantity": "string:7400000000",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:IOV"
+      },
+      "fee": {
+        "tokens": {
+          "quantity": "string:0",
+          "fractionalDigits": 9,
+          "tokenTicker": "string:CASH"
+        }
+      }
+    },
+    "nonce": 1,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f31323300000000000000010a1e1214f70778bd52f4c625227c4a2f5f01b244f7523ae81a061a04434153489a034a0a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae8220d0807108088debe011a03494f562a09736f6d652074657874"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "memo": "string:text with emoji: 🐎",
+      "amount": {
+        "quantity": "string:7400000000",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:IOV"
+      },
+      "fee": {
+        "tokens": {
+          "quantity": "string:0",
+          "fractionalDigits": 9,
+          "tokenTicker": "string:CASH"
+        }
+      }
+    },
+    "nonce": 1,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f31323300000000000000010a1e1214f70778bd52f4c625227c4a2f5f01b244f7523ae81a061a04434153489a03560a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae8220d0807108088debe011a03494f562a1574657874207769746820656d6f6a693a20f09f908e"
   },
   {
     "transaction": {
@@ -4155,6 +6231,466 @@
     "transaction": {
       "kind": "string:bcp/send",
       "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "amount": {
+        "quantity": "string:0",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:CASH"
+      },
+      "fee": {
+        "tokens": {
+          "quantity": "string:100000000",
+          "fractionalDigits": 9,
+          "tokenTicker": "string:CASH"
+        }
+      }
+    },
+    "nonce": 1,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f31323300000000000000010a231214f70778bd52f4c625227c4a2f5f01b244f7523ae81a0b1080c2d72f1a04434153489a03380a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae822061a0443415348"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "memo": "string:",
+      "amount": {
+        "quantity": "string:0",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:CASH"
+      },
+      "fee": {
+        "tokens": {
+          "quantity": "string:100000000",
+          "fractionalDigits": 9,
+          "tokenTicker": "string:CASH"
+        }
+      }
+    },
+    "nonce": 1,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f31323300000000000000010a231214f70778bd52f4c625227c4a2f5f01b244f7523ae81a0b1080c2d72f1a04434153489a03380a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae822061a0443415348"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "memo": "string:some text",
+      "amount": {
+        "quantity": "string:0",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:CASH"
+      },
+      "fee": {
+        "tokens": {
+          "quantity": "string:100000000",
+          "fractionalDigits": 9,
+          "tokenTicker": "string:CASH"
+        }
+      }
+    },
+    "nonce": 1,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f31323300000000000000010a231214f70778bd52f4c625227c4a2f5f01b244f7523ae81a0b1080c2d72f1a04434153489a03430a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae822061a04434153482a09736f6d652074657874"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "memo": "string:text with emoji: 🐎",
+      "amount": {
+        "quantity": "string:0",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:CASH"
+      },
+      "fee": {
+        "tokens": {
+          "quantity": "string:100000000",
+          "fractionalDigits": 9,
+          "tokenTicker": "string:CASH"
+        }
+      }
+    },
+    "nonce": 1,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f31323300000000000000010a231214f70778bd52f4c625227c4a2f5f01b244f7523ae81a0b1080c2d72f1a04434153489a034f0a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae822061a04434153482a1574657874207769746820656d6f6a693a20f09f908e"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "amount": {
+        "quantity": "string:1",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:CASH"
+      },
+      "fee": {
+        "tokens": {
+          "quantity": "string:100000000",
+          "fractionalDigits": 9,
+          "tokenTicker": "string:CASH"
+        }
+      }
+    },
+    "nonce": 1,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f31323300000000000000010a231214f70778bd52f4c625227c4a2f5f01b244f7523ae81a0b1080c2d72f1a04434153489a033a0a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae8220810011a0443415348"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "memo": "string:",
+      "amount": {
+        "quantity": "string:1",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:CASH"
+      },
+      "fee": {
+        "tokens": {
+          "quantity": "string:100000000",
+          "fractionalDigits": 9,
+          "tokenTicker": "string:CASH"
+        }
+      }
+    },
+    "nonce": 1,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f31323300000000000000010a231214f70778bd52f4c625227c4a2f5f01b244f7523ae81a0b1080c2d72f1a04434153489a033a0a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae8220810011a0443415348"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "memo": "string:some text",
+      "amount": {
+        "quantity": "string:1",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:CASH"
+      },
+      "fee": {
+        "tokens": {
+          "quantity": "string:100000000",
+          "fractionalDigits": 9,
+          "tokenTicker": "string:CASH"
+        }
+      }
+    },
+    "nonce": 1,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f31323300000000000000010a231214f70778bd52f4c625227c4a2f5f01b244f7523ae81a0b1080c2d72f1a04434153489a03450a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae8220810011a04434153482a09736f6d652074657874"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "memo": "string:text with emoji: 🐎",
+      "amount": {
+        "quantity": "string:1",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:CASH"
+      },
+      "fee": {
+        "tokens": {
+          "quantity": "string:100000000",
+          "fractionalDigits": 9,
+          "tokenTicker": "string:CASH"
+        }
+      }
+    },
+    "nonce": 1,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f31323300000000000000010a231214f70778bd52f4c625227c4a2f5f01b244f7523ae81a0b1080c2d72f1a04434153489a03510a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae8220810011a04434153482a1574657874207769746820656d6f6a693a20f09f908e"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "amount": {
+        "quantity": "string:1000000000",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:CASH"
+      },
+      "fee": {
+        "tokens": {
+          "quantity": "string:100000000",
+          "fractionalDigits": 9,
+          "tokenTicker": "string:CASH"
+        }
+      }
+    },
+    "nonce": 1,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f31323300000000000000010a231214f70778bd52f4c625227c4a2f5f01b244f7523ae81a0b1080c2d72f1a04434153489a033a0a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae8220808011a0443415348"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "memo": "string:",
+      "amount": {
+        "quantity": "string:1000000000",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:CASH"
+      },
+      "fee": {
+        "tokens": {
+          "quantity": "string:100000000",
+          "fractionalDigits": 9,
+          "tokenTicker": "string:CASH"
+        }
+      }
+    },
+    "nonce": 1,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f31323300000000000000010a231214f70778bd52f4c625227c4a2f5f01b244f7523ae81a0b1080c2d72f1a04434153489a033a0a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae8220808011a0443415348"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "memo": "string:some text",
+      "amount": {
+        "quantity": "string:1000000000",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:CASH"
+      },
+      "fee": {
+        "tokens": {
+          "quantity": "string:100000000",
+          "fractionalDigits": 9,
+          "tokenTicker": "string:CASH"
+        }
+      }
+    },
+    "nonce": 1,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f31323300000000000000010a231214f70778bd52f4c625227c4a2f5f01b244f7523ae81a0b1080c2d72f1a04434153489a03450a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae8220808011a04434153482a09736f6d652074657874"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "memo": "string:text with emoji: 🐎",
+      "amount": {
+        "quantity": "string:1000000000",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:CASH"
+      },
+      "fee": {
+        "tokens": {
+          "quantity": "string:100000000",
+          "fractionalDigits": 9,
+          "tokenTicker": "string:CASH"
+        }
+      }
+    },
+    "nonce": 1,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f31323300000000000000010a231214f70778bd52f4c625227c4a2f5f01b244f7523ae81a0b1080c2d72f1a04434153489a03510a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae8220808011a04434153482a1574657874207769746820656d6f6a693a20f09f908e"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "amount": {
+        "quantity": "string:7400000000",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:IOV"
+      },
+      "fee": {
+        "tokens": {
+          "quantity": "string:100000000",
+          "fractionalDigits": 9,
+          "tokenTicker": "string:CASH"
+        }
+      }
+    },
+    "nonce": 1,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f31323300000000000000010a231214f70778bd52f4c625227c4a2f5f01b244f7523ae81a0b1080c2d72f1a04434153489a033f0a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae8220d0807108088debe011a03494f56"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "memo": "string:",
+      "amount": {
+        "quantity": "string:7400000000",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:IOV"
+      },
+      "fee": {
+        "tokens": {
+          "quantity": "string:100000000",
+          "fractionalDigits": 9,
+          "tokenTicker": "string:CASH"
+        }
+      }
+    },
+    "nonce": 1,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f31323300000000000000010a231214f70778bd52f4c625227c4a2f5f01b244f7523ae81a0b1080c2d72f1a04434153489a033f0a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae8220d0807108088debe011a03494f56"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "memo": "string:some text",
+      "amount": {
+        "quantity": "string:7400000000",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:IOV"
+      },
+      "fee": {
+        "tokens": {
+          "quantity": "string:100000000",
+          "fractionalDigits": 9,
+          "tokenTicker": "string:CASH"
+        }
+      }
+    },
+    "nonce": 1,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f31323300000000000000010a231214f70778bd52f4c625227c4a2f5f01b244f7523ae81a0b1080c2d72f1a04434153489a034a0a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae8220d0807108088debe011a03494f562a09736f6d652074657874"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "memo": "string:text with emoji: 🐎",
+      "amount": {
+        "quantity": "string:7400000000",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:IOV"
+      },
+      "fee": {
+        "tokens": {
+          "quantity": "string:100000000",
+          "fractionalDigits": 9,
+          "tokenTicker": "string:CASH"
+        }
+      }
+    },
+    "nonce": 1,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f31323300000000000000010a231214f70778bd52f4c625227c4a2f5f01b244f7523ae81a0b1080c2d72f1a04434153489a03560a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae8220d0807108088debe011a03494f562a1574657874207769746820656d6f6a693a20f09f908e"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
         "chainId": "string:iov-lovenet",
         "pubkey": {
           "algo": "string:ed25519",
@@ -5075,6 +7611,354 @@
     "transaction": {
       "kind": "string:bcp/send",
       "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "amount": {
+        "quantity": "string:0",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:CASH"
+      }
+    },
+    "nonce": 9007199254740991,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f313233001fffffffffffff9a03380a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae822061a0443415348"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "memo": "string:",
+      "amount": {
+        "quantity": "string:0",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:CASH"
+      }
+    },
+    "nonce": 9007199254740991,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f313233001fffffffffffff9a03380a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae822061a0443415348"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "memo": "string:some text",
+      "amount": {
+        "quantity": "string:0",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:CASH"
+      }
+    },
+    "nonce": 9007199254740991,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f313233001fffffffffffff9a03430a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae822061a04434153482a09736f6d652074657874"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "memo": "string:text with emoji: 🐎",
+      "amount": {
+        "quantity": "string:0",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:CASH"
+      }
+    },
+    "nonce": 9007199254740991,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f313233001fffffffffffff9a034f0a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae822061a04434153482a1574657874207769746820656d6f6a693a20f09f908e"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "amount": {
+        "quantity": "string:1",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:CASH"
+      }
+    },
+    "nonce": 9007199254740991,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f313233001fffffffffffff9a033a0a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae8220810011a0443415348"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "memo": "string:",
+      "amount": {
+        "quantity": "string:1",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:CASH"
+      }
+    },
+    "nonce": 9007199254740991,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f313233001fffffffffffff9a033a0a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae8220810011a0443415348"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "memo": "string:some text",
+      "amount": {
+        "quantity": "string:1",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:CASH"
+      }
+    },
+    "nonce": 9007199254740991,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f313233001fffffffffffff9a03450a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae8220810011a04434153482a09736f6d652074657874"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "memo": "string:text with emoji: 🐎",
+      "amount": {
+        "quantity": "string:1",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:CASH"
+      }
+    },
+    "nonce": 9007199254740991,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f313233001fffffffffffff9a03510a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae8220810011a04434153482a1574657874207769746820656d6f6a693a20f09f908e"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "amount": {
+        "quantity": "string:1000000000",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:CASH"
+      }
+    },
+    "nonce": 9007199254740991,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f313233001fffffffffffff9a033a0a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae8220808011a0443415348"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "memo": "string:",
+      "amount": {
+        "quantity": "string:1000000000",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:CASH"
+      }
+    },
+    "nonce": 9007199254740991,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f313233001fffffffffffff9a033a0a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae8220808011a0443415348"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "memo": "string:some text",
+      "amount": {
+        "quantity": "string:1000000000",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:CASH"
+      }
+    },
+    "nonce": 9007199254740991,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f313233001fffffffffffff9a03450a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae8220808011a04434153482a09736f6d652074657874"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "memo": "string:text with emoji: 🐎",
+      "amount": {
+        "quantity": "string:1000000000",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:CASH"
+      }
+    },
+    "nonce": 9007199254740991,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f313233001fffffffffffff9a03510a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae8220808011a04434153482a1574657874207769746820656d6f6a693a20f09f908e"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "amount": {
+        "quantity": "string:7400000000",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:IOV"
+      }
+    },
+    "nonce": 9007199254740991,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f313233001fffffffffffff9a033f0a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae8220d0807108088debe011a03494f56"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "memo": "string:",
+      "amount": {
+        "quantity": "string:7400000000",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:IOV"
+      }
+    },
+    "nonce": 9007199254740991,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f313233001fffffffffffff9a033f0a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae8220d0807108088debe011a03494f56"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "memo": "string:some text",
+      "amount": {
+        "quantity": "string:7400000000",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:IOV"
+      }
+    },
+    "nonce": 9007199254740991,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f313233001fffffffffffff9a034a0a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae8220d0807108088debe011a03494f562a09736f6d652074657874"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "memo": "string:text with emoji: 🐎",
+      "amount": {
+        "quantity": "string:7400000000",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:IOV"
+      }
+    },
+    "nonce": 9007199254740991,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f313233001fffffffffffff9a03560a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae8220d0807108088debe011a03494f562a1574657874207769746820656d6f6a693a20f09f908e"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
         "chainId": "string:iov-lovenet",
         "pubkey": {
           "algo": "string:ed25519",
@@ -5766,6 +8650,466 @@
     },
     "nonce": 9007199254740991,
     "bytes": "00cafe000b696f762d6d61696e6e6574001fffffffffffff9a03560a0208011214bad055e2cbcffc633e7dc76dc1148d6e9a2debfd1a14020daec62066ec82a5a1b40378d87457ed88e4fc220d0807108088debe011a03494f562a1574657874207769746820656d6f6a693a20f09f908e"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "amount": {
+        "quantity": "string:0",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:CASH"
+      },
+      "fee": {
+        "tokens": {
+          "quantity": "string:0",
+          "fractionalDigits": 9,
+          "tokenTicker": "string:CASH"
+        }
+      }
+    },
+    "nonce": 9007199254740991,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f313233001fffffffffffff0a1e1214f70778bd52f4c625227c4a2f5f01b244f7523ae81a061a04434153489a03380a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae822061a0443415348"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "memo": "string:",
+      "amount": {
+        "quantity": "string:0",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:CASH"
+      },
+      "fee": {
+        "tokens": {
+          "quantity": "string:0",
+          "fractionalDigits": 9,
+          "tokenTicker": "string:CASH"
+        }
+      }
+    },
+    "nonce": 9007199254740991,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f313233001fffffffffffff0a1e1214f70778bd52f4c625227c4a2f5f01b244f7523ae81a061a04434153489a03380a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae822061a0443415348"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "memo": "string:some text",
+      "amount": {
+        "quantity": "string:0",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:CASH"
+      },
+      "fee": {
+        "tokens": {
+          "quantity": "string:0",
+          "fractionalDigits": 9,
+          "tokenTicker": "string:CASH"
+        }
+      }
+    },
+    "nonce": 9007199254740991,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f313233001fffffffffffff0a1e1214f70778bd52f4c625227c4a2f5f01b244f7523ae81a061a04434153489a03430a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae822061a04434153482a09736f6d652074657874"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "memo": "string:text with emoji: 🐎",
+      "amount": {
+        "quantity": "string:0",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:CASH"
+      },
+      "fee": {
+        "tokens": {
+          "quantity": "string:0",
+          "fractionalDigits": 9,
+          "tokenTicker": "string:CASH"
+        }
+      }
+    },
+    "nonce": 9007199254740991,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f313233001fffffffffffff0a1e1214f70778bd52f4c625227c4a2f5f01b244f7523ae81a061a04434153489a034f0a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae822061a04434153482a1574657874207769746820656d6f6a693a20f09f908e"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "amount": {
+        "quantity": "string:1",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:CASH"
+      },
+      "fee": {
+        "tokens": {
+          "quantity": "string:0",
+          "fractionalDigits": 9,
+          "tokenTicker": "string:CASH"
+        }
+      }
+    },
+    "nonce": 9007199254740991,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f313233001fffffffffffff0a1e1214f70778bd52f4c625227c4a2f5f01b244f7523ae81a061a04434153489a033a0a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae8220810011a0443415348"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "memo": "string:",
+      "amount": {
+        "quantity": "string:1",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:CASH"
+      },
+      "fee": {
+        "tokens": {
+          "quantity": "string:0",
+          "fractionalDigits": 9,
+          "tokenTicker": "string:CASH"
+        }
+      }
+    },
+    "nonce": 9007199254740991,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f313233001fffffffffffff0a1e1214f70778bd52f4c625227c4a2f5f01b244f7523ae81a061a04434153489a033a0a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae8220810011a0443415348"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "memo": "string:some text",
+      "amount": {
+        "quantity": "string:1",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:CASH"
+      },
+      "fee": {
+        "tokens": {
+          "quantity": "string:0",
+          "fractionalDigits": 9,
+          "tokenTicker": "string:CASH"
+        }
+      }
+    },
+    "nonce": 9007199254740991,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f313233001fffffffffffff0a1e1214f70778bd52f4c625227c4a2f5f01b244f7523ae81a061a04434153489a03450a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae8220810011a04434153482a09736f6d652074657874"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "memo": "string:text with emoji: 🐎",
+      "amount": {
+        "quantity": "string:1",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:CASH"
+      },
+      "fee": {
+        "tokens": {
+          "quantity": "string:0",
+          "fractionalDigits": 9,
+          "tokenTicker": "string:CASH"
+        }
+      }
+    },
+    "nonce": 9007199254740991,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f313233001fffffffffffff0a1e1214f70778bd52f4c625227c4a2f5f01b244f7523ae81a061a04434153489a03510a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae8220810011a04434153482a1574657874207769746820656d6f6a693a20f09f908e"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "amount": {
+        "quantity": "string:1000000000",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:CASH"
+      },
+      "fee": {
+        "tokens": {
+          "quantity": "string:0",
+          "fractionalDigits": 9,
+          "tokenTicker": "string:CASH"
+        }
+      }
+    },
+    "nonce": 9007199254740991,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f313233001fffffffffffff0a1e1214f70778bd52f4c625227c4a2f5f01b244f7523ae81a061a04434153489a033a0a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae8220808011a0443415348"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "memo": "string:",
+      "amount": {
+        "quantity": "string:1000000000",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:CASH"
+      },
+      "fee": {
+        "tokens": {
+          "quantity": "string:0",
+          "fractionalDigits": 9,
+          "tokenTicker": "string:CASH"
+        }
+      }
+    },
+    "nonce": 9007199254740991,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f313233001fffffffffffff0a1e1214f70778bd52f4c625227c4a2f5f01b244f7523ae81a061a04434153489a033a0a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae8220808011a0443415348"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "memo": "string:some text",
+      "amount": {
+        "quantity": "string:1000000000",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:CASH"
+      },
+      "fee": {
+        "tokens": {
+          "quantity": "string:0",
+          "fractionalDigits": 9,
+          "tokenTicker": "string:CASH"
+        }
+      }
+    },
+    "nonce": 9007199254740991,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f313233001fffffffffffff0a1e1214f70778bd52f4c625227c4a2f5f01b244f7523ae81a061a04434153489a03450a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae8220808011a04434153482a09736f6d652074657874"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "memo": "string:text with emoji: 🐎",
+      "amount": {
+        "quantity": "string:1000000000",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:CASH"
+      },
+      "fee": {
+        "tokens": {
+          "quantity": "string:0",
+          "fractionalDigits": 9,
+          "tokenTicker": "string:CASH"
+        }
+      }
+    },
+    "nonce": 9007199254740991,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f313233001fffffffffffff0a1e1214f70778bd52f4c625227c4a2f5f01b244f7523ae81a061a04434153489a03510a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae8220808011a04434153482a1574657874207769746820656d6f6a693a20f09f908e"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "amount": {
+        "quantity": "string:7400000000",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:IOV"
+      },
+      "fee": {
+        "tokens": {
+          "quantity": "string:0",
+          "fractionalDigits": 9,
+          "tokenTicker": "string:CASH"
+        }
+      }
+    },
+    "nonce": 9007199254740991,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f313233001fffffffffffff0a1e1214f70778bd52f4c625227c4a2f5f01b244f7523ae81a061a04434153489a033f0a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae8220d0807108088debe011a03494f56"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "memo": "string:",
+      "amount": {
+        "quantity": "string:7400000000",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:IOV"
+      },
+      "fee": {
+        "tokens": {
+          "quantity": "string:0",
+          "fractionalDigits": 9,
+          "tokenTicker": "string:CASH"
+        }
+      }
+    },
+    "nonce": 9007199254740991,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f313233001fffffffffffff0a1e1214f70778bd52f4c625227c4a2f5f01b244f7523ae81a061a04434153489a033f0a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae8220d0807108088debe011a03494f56"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "memo": "string:some text",
+      "amount": {
+        "quantity": "string:7400000000",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:IOV"
+      },
+      "fee": {
+        "tokens": {
+          "quantity": "string:0",
+          "fractionalDigits": 9,
+          "tokenTicker": "string:CASH"
+        }
+      }
+    },
+    "nonce": 9007199254740991,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f313233001fffffffffffff0a1e1214f70778bd52f4c625227c4a2f5f01b244f7523ae81a061a04434153489a034a0a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae8220d0807108088debe011a03494f562a09736f6d652074657874"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "memo": "string:text with emoji: 🐎",
+      "amount": {
+        "quantity": "string:7400000000",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:IOV"
+      },
+      "fee": {
+        "tokens": {
+          "quantity": "string:0",
+          "fractionalDigits": 9,
+          "tokenTicker": "string:CASH"
+        }
+      }
+    },
+    "nonce": 9007199254740991,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f313233001fffffffffffff0a1e1214f70778bd52f4c625227c4a2f5f01b244f7523ae81a061a04434153489a03560a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae8220d0807108088debe011a03494f562a1574657874207769746820656d6f6a693a20f09f908e"
   },
   {
     "transaction": {
@@ -6686,6 +10030,466 @@
     },
     "nonce": 9007199254740991,
     "bytes": "00cafe000b696f762d6d61696e6e6574001fffffffffffff0a1e1214bad055e2cbcffc633e7dc76dc1148d6e9a2debfd1a061a04434153489a03560a0208011214bad055e2cbcffc633e7dc76dc1148d6e9a2debfd1a14020daec62066ec82a5a1b40378d87457ed88e4fc220d0807108088debe011a03494f562a1574657874207769746820656d6f6a693a20f09f908e"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "amount": {
+        "quantity": "string:0",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:CASH"
+      },
+      "fee": {
+        "tokens": {
+          "quantity": "string:100000000",
+          "fractionalDigits": 9,
+          "tokenTicker": "string:CASH"
+        }
+      }
+    },
+    "nonce": 9007199254740991,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f313233001fffffffffffff0a231214f70778bd52f4c625227c4a2f5f01b244f7523ae81a0b1080c2d72f1a04434153489a03380a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae822061a0443415348"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "memo": "string:",
+      "amount": {
+        "quantity": "string:0",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:CASH"
+      },
+      "fee": {
+        "tokens": {
+          "quantity": "string:100000000",
+          "fractionalDigits": 9,
+          "tokenTicker": "string:CASH"
+        }
+      }
+    },
+    "nonce": 9007199254740991,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f313233001fffffffffffff0a231214f70778bd52f4c625227c4a2f5f01b244f7523ae81a0b1080c2d72f1a04434153489a03380a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae822061a0443415348"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "memo": "string:some text",
+      "amount": {
+        "quantity": "string:0",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:CASH"
+      },
+      "fee": {
+        "tokens": {
+          "quantity": "string:100000000",
+          "fractionalDigits": 9,
+          "tokenTicker": "string:CASH"
+        }
+      }
+    },
+    "nonce": 9007199254740991,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f313233001fffffffffffff0a231214f70778bd52f4c625227c4a2f5f01b244f7523ae81a0b1080c2d72f1a04434153489a03430a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae822061a04434153482a09736f6d652074657874"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "memo": "string:text with emoji: 🐎",
+      "amount": {
+        "quantity": "string:0",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:CASH"
+      },
+      "fee": {
+        "tokens": {
+          "quantity": "string:100000000",
+          "fractionalDigits": 9,
+          "tokenTicker": "string:CASH"
+        }
+      }
+    },
+    "nonce": 9007199254740991,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f313233001fffffffffffff0a231214f70778bd52f4c625227c4a2f5f01b244f7523ae81a0b1080c2d72f1a04434153489a034f0a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae822061a04434153482a1574657874207769746820656d6f6a693a20f09f908e"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "amount": {
+        "quantity": "string:1",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:CASH"
+      },
+      "fee": {
+        "tokens": {
+          "quantity": "string:100000000",
+          "fractionalDigits": 9,
+          "tokenTicker": "string:CASH"
+        }
+      }
+    },
+    "nonce": 9007199254740991,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f313233001fffffffffffff0a231214f70778bd52f4c625227c4a2f5f01b244f7523ae81a0b1080c2d72f1a04434153489a033a0a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae8220810011a0443415348"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "memo": "string:",
+      "amount": {
+        "quantity": "string:1",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:CASH"
+      },
+      "fee": {
+        "tokens": {
+          "quantity": "string:100000000",
+          "fractionalDigits": 9,
+          "tokenTicker": "string:CASH"
+        }
+      }
+    },
+    "nonce": 9007199254740991,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f313233001fffffffffffff0a231214f70778bd52f4c625227c4a2f5f01b244f7523ae81a0b1080c2d72f1a04434153489a033a0a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae8220810011a0443415348"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "memo": "string:some text",
+      "amount": {
+        "quantity": "string:1",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:CASH"
+      },
+      "fee": {
+        "tokens": {
+          "quantity": "string:100000000",
+          "fractionalDigits": 9,
+          "tokenTicker": "string:CASH"
+        }
+      }
+    },
+    "nonce": 9007199254740991,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f313233001fffffffffffff0a231214f70778bd52f4c625227c4a2f5f01b244f7523ae81a0b1080c2d72f1a04434153489a03450a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae8220810011a04434153482a09736f6d652074657874"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "memo": "string:text with emoji: 🐎",
+      "amount": {
+        "quantity": "string:1",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:CASH"
+      },
+      "fee": {
+        "tokens": {
+          "quantity": "string:100000000",
+          "fractionalDigits": 9,
+          "tokenTicker": "string:CASH"
+        }
+      }
+    },
+    "nonce": 9007199254740991,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f313233001fffffffffffff0a231214f70778bd52f4c625227c4a2f5f01b244f7523ae81a0b1080c2d72f1a04434153489a03510a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae8220810011a04434153482a1574657874207769746820656d6f6a693a20f09f908e"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "amount": {
+        "quantity": "string:1000000000",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:CASH"
+      },
+      "fee": {
+        "tokens": {
+          "quantity": "string:100000000",
+          "fractionalDigits": 9,
+          "tokenTicker": "string:CASH"
+        }
+      }
+    },
+    "nonce": 9007199254740991,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f313233001fffffffffffff0a231214f70778bd52f4c625227c4a2f5f01b244f7523ae81a0b1080c2d72f1a04434153489a033a0a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae8220808011a0443415348"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "memo": "string:",
+      "amount": {
+        "quantity": "string:1000000000",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:CASH"
+      },
+      "fee": {
+        "tokens": {
+          "quantity": "string:100000000",
+          "fractionalDigits": 9,
+          "tokenTicker": "string:CASH"
+        }
+      }
+    },
+    "nonce": 9007199254740991,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f313233001fffffffffffff0a231214f70778bd52f4c625227c4a2f5f01b244f7523ae81a0b1080c2d72f1a04434153489a033a0a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae8220808011a0443415348"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "memo": "string:some text",
+      "amount": {
+        "quantity": "string:1000000000",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:CASH"
+      },
+      "fee": {
+        "tokens": {
+          "quantity": "string:100000000",
+          "fractionalDigits": 9,
+          "tokenTicker": "string:CASH"
+        }
+      }
+    },
+    "nonce": 9007199254740991,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f313233001fffffffffffff0a231214f70778bd52f4c625227c4a2f5f01b244f7523ae81a0b1080c2d72f1a04434153489a03450a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae8220808011a04434153482a09736f6d652074657874"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "memo": "string:text with emoji: 🐎",
+      "amount": {
+        "quantity": "string:1000000000",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:CASH"
+      },
+      "fee": {
+        "tokens": {
+          "quantity": "string:100000000",
+          "fractionalDigits": 9,
+          "tokenTicker": "string:CASH"
+        }
+      }
+    },
+    "nonce": 9007199254740991,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f313233001fffffffffffff0a231214f70778bd52f4c625227c4a2f5f01b244f7523ae81a0b1080c2d72f1a04434153489a03510a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae8220808011a04434153482a1574657874207769746820656d6f6a693a20f09f908e"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "amount": {
+        "quantity": "string:7400000000",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:IOV"
+      },
+      "fee": {
+        "tokens": {
+          "quantity": "string:100000000",
+          "fractionalDigits": 9,
+          "tokenTicker": "string:CASH"
+        }
+      }
+    },
+    "nonce": 9007199254740991,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f313233001fffffffffffff0a231214f70778bd52f4c625227c4a2f5f01b244f7523ae81a0b1080c2d72f1a04434153489a033f0a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae8220d0807108088debe011a03494f56"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "memo": "string:",
+      "amount": {
+        "quantity": "string:7400000000",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:IOV"
+      },
+      "fee": {
+        "tokens": {
+          "quantity": "string:100000000",
+          "fractionalDigits": 9,
+          "tokenTicker": "string:CASH"
+        }
+      }
+    },
+    "nonce": 9007199254740991,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f313233001fffffffffffff0a231214f70778bd52f4c625227c4a2f5f01b244f7523ae81a0b1080c2d72f1a04434153489a033f0a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae8220d0807108088debe011a03494f56"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "memo": "string:some text",
+      "amount": {
+        "quantity": "string:7400000000",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:IOV"
+      },
+      "fee": {
+        "tokens": {
+          "quantity": "string:100000000",
+          "fractionalDigits": 9,
+          "tokenTicker": "string:CASH"
+        }
+      }
+    },
+    "nonce": 9007199254740991,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f313233001fffffffffffff0a231214f70778bd52f4c625227c4a2f5f01b244f7523ae81a0b1080c2d72f1a04434153489a034a0a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae8220d0807108088debe011a03494f562a09736f6d652074657874"
+  },
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:local-some.Net_123",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:82f1a2b41db4883adc37b5bd5e742dc039a0fee677bae0d5de88f8e37a8315ed"
+        }
+      },
+      "sender": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "recipient": "string:tiov17urh302j7nrz2gnufgh47qdjgnm4ywhgwzhrdf",
+      "memo": "string:text with emoji: 🐎",
+      "amount": {
+        "quantity": "string:7400000000",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:IOV"
+      },
+      "fee": {
+        "tokens": {
+          "quantity": "string:100000000",
+          "fractionalDigits": 9,
+          "tokenTicker": "string:CASH"
+        }
+      }
+    },
+    "nonce": 9007199254740991,
+    "bytes": "00cafe00126c6f63616c2d736f6d652e4e65745f313233001fffffffffffff0a231214f70778bd52f4c625227c4a2f5f01b244f7523ae81a0b1080c2d72f1a04434153489a03560a0208011214f70778bd52f4c625227c4a2f5f01b244f7523ae81a14f70778bd52f4c625227c4a2f5f01b244f7523ae8220d0807108088debe011a03494f562a1574657874207769746820656d6f6a693a20f09f908e"
   },
   {
     "transaction": {
