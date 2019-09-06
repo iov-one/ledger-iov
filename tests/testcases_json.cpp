@@ -142,11 +142,49 @@ public:
 
 json JsonTests::j;
 
-INSTANTIATE_TEST_CASE_P
-
-(JsonTestCases, JsonTests, ::testing::Range(0, 432));
+INSTANTIATE_TEST_CASE_P(JsonTestCases, JsonTests, ::testing::Range(0, 432));
 
 TEST_P(JsonTests, CheckParser) {
+    uint8_t buffer[200];
+    size_t i = GetParam();
+
+    std::string s = j[i]["bytes"];
+    uint16_t bufferSize = parseHexString(s.c_str(), buffer);
+
+    parser_context_t ctx;
+    parser_error_t err = parser_parse(&ctx, buffer, bufferSize);
+    ASSERT_EQ(err, parser_ok) << parser_getErrorDescription(err);
+
+    checkJsonTx(j, i);
+}
+
+
+class JsonMultisigTests : public ::testing::TestWithParam<int> {
+public:
+    static json j;
+
+    static void SetUpTestCase() {
+        std::ifstream inFile("testvectors/sendtx_multisig_tests.json");
+        ASSERT_TRUE(inFile.is_open()) << "Check that your working directory is pointing to the test directory";
+        inFile >> j;
+
+        std::cout << "Number of testcases: " << j.size() << std::endl;
+    }
+
+    struct PrintToStringParamName {
+        std::string operator()(const ::testing::TestParamInfo<int> &p) const {
+            std::stringstream ss;
+            ss << "TestCase" << p.param;
+            return ss.str();
+        }
+    };
+};
+
+json JsonMultisigTests::j;
+
+INSTANTIATE_TEST_CASE_P(JsonMultisigTests, JsonMultisigTests, ::testing::Range(0, 6));
+
+TEST_P(JsonMultisigTests, CheckParser) {
     uint8_t buffer[200];
     size_t i = GetParam();
 

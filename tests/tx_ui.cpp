@@ -68,8 +68,28 @@ TEST(UI, SingleJson) {
 
     json j;
     inFile >> j;
-    uint8_t buffer[200];
+    uint8_t buffer[10000];
     std::string s = j[0]["bytes"];
+    uint16_t bufferSize = parseHexString(s.c_str(), buffer);
+
+    parser_context_t ctx;
+    parser_error_t err = parser_parse(&ctx, buffer, bufferSize);
+    ASSERT_EQ(err, parser_ok) << parser_getErrorDescription(err);
+
+    std::string output = dumpUI();
+
+    std::cout << std::endl << output << std::endl;
+}
+
+TEST(UI, SingleMultisigJson) {
+    std::ifstream inFile("testvectors/sendtx_singleMultisig.json");
+    ASSERT_TRUE(inFile.is_open()) << "Check that your working directory is pointing to the test directory";
+
+    json j;
+    inFile >> j;
+    std::string s = j[0]["bytes"];
+
+    uint8_t buffer[10000];
     uint16_t bufferSize = parseHexString(s.c_str(), buffer);
 
     parser_context_t ctx;
