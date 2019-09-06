@@ -108,7 +108,7 @@ TEST(TestCases, SingleJson) {
 
     json j;
     inFile >> j;
-    uint8_t buffer[200];
+    uint8_t buffer[10000];
     std::string s = j[0]["bytes"];
     uint16_t bufferSize = parseHexString(s.c_str(), buffer);
 
@@ -185,7 +185,7 @@ json JsonMultisigTests::j;
 INSTANTIATE_TEST_CASE_P(JsonMultisigTests, JsonMultisigTests, ::testing::Range(0, 6));
 
 TEST_P(JsonMultisigTests, CheckParser) {
-    uint8_t buffer[200];
+    uint8_t buffer[10000];
     size_t i = GetParam();
 
     std::string s = j[i]["bytes"];
