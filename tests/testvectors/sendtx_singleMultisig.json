@@ -1,0 +1,37 @@
+[
+  {
+    "transaction": {
+      "kind": "string:bcp/send",
+      "creator": {
+        "chainId": "string:iov-lovenet",
+        "pubkey": {
+          "algo": "string:ed25519",
+          "data": "bytes:fa8c2a18b2854ab65207c0c727b825b6dbaa29379e6b2bb35ac778bfaa881e92"
+        }
+      },
+      "sender": "string:tiov14w46h2c3zg3pzy3zzyfz9nxvenxdmhwafk9qya",
+      "recipient": "string:tiov1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqzx8n0d",
+      "multisig": [
+        1,
+        123,
+        455,
+        2877
+      ],
+      "memo": "string:A very long memo lorem ipsum lorem ipsum. A very long memo lorem ipsum lorem ipsum. A very long memo lorem ipsum lorem ipsum!!11",
+      "amount": {
+        "quantity": "string:8900000000",
+        "fractionalDigits": 9,
+        "tokenTicker": "string:IOV"
+      },
+      "fee": {
+        "tokens": {
+          "quantity": "string:100000000",
+          "fractionalDigits": 9,
+          "tokenTicker": "string:CASH"
+        }
+      }
+    },
+    "nonce": 7,
+    "bytes": "00cafe000b696f762d6c6f76656e657400000000000000070a2312145ae2c58796b0ad48ffe7602eac3353488c859a2b1a0b1080c2d72f1a0443415348220800000000000000012208000000000000007b220800000000000001c722080000000000000b3d9a03c2010a0208011214abababab111222111222111222ccccccccdddddd1a140000000000000000000000000000000000000000220d08081080d293ad031a03494f562a8001412076657279206c6f6e67206d656d6f206c6f72656d20697073756d206c6f72656d20697073756d2e20412076657279206c6f6e67206d656d6f206c6f72656d20697073756d206c6f72656d20697073756d2e20412076657279206c6f6e67206d656d6f206c6f72656d20697073756d206c6f72656d20697073756d21213131"
+  }
+]
