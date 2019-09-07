@@ -41,3 +41,13 @@ branches:
 
 notifications:
   email: false
+
+deploy:
+  provider: releases
+  api_key:
+    secure: "oEsOeAr08WAYerd/ERTWp7VeG/moHCBX1mtTI0nN+CtPwq1hegISdDnZlljKd4GlvrE/3HsL6gP78cm5IkvXbB20o0LIBXji4MlQK/eFeX6K4QnC3DJNbFJw6Z1dQfHAsCzYrXgpaaG7/Z0YMU/SRoMrrDfQGsKbZQqr+h9BGDtd7yQdGpm6sOiXV971SicDdWj7OC+2yDPW+Hm1ul1tXmjU7TSkwnVuWRGnmo/A5D1iLhWTSbVU2cmeuMH7eARhHIGc42mnW/xegpvDANrryA7aYvDoVHDih1voZPUboXyFB1Zlq1Xxzu+MKFb45ul++obFaF/pv7Z49ajSmNKsLFZFSpWRXcN5Q8hE31l4dTp/KDj+Kqw06wm1CkRVl70wCPT5bs1Mk9PjwZKVm1mxXJo61xtnimSI5dQH7OzVvEKRlRPaq5WTtNa0BwRP5sqAuZLxGG7PPL52w60bYLTMpyJ8ja2SR6prGsBx49cmYOKhGsmvsqmtJUPb3kXZWrZ5xoDTkSvPOqVtsD/gKR2+4t/d+zy8/yJuw5yjVP/1OJR9kH++IEUXM09heevCNdGYwl53e+zhAsEcGmVBptjn8YKFU8exj2up6UsiyRqPWzvqq32tkYTQyKSJu1Zbf3S1iqTSpjZXM7vOdE7Ak31WEXny7pbmozY6ep59U6ejsiU="
+  file_glob: true
+  file: exports/*
+  skip_cleanup: true
+  on:
+    tags: true

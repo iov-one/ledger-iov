@@ -89,7 +89,21 @@ elif [[ "$MODE" == "ledger" ]]; then
   #
   fold_start "build"
   make
+  echo "Debug compile output..."
+  sha256sum src/ledger/bin/*
   fold_end
+
+  if [[ "$TRAVIS_TAG" != "" ]]; then
+    #
+    # Export
+    #
+    fold_start "export"
+    echo "Copy to exports dir ..."
+    mkdir exports
+    cp src/ledger/bin/app.hex "exports/iov-$NET-$TRAVIS_TAG.hex"
+    sha256sum exports/*
+    fold_end
+  fi
 else
   echo "Unsupported MODE value"
   exit 1
