@@ -57,7 +57,7 @@ clean: check_python
 
 load: check_python build
 	SCP_PRIVKEY=$(SCP_PRIVKEY) \
-	BOLOS_SDK=$(CURDIR)/deps/nanos-secure-sdk BOLOS_ENV=/opt/bolos \
+	  BOLOS_SDK=$(CURDIR)/deps/nanos-secure-sdk BOLOS_ENV=/opt/bolos \
 	  make -C $(LEDGER_SRC) load
 
 load2: check_python build2
