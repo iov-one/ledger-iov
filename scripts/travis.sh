@@ -95,12 +95,21 @@ elif [[ "$MODE" == "ledger" ]]; then
 
   if [[ "$TRAVIS_TAG" != "" ]]; then
     #
+    # Pack
+    #
+    fold_start "pack"
+    VERSION=$(echo "$TRAVIS_TAG" | cut -d "v" -f 2 )
+    echo "Packing version $VERSION ..."
+    ./scripts/pack.sh "$NET" "$VERSION"
+    fold_end
+
+    #
     # Export
     #
     fold_start "export"
     echo "Copy to exports dir ..."
     mkdir exports
-    cp src/ledger/bin/app.hex "exports/iov-$NET-$TRAVIS_TAG.hex"
+    cp out/*.zip exports
     sha256sum exports/*
     fold_end
   fi
