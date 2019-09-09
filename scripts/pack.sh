@@ -5,7 +5,8 @@ command -v shellcheck > /dev/null && shellcheck "$0"
 NET="$1"
 VERSION="$2"
 
-APP_ICON=$(python ./deps/nanos-secure-sdk/icon.py src/ledger/nanos_icon.gif hexbitmaponly)
+# Get via `make dev_read_icon`
+APP_ICON="0100000000ffffff00ffffffffffff7ffebffd9ff9fffffffffffff3cffbdfdbdbc3c3ffffffffffff"
 if [[ "$NET" == "mainnet" ]]; then
   APP_NAME="IOV"
 else

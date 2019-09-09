@@ -88,3 +88,7 @@ dev_ca2: check_python
 
 dev_ca_delete2: check_python
 	@python -m ledgerblue.resetCustomCA --targetId 0x33000004
+
+dev_read_icon: check_python
+	@python ./deps/nanos-secure-sdk/icon.py src/ledger/nanos_icon.gif hexbitmaponly
+	@echo
