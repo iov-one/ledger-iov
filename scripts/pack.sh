@@ -20,20 +20,18 @@ APP_DATA_SIZE=$(grep -F _nvram_data_size src/ledger/debug/app.map | tr -s ' ' | 
 rm -rf "out/iov-$NET-ledger"
 mkdir -p "out/iov-$NET-ledger"
 cp src/ledger/bin/app.hex "out/iov-$NET-ledger/$APP_FILENAME"
-cp scripts/install_app.template.sh "out/iov-$NET-ledger/install_app.sh"
+
+sed \
+  -e "s|APP_ICON=.*|APP_ICON=\"$APP_ICON\"|" \
+  -e "s|APP_NAME=.*|APP_NAME=\"$APP_NAME\"|" \
+  -e "s|APP_VERSION=.*|APP_VERSION=\"$APP_VERSION\"|" \
+  -e "s|APP_SHA256SUM=.*|APP_SHA256SUM=\"$APP_SHA256SUM\"|" \
+  -e "s|APP_DATA_SIZE=.*|APP_DATA_SIZE=\"$APP_DATA_SIZE\"|" \
+  -e "s|APP_FILENAME=.*|APP_FILENAME=\"$APP_FILENAME\"|" \
+  scripts/install_app.template.sh > "out/iov-$NET-ledger/install_app.sh"
 chmod +x "out/iov-$NET-ledger/install_app.sh"
 
 (
   cd out
-
-  sed \
-    -e "s|APP_ICON=.*|APP_ICON=\"$APP_ICON\"|" \
-    -e "s|APP_NAME=.*|APP_NAME=\"$APP_NAME\"|" \
-    -e "s|APP_VERSION=.*|APP_VERSION=\"$APP_VERSION\"|" \
-    -e "s|APP_SHA256SUM=.*|APP_SHA256SUM=\"$APP_SHA256SUM\"|" \
-    -e "s|APP_DATA_SIZE=.*|APP_DATA_SIZE=\"$APP_DATA_SIZE\"|" \
-    -e "s|APP_FILENAME=.*|APP_FILENAME=\"$APP_FILENAME\"|" \
-    -i "" "iov-$NET-ledger/install_app.sh"
-
   zip -r "iov-$NET-ledger-$VERSION.zip" "iov-$NET-ledger"
 )
