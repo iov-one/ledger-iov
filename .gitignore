@@ -68,3 +68,7 @@ unittests
 *.cmake
 cmake/
 Testing/
+
+# Exports
+out/
+exports/
