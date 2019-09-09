@@ -12,7 +12,7 @@ else
   APP_NAME="IOVTEST"
 fi
 APP_FILENAME="iov-$NET.hex"
-APP_VERSION=$(echo "$VERSION" | cut -d "-" -f 1)
+APP_VERSION=$(echo "$VERSION" | cut -d "+" -f 1)
 APP_SHA256SUM=$(sha256sum src/ledger/bin/app.hex | cut -d " " -f 1)
 APP_DATA_SIZE=$(grep -F _nvram_data_size src/ledger/debug/app.map | tr -s ' ' | cut -f2 -d' ')
 
