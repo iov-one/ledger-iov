@@ -29,6 +29,7 @@ sed \
   -e "s|APP_DATA_SIZE=.*|APP_DATA_SIZE=\"$APP_DATA_SIZE\"|" \
   -e "s|APP_FILENAME=.*|APP_FILENAME=\"$APP_FILENAME\"|" \
   scripts/install_app.template.sh > "out/iov-$NET-ledger/install_app.sh"
+shellcheck "out/iov-$NET-ledger/install_app.sh"
 chmod +x "out/iov-$NET-ledger/install_app.sh"
 
 (

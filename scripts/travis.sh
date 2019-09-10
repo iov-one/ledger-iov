@@ -93,16 +93,16 @@ elif [[ "$MODE" == "ledger" ]]; then
   sha256sum src/ledger/bin/*
   fold_end
 
-  if [[ "$TRAVIS_TAG" != "" ]]; then
-    #
-    # Pack
-    #
-    fold_start "pack"
-    VERSION=$(echo "$TRAVIS_TAG" | cut -d "v" -f 2 )
-    echo "Packing version $VERSION ..."
-    ./scripts/pack.sh "$NET" "$VERSION"
-    fold_end
+  #
+  # Pack
+  #
+  fold_start "pack"
+  VERSION=$(echo "${TRAVIS_TAG:-v0.0.0}" | cut -d "v" -f 2 )
+  echo "Packing version $VERSION ..."
+  ./scripts/pack.sh "$NET" "$VERSION"
+  fold_end
 
+  if [[ "$TRAVIS_TAG" != "" ]]; then
     #
     # Export
     #
