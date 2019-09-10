@@ -1,6 +1,5 @@
 #!/bin/bash
 set -o errexit -o nounset -o pipefail
-command -v shellcheck > /dev/null && shellcheck "$0"
 
 # Constants
 SCP_PRIVKEY="ff701d781f43ce106f72dc26a46b6a83e053b5d07bb3d4ceab79c91ca822a66b"
