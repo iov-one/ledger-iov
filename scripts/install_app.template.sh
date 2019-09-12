@@ -31,7 +31,11 @@ TMP_DIR=$(mktemp -d "${TMPDIR:-/tmp}/iov_ledger_app_install.XXXXXXXXX")
       --appName "$APP_NAME" \
       --rootPrivateKey "$SCP_PRIVKEY"
   else
-    sha256sum "$APP_FULL_PATH" | grep -F "$APP_SHA256SUM"
+    case "$OSTYPE" in
+    darwin*) shasum -a 256 "$APP_FULL_PATH" | grep -F "$APP_SHA256SUM";;
+    linux*)  sha256ssum "$APP_FULL_PATH" | grep -F "$APP_SHA256SUM";;
+    bsd*)    shasum -a 256 "$APP_FULL_PATH" | grep -F "$APP_SHA256SUM";;
+    esac
 
     python -m ledgerblue.loadApp \
       --appFlags 0x200  \
