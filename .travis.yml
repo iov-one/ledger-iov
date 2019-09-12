@@ -49,6 +49,8 @@ deploy:
     secure: "LE+yFnAWvkyTxVk8D/4N+G31Ghja9m3ZxVu8pO6ilEeFk+RsjguDq34bqyEki9pa1KHPgM1oSoz/e4YPqFqEP+oEKuqpZEw0Tl/yRCWu1Mg958PiGN9osgPg36FVHyGa3usRrVI21Agxb+VBJ0l6fzk+XY1YMqV0a1xFHAYj0XJaVKBY5bfyVVzGAzsTUZM1SUzTSbV2CXSVr+1n5XDNIgTeV6whxWdVDsdsXVKeFJ6sBrrRuIkLq4w9hsS5w7Wbs9KBcoEW1ZtjkKKxIs8R3k1S0zcAbQyhrsKL1/+j0LAZYz32O7OjryRnXsu/mIhojiazz4FdU9RUa9l1eh76W+U6hzUkgN8COea4O4IC3UwbAHTi+SDVRwkpFNooCxrpmv67rSzwMtNHDWhGWF0PzBSFF5cGURU6QrWZYdsgkljSTZZKL5SCga0jasl0wf0AzqBHctb76gNtJhfT+kxbPpbrb7zrzZgfU2FW8Pg0lpU0NsLp3DrLVH7sIuzK1urTgO/S8d/A8AQhnBStAqTrWqzvtXIN5iyLgTwBaWdzdnhTKAt5TV7B9rz+lnjwaM5np4+HMr8mXCbrrk8z6X0uDZgX+8ZR/oV5iSkPmgFAIi//d32bLFzKPC9aFMJgJoHPxMSFKDtR3fUCmPZF3gOOuWQnHmP4zfEKsi8NXoBDGfw="
   file_glob: true
   file: exports/*
+  name: "Internal test release $(TRAVIS_TAG)"
+  body: ""
   skip_cleanup: true
   on:
     tags: true
