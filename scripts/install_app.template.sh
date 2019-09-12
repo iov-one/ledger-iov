@@ -31,7 +31,11 @@ TMP_DIR=$(mktemp -d "${TMPDIR:-/tmp}/iov_ledger_app_install.XXXXXXXXX")
       --appName "$APP_NAME" \
       --rootPrivateKey "$SCP_PRIVKEY"
   else
-    sha256sum "$APP_FULL_PATH" | grep -F "$APP_SHA256SUM"
+    case "$OSTYPE" in
+    darwin* | bsd*) shasum -a 256 "$APP_FULL_PATH" | grep -F "$APP_SHA256SUM";;
+    linux*)  sha256sum "$APP_FULL_PATH" | grep -F "$APP_SHA256SUM";;
+    *)       echo "unsupported OSTYPE: $OSTYPE"; exit 1;;
+    esac
 
     python -m ledgerblue.loadApp \
       --appFlags 0x200  \
