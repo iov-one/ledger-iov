@@ -23,7 +23,10 @@ TMP_DIR=$(mktemp -d "${TMPDIR:-/tmp}/iov_ledger_app_install.XXXXXXXXX")
   # shellcheck disable=SC1091
   source ./iov-ledger/bin/activate
 
-  pip install --disable-pip-version-check wheel ledgerblue
+  # wheel needs to be installed separately to avoid errors in the upcoming installations
+  pip install --disable-pip-version-check wheel
+
+  pip install --disable-pip-version-check ledgerblue
 
   if [[ "${1:-}" == "--uninstall" ]]; then
   	python -m ledgerblue.deleteApp \
