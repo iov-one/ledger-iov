@@ -2,6 +2,10 @@ os:
   - linux
   - osx
 
+addons:
+  homebrew:
+    brewfile: true
+
 dist: bionic
 
 sudo: required
