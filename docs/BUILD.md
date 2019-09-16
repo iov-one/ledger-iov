@@ -1,30 +1,35 @@
 # IOV App for Ledger Nano S / X
 
 ## Get source
+
 Apart from cloning, be sure you get all the submodules, by calling:
-```
+
+```sh
 git submodule update --init --recursive
 ```
 
 ## Dependencies
 
-#### Ledger Nano S
+### Ledger Nano S
 
 This project requires ledger firmware 1.5.5
 
 The current repository keeps track of Ledger's SDK but it is possible to override it by changing the git submodule.
 
-#### Docker CE
+### Docker CE
 
 Please install docker CE. The instructions can be found here: https://docs.docker.com/install/
 
-#### Ubuntu Dependencies
+### Ubuntu Dependencies
+
 Install the following packages:
-```
+
+```sh
 sudo apt update && apt-get -y install build-essential git wget cmake libssl-dev libgmp-dev autoconf libtool
 ```
 
-#### OSX Dependencies
+### OSX Dependencies
+
 It is recommended that you install brew and xcode.
 
 Additionally you will need to:
@@ -33,49 +38,53 @@ Additionally you will need to:
 brew bundle
 ```
 
-### Python 3 development environment
+## Python 3 development environment
 
 The unversioned `python` and `pip` commands need to point to Python 3 versions. This is unconvenient
 but something we cannot easily change due to external code and scripts.
 Setup a Python 3 development environment as follows:
 
-#### Mac+brew
+### Mac+brew
 
 - Install Python 3: `brew install python`
 - `export PATH="/usr/local/opt/python/libexec/bin:$PATH"`
 - In zsh only: `rehash`
 
-#### Ubuntu
+### Ubuntu
 
 - Install Python 3: `sudo apt-get install -y python3 python3-pip`
 - `export PATH="$PWD/scripts/python3-ubuntu:$PATH"`
 - In zsh only: `rehash`
 
-### Other dependencies
+## Other dependencies
 
 In most cases, `make deps` should be able to install all dependencies:
 
-```bash
+```sh
 make deps
 ```
 
 (Ledger firmware 1.5.5 requires python 3 and ledgerblue >= 0.1.21. )
 
-# Building the Ledger App
+## Building the Ledger App
+
 In order to keep builds reproducible, a Makefile is provided.
 
 The Makefile will build the firmware in a docker container and leave the binary in the correct directory.
 
-**Build**
+### Build
 
 The following command will build the app firmware inside a container. All output will be available to the host.
-```
+
+```sh
 make                # Builds the app
 ```
 
-**Upload the app to the device**
+### Upload the app to the device
+
 The following command will upload the application to the ledger. _Warning: The application will be deleted before uploading._
-```
+
+```sh
 make load          # Builds and loads the app to the device
 ```
 
@@ -84,20 +93,23 @@ make load          # Builds and loads the app to the device
 The app is built for mainnet by default. To enable the testnet mode, set
 the environment variable `TESTNET_ENABLED`. E.g.
 
-```
+```sh
 TESTNET_ENABLED=1 make build
 TESTNET_ENABLED=1 make load
 ```
 
-### Developers (building C++ Code / Tests)
+## Developers (building C++ Code / Tests)
 
 This is useful when you want to make changes to libraries, run unit tests, etc. It will build all common libraries and unit tests.
 
-**Compile**
-```
+### Compile
+
+```sh
 cmake -DDISABLE_DOCKER_BUILDS=ON . && make
 ```
-**Run unit tests**
-```
+
+### Run unit tests
+
+```sh
 export GTEST_COLOR=1 && ctest -VV
 ```
