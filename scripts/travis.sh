@@ -60,12 +60,7 @@ if [[ "$MODE" == "unit" ]]; then
   # Install dependencies
   #
   fold_start "install-dependencies"
-  if [[ "${TRAVIS_OS_NAME:-}" == "linux" ]]; then
-    make deps
-  else
-    brew install libusb
-    make deps
-  fi
+  make deps
   fold_end
 
   #

@@ -29,8 +29,8 @@ It is recommended that you install brew and xcode.
 
 Additionally you will need to:
 
-```
-brew install libusb
+```sh
+brew bundle
 ```
 
 ### Python 3 development environment
