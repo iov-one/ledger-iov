@@ -30,14 +30,14 @@ For development purposes, this repo is recommended as it includes unit tests, to
 3. `sudo mv 20-hw1.rules /etc/udev/rules.d/20-hw1.rules`
 4. `sudo udevadm trigger && sudo udevadm control --reload-rules`
 
-#### macOS
+#### MacOS
 
-1. Mac only: [install XCode](https://apps.apple.com/us/app/xcode/id497799835)
-2. XCode command line tools (xcode-select --install) are installed
+1. Install dependencies: `brew bundle`
+2. Install [XCode](https://apps.apple.com/us/app/xcode/id497799835) and XCode command line tools `xcode-select --install`
 
 ### Download
 
-Find a recent release from https://github.com/iov-one/ledger-iov/releases that includes a zip package (`e.g. iov-testnet-ledger-0.10.0+9.zip`). The mainnet/testnet parts in the file name tell you for which network the app works. You can install both apps in parallel.
+Find a recent release from [ledger-iov releases](https://github.com/iov-one/ledger-iov/releases) that includes a zip package (`e.g. iov-testnet-ledger-0.10.0+9.zip`). The mainnet/testnet parts in the file name tell you for which network the app works. You can install both apps in parallel.
 
 Download and extract.
 
