@@ -30,11 +30,10 @@ For development purposes, this repo is recommended as it includes unit tests, to
 3. `sudo mv 20-hw1.rules /etc/udev/rules.d/20-hw1.rules`
 4. `sudo udevadm trigger && sudo udevadm control --reload-rules`
 
-#### macOS
+#### MacOS
 
-1. Mac only: [install XCode](https://apps.apple.com/us/app/xcode/id497799835)
-2. Install dependencies: `brew bundle`
-3. XCode command line tools (`xcode-select --install`) are installed
+1. Install dependencies: `brew bundle`
+2. Install [XCode](https://apps.apple.com/us/app/xcode/id497799835) and XCode command line tools `xcode-select --install`
 
 ### Download
 
