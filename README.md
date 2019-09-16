@@ -33,11 +33,12 @@ For development purposes, this repo is recommended as it includes unit tests, to
 #### macOS
 
 1. Mac only: [install XCode](https://apps.apple.com/us/app/xcode/id497799835)
-2. XCode command line tools (xcode-select --install) are installed
+2. Install dependencies: `brew bundle`
+3. XCode command line tools (`xcode-select --install`) are installed
 
 ### Download
 
-Find a recent release from https://github.com/iov-one/ledger-iov/releases that includes a zip package (`e.g. iov-testnet-ledger-0.10.0+9.zip`). The mainnet/testnet parts in the file name tell you for which network the app works. You can install both apps in parallel.
+Find a recent release from [ledger-iov releases](https://github.com/iov-one/ledger-iov/releases) that includes a zip package (`e.g. iov-testnet-ledger-0.10.0+9.zip`). The mainnet/testnet parts in the file name tell you for which network the app works. You can install both apps in parallel.
 
 Download and extract.
 
