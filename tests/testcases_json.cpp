@@ -32,7 +32,7 @@ using json = nlohmann::json;
 
 TEST(TestCases, Json) {
     std::ifstream inFile("testvectors/sendtx_single.json");
-    ASSERT_TRUE(inFile.is_open()) << "Check that your working directory is pointing to the test directory";
+    ASSERT_TRUE(inFile.is_open()) << "Check that your working directory is pointing to the 'tests' directory";
 
     json j;
     inFile >> j;
@@ -104,7 +104,7 @@ void checkJsonTx(json &j, uint64_t index) {
 
 TEST(TestCases, SingleJson) {
     std::ifstream inFile("testvectors/sendtx_single.json");
-    ASSERT_TRUE(inFile.is_open()) << "Check that your working directory is pointing to the test directory";
+    ASSERT_TRUE(inFile.is_open()) << "Check that your working directory is pointing to the 'tests' directory";
 
     json j;
     inFile >> j;
@@ -125,7 +125,7 @@ public:
 
     static void SetUpTestCase() {
         std::ifstream inFile("testvectors/sendtx_tests.json");
-        ASSERT_TRUE(inFile.is_open()) << "Check that your working directory is pointing to the test directory";
+        ASSERT_TRUE(inFile.is_open()) << "Check that your working directory is pointing to the 'tests' directory";
         inFile >> j;
 
         std::cout << "Number of testcases: " << j.size() << std::endl;
@@ -165,7 +165,7 @@ public:
 
     static void SetUpTestCase() {
         std::ifstream inFile("testvectors/sendtx_multisig_tests.json");
-        ASSERT_TRUE(inFile.is_open()) << "Check that your working directory is pointing to the test directory";
+        ASSERT_TRUE(inFile.is_open()) << "Check that your working directory is pointing to the 'tests' directory";
         inFile >> j;
 
         std::cout << "Number of testcases: " << j.size() << std::endl;

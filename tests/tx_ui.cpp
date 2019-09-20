@@ -64,7 +64,7 @@ std::string dumpUI() {
 
 TEST(UI, SingleJson) {
     std::ifstream inFile("testvectors/sendtx_single.json");
-    ASSERT_TRUE(inFile.is_open()) << "Check that your working directory is pointing to the test directory";
+    ASSERT_TRUE(inFile.is_open()) << "Check that your working directory is pointing to the 'tests' directory";
 
     json j;
     inFile >> j;
@@ -83,7 +83,7 @@ TEST(UI, SingleJson) {
 
 TEST(UI, SingleMultisigJson) {
     std::ifstream inFile("testvectors/sendtx_singleMultisig.json");
-    ASSERT_TRUE(inFile.is_open()) << "Check that your working directory is pointing to the test directory";
+    ASSERT_TRUE(inFile.is_open()) << "Check that your working directory is pointing to the 'tests' directory";
 
     json j;
     inFile >> j;
