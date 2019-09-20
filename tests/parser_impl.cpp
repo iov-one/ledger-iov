@@ -21,6 +21,7 @@
 #include <nlohmann/json.hpp>
 #include <lib/parser.h>
 #include <bech32.h>
+#include <lib/parser_txdef.h>
 #include "lib/parser_impl.h"
 
 using ::testing::TestWithParam;
@@ -275,4 +276,83 @@ TEST(Protobuf, SendMsg) {
                          0, nullptr);
     ASSERT_EQ(err, parser_ok) << parser_getErrorDescription(err);
     ASSERT_STREQ(tmp, "CASH");
+}
+
+TEST(Tx, Init) {
+    parser_tx_t tx;
+
+    parser_txInit(&tx);
+
+    EXPECT_EQ(tx.version, nullptr);
+    EXPECT_EQ(tx.chainIDLen, 0);
+    EXPECT_EQ(tx.chainID, nullptr);
+    EXPECT_EQ(tx.nonce, 0);
+
+    EXPECT_EQ(tx.seen.fees, false);
+    EXPECT_EQ(tx.seen.sendmsg, false);
+
+    //////
+
+    EXPECT_EQ(tx.feesPtr, nullptr);
+    EXPECT_EQ(tx.feesLen, 0);
+    EXPECT_EQ(tx.fees.seen.payer, false);
+    EXPECT_EQ(tx.fees.seen.coin, false);
+    EXPECT_EQ(tx.fees.payerPtr, nullptr);
+    EXPECT_EQ(tx.fees.payerLen, 0);
+    EXPECT_EQ(tx.fees.coinPtr, nullptr);
+    EXPECT_EQ(tx.fees.coinLen, 0);
+
+    EXPECT_EQ(tx.fees.coin.seen.whole, false);
+    EXPECT_EQ(tx.fees.coin.seen.fractional, false);
+    EXPECT_EQ(tx.fees.coin.seen.ticker, false);
+    EXPECT_EQ(tx.fees.coin.whole, 0);
+    EXPECT_EQ(tx.fees.coin.fractional, 0);
+    EXPECT_EQ(tx.fees.coin.tickerPtr, nullptr);
+    EXPECT_EQ(tx.fees.coin.tickerLen, 0);
+
+    //////
+
+    EXPECT_EQ(tx.multisigPtr, nullptr);
+    EXPECT_EQ(tx.multisigLen, 0);
+    EXPECT_EQ(tx.multisig.count, 0);
+
+    //////
+
+    EXPECT_EQ(tx.sendmsgPtr, nullptr);
+    EXPECT_EQ(tx.sendmsgLen, 0);
+
+    EXPECT_EQ(tx.sendmsg.seen.metadata, false);
+    EXPECT_EQ(tx.sendmsg.seen.source, false);
+    EXPECT_EQ(tx.sendmsg.seen.destination, false);
+    EXPECT_EQ(tx.sendmsg.seen.amount, false);
+    EXPECT_EQ(tx.sendmsg.seen.memo, false);
+    EXPECT_EQ(tx.sendmsg.seen.ref, false);
+
+    EXPECT_EQ(tx.sendmsg.metadataPtr, nullptr);
+    EXPECT_EQ(tx.sendmsg.metadataLen, 0);
+    EXPECT_EQ(tx.sendmsg.metadata.seen.schema, false);
+    EXPECT_EQ(tx.sendmsg.metadata.schema, 0);
+
+    EXPECT_EQ(tx.sendmsg.sourcePtr, nullptr);
+    EXPECT_EQ(tx.sendmsg.sourceLen, 0);
+
+    EXPECT_EQ(tx.sendmsg.destinationPtr, nullptr);
+    EXPECT_EQ(tx.sendmsg.destinationLen, 0);
+
+    EXPECT_EQ(tx.sendmsg.amountPtr, nullptr);
+    EXPECT_EQ(tx.sendmsg.amountLen, 0);
+    EXPECT_EQ(tx.sendmsg.amount.seen.whole, false);
+    EXPECT_EQ(tx.sendmsg.amount.seen.fractional, false);
+    EXPECT_EQ(tx.sendmsg.amount.seen.ticker, false);
+    EXPECT_EQ(tx.sendmsg.amount.whole, 0);
+    EXPECT_EQ(tx.sendmsg.amount.fractional, 0);
+    EXPECT_EQ(tx.sendmsg.amount.tickerPtr, nullptr);
+    EXPECT_EQ(tx.sendmsg.amount.tickerLen, 0);
+
+    EXPECT_EQ(tx.sendmsg.memoPtr, nullptr);
+    EXPECT_EQ(tx.sendmsg.memoLen, 0);
+
+    EXPECT_EQ(tx.sendmsg.refPtr, nullptr);
+    EXPECT_EQ(tx.sendmsg.refLen, 0);
+
 }
