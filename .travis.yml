@@ -54,7 +54,7 @@ deploy:
   file_glob: true
   file: exports/*
   name: "Internal test release $TRAVIS_TAG"
-  body: "Release $TRAVIS_TAG automatically created by the CI. See https://github.com/iov-one/ledger-iov/wiki/Installation-of-test-version for installation instructions."
+  body: "Release $TRAVIS_TAG automatically created by the CI. See https://github.com/iov-one/ledger-iov/blob/master/README.md#installing-the-release for installation instructions."
   skip_cleanup: true
   on:
     tags: true

@@ -3,13 +3,9 @@
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![Build Status](https://travis-ci.com/iov-one/ledger-iov.svg?branch=master)](https://travis-ci.com/iov-one/ledger-iov)
 
-This repository contains the Ledger Nano S/X app for IOV
-
-- Ledger Nano S/X BOLOS app
-- Unit tests
+This repository contains the Ledger Nano S app for IOV (BOLOS app and unit tests).
 
 Source code for apps is linked as submodules to allow for Ledger's build infrastructure.
-
 For development purposes, this repo is recommended as it includes unit tests, tools, etc.
 
 ## Installing the release
@@ -44,12 +40,17 @@ Download and extract.
 ### Install / Uninstall
 
 1. Navigate to the extracted folder, e.g. `cd ~/Downloads/iov-testnet-ledger`
-2. Connect and unlock Ledger Nano S; navigate to main menu.
-3. To install run `./install_app.sh; to uninstall run ./install_app.sh --uninstall`
+2. Connect and unlock Ledger Nano S; navigate to the main menu.
+3. To install run `./install_app.sh`; to uninstall run `./install_app.sh --uninstall`
 
 ### Further notes
 
 The `+xyz` suffix in versions is build meta data, i.e. the same Ledger app in a different package
+
+## Ledger Nano X support
+
+Right now, there is no support for the Ledger Nano X. However, the source code is prepared for future Nano X support,
+which is why there are Nano X references in some places.
 
 ## Building
 
