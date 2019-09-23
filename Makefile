@@ -14,7 +14,7 @@
 #*  limitations under the License.
 #********************************************************************************
 
-.PHONY: all deps build clean load delete check_python
+.PHONY: all deps build clean load delete check_python show_info_recovery_mode
 
 LEDGER_SRC=$(CURDIR)/src/ledger
 
@@ -70,10 +70,22 @@ delete: check_python
 	  BOLOS_SDK=$(CURDIR)/deps/nanos-secure-sdk BOLOS_ENV=/opt/bolos \
 	  make -C $(LEDGER_SRC) delete
 
-# This target will initialize the device with the integration testing mnemonic
-dev_init: check_python
-	@echo "Initializing device with test mnemonic! WARNING TAKES 2 MINUTES AND REQUIRES RECOVERY MODE"
+show_info_recovery_mode:
+	@echo "This command requires a Ledger Nano S in recovery mode. To go into recovery mode, follow:"
+	@echo " 1. Settings -> Device -> Reset all and confirm"
+	@echo " 2. Unplug device, press and hold the right button, plug-in again"
+	@echo " 3. Navigate to the main menu"
+	@echo "If everything was correct, no PIN needs to be entered."
+
+# This target will initialize the device with the primary integration testing mnemonic (Alice)
+dev_init: check_python show_info_recovery_mode
+	@echo "Initializing device with primary test mnemonic! WARNING TAKES 2 MINUTES AND REQUIRES RECOVERY MODE"
 	@python -m ledgerblue.hostOnboard --apdu --id 0 --prefix "" --passphrase "" --pin 5555 --words "equip will roof matter pink blind book anxiety banner elbow sun young"
+
+# This target will initialize the device with the secondary integration testing mnemonic (Bob)
+dev_init_secondary: check_python show_info_recovery_mode
+	@echo "Initializing device with secondary test mnemonic! WARNING TAKES 2 MINUTES AND REQUIRES RECOVERY MODE"
+	@python -m ledgerblue.hostOnboard --apdu --id 0 --prefix "" --passphrase "" --pin 5555 --words "elite vote proof agree february step sibling sand grocery axis false cup"
 
 # This target will setup a custom developer certificate
 dev_ca: check_python
