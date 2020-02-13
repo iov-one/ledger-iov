@@ -4,7 +4,7 @@
       "kind": "string:bns/vote",
       "chainId": "string:iov-exchangenet",
       "proposalId": 70,
-      "selection": 0,
+      "selection": "string:yes",
       "voter": "string:tiov1c9eprq0gxdmwl9u25j568zj7ylqgc7ajyu8wxr",
       "fee": {
         "tokens": {
@@ -23,7 +23,7 @@
       "kind": "string:bns/vote",
       "chainId": "string:iov-exchangenet",
       "proposalId": 70,
-      "selection": 1,
+      "selection": "string:no",
       "voter": "string:tiov1c9eprq0gxdmwl9u25j568zj7ylqgc7ajyu8wxr",
       "fee": {
         "tokens": {
@@ -42,7 +42,7 @@
       "kind": "string:bns/vote",
       "chainId": "string:iov-exchangenet",
       "proposalId": 70,
-      "selection": 2,
+      "selection": "string:abstain",
       "voter": "string:tiov1c9eprq0gxdmwl9u25j568zj7ylqgc7ajyu8wxr",
       "fee": {
         "tokens": {
@@ -61,7 +61,7 @@
       "kind": "string:bns/vote",
       "chainId": "string:iov-mainnet",
       "proposalId": 70,
-      "selection": 0,
+      "selection": "string:yes",
       "voter": "string:iov1htg9tcktel7xx0nacakuz9ydd6dzm6lak3hwfr",
       "fee": {
         "tokens": {
@@ -80,7 +80,7 @@
       "kind": "string:bns/vote",
       "chainId": "string:iov-mainnet",
       "proposalId": 70,
-      "selection": 1,
+      "selection": "string:no",
       "voter": "string:iov1htg9tcktel7xx0nacakuz9ydd6dzm6lak3hwfr",
       "fee": {
         "tokens": {
@@ -99,7 +99,7 @@
       "kind": "string:bns/vote",
       "chainId": "string:iov-mainnet",
       "proposalId": 70,
-      "selection": 2,
+      "selection": "string:abstain",
       "voter": "string:iov1htg9tcktel7xx0nacakuz9ydd6dzm6lak3hwfr",
       "fee": {
         "tokens": {
