@@ -29,7 +29,8 @@ SCP_PRIVKEY=ff701d781f43ce106f72dc26a46b6a83e053b5d07bb3d4ceab79c91ca822a66b
 all: build
 
 check_python:
-	@python -c 'import sys; sys.exit(3-sys.version_info.major)' || (echo "The python command does not point to Python 3"; exit 1)
+	echo "HI!"
+#	@python -c 'import sys; sys.exit(3-sys.version_info.major)' || (echo "The python command does not point to Python 3"; exit 1)
 
 deps: check_python
 	@echo "Install dependencies"
@@ -104,3 +105,6 @@ dev_ca_delete2: check_python
 dev_read_icon: check_python
 	@python ./deps/nanos-secure-sdk/icon.py src/ledger/nanos_icon.gif hexbitmaponly
 	@echo
+
+update_zxlib:
+	rsync -a --exclude='.git/' ../ledger-zxlib src/ledger/deps/

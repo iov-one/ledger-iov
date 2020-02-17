@@ -55,6 +55,7 @@ file(GLOB_RECURSE TESTS_SRC
 add_executable(unittests ${TESTS_SRC})
 target_include_directories(unittests PUBLIC
         ${CMAKE_CURRENT_SOURCE_DIR}/src/ledger/src
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/ledger/deps/ledger-zxlib/include
         ${gtest_SOURCE_DIR}/include
         ${gmock_SOURCE_DIR}/include
         ${CONAN_INCLUDE_DIRS_FMT}
@@ -63,7 +64,7 @@ target_include_directories(unittests PUBLIC
 
 target_link_libraries(unittests PRIVATE
         gtest_main
-        cbor_parser
+        app_lib
         CONAN_PKG::fmt
         CONAN_PKG::jsoncpp)
 
@@ -74,12 +75,12 @@ set_tests_properties(unittests PROPERTIES WORKING_DIRECTORY ${CMAKE_CURRENT_SOUR
 # Force tests to depend from app compiling
 ###############################################################
 
-set(DISABLE_DOCKER_BUILDS OFF CACHE BOOL "Disables Docker Builds")
-
-if (NOT DISABLE_DOCKER_BUILDS)
-    add_custom_target(ledger_app
-            COMMAND make build
-            WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
-            )
-    add_dependencies(unittests ledger_app)
-endif()
+#set(DISABLE_DOCKER_BUILDS OFF CACHE BOOL "Disables Docker Builds")
+#
+#if (NOT DISABLE_DOCKER_BUILDS)
+#    add_custom_target(ledger_app
+#            COMMAND make build
+#            WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+#            )
+#    add_dependencies(unittests ledger_app)
+#endif()

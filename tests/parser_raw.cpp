@@ -1,3 +1,5 @@
+#pragma clang diagnostic push
+#pragma ide diagnostic ignored "cert-err58-cpp"
 /*******************************************************************************
 *   (c) 2019 ZondaX GmbH
 *
@@ -17,16 +19,12 @@
 #include "gmock/gmock.h"
 
 #include <iostream>
-#include <hexutils.h>
-#include <nlohmann/json.hpp>
+#include "hexutils.h"
 #include <lib/parser.h>
-#include <bech32.h>
 #include <lib/parser_txdef.h>
-#include "lib/parser_impl.h"
 
 using ::testing::TestWithParam;
 using ::testing::Values;
-using json = nlohmann::json;
 
 TEST(Protobuf, RawVarint) {
     uint8_t buffer[] = {0x08, 0x96, 0x01};
@@ -160,7 +158,7 @@ TEST(Protobuf, Nested) {
 TEST(Protobuf, Enumeration) {
     char pbtx[] = "0a020801121473f16e71d0878f6ad26531e174452aec9161e8d41a14000000000000000000000000000000000000000022061a0443415348";
     uint8_t buffer[200];
-    uint16_t bufferSize = parseHexString(pbtx, buffer);
+    uint16_t bufferSize = parseHexString(buffer, sizeof(buffer), pbtx);
     EXPECT_EQ(bufferSize, 56);
 
     parser_context_t ctx;
@@ -203,7 +201,7 @@ TEST(Protobuf, Header) {
                   "000000000022061a0443415348";
 
     uint8_t buffer[200];
-    uint16_t bufferSize = parseHexString(pbtx, buffer);
+    uint16_t bufferSize = parseHexString(buffer, sizeof(buffer), pbtx);
     EXPECT_EQ(bufferSize, 83);
 
     parser_context_t ctx;
@@ -238,7 +236,7 @@ TEST(Protobuf, SendMsg) {
                   "1a14000000000000000000000000000000000000000022061a0443415348";
 
     uint8_t buffer[200];
-    uint16_t bufferSize = parseHexString(pbtx, buffer);
+    uint16_t bufferSize = parseHexString(buffer, sizeof(buffer), pbtx);
     EXPECT_EQ(bufferSize, 56);
 
     parser_sendmsg_t sendmsg;
@@ -356,3 +354,5 @@ TEST(Tx, Init) {
     EXPECT_EQ(tx.sendmsg.refLen, 0);
 
 }
+
+#pragma clang diagnostic pop
