@@ -2,13 +2,7 @@
   {
     "transaction": {
       "kind": "string:bcp/send",
-      "creator": {
-        "chainId": "string:iov-lovenet",
-        "pubkey": {
-          "algo": "string:ed25519",
-          "data": "bytes:fa8c2a18b2854ab65207c0c727b825b6dbaa29379e6b2bb35ac778bfaa881e92"
-        }
-      },
+      "chainId": "string:iov-lovenet",
       "sender": "string:tiov14w46h2c3zg3pzy3zzyfz9nxvenxdmhwafk9qya",
       "recipient": "string:tiov1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqzx8n0d",
       "multisig": [
@@ -34,13 +28,7 @@
   {
     "transaction": {
       "kind": "string:bcp/send",
-      "creator": {
-        "chainId": "string:iov-lovenet",
-        "pubkey": {
-          "algo": "string:ed25519",
-          "data": "bytes:fa8c2a18b2854ab65207c0c727b825b6dbaa29379e6b2bb35ac778bfaa881e92"
-        }
-      },
+      "chainId": "string:iov-lovenet",
       "sender": "string:tiov14w46h2c3zg3pzy3zzyfz9nxvenxdmhwafk9qya",
       "recipient": "string:tiov1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqzx8n0d",
       "multisig": [
@@ -67,13 +55,7 @@
   {
     "transaction": {
       "kind": "string:bcp/send",
-      "creator": {
-        "chainId": "string:iov-lovenet",
-        "pubkey": {
-          "algo": "string:ed25519",
-          "data": "bytes:fa8c2a18b2854ab65207c0c727b825b6dbaa29379e6b2bb35ac778bfaa881e92"
-        }
-      },
+      "chainId": "string:iov-lovenet",
       "sender": "string:tiov14w46h2c3zg3pzy3zzyfz9nxvenxdmhwafk9qya",
       "recipient": "string:tiov1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqzx8n0d",
       "multisig": [
@@ -102,13 +84,7 @@
   {
     "transaction": {
       "kind": "string:bcp/send",
-      "creator": {
-        "chainId": "string:iov-mainnet",
-        "pubkey": {
-          "algo": "string:ed25519",
-          "data": "bytes:34299fa3fe218a6210ace221f86597c800ecff3d27e1e6a7937248514a6784ee"
-        }
-      },
+      "chainId": "string:iov-mainnet",
       "sender": "string:iov1s7rc0pu8s7rc02424242424242venxve6xrhfk",
       "recipient": "string:iov1qgx6a33qvmkg9fdpksph3kr52lkc3e8uu9gftm",
       "multisig": [
@@ -134,13 +110,7 @@
   {
     "transaction": {
       "kind": "string:bcp/send",
-      "creator": {
-        "chainId": "string:iov-mainnet",
-        "pubkey": {
-          "algo": "string:ed25519",
-          "data": "bytes:34299fa3fe218a6210ace221f86597c800ecff3d27e1e6a7937248514a6784ee"
-        }
-      },
+      "chainId": "string:iov-mainnet",
       "sender": "string:iov1s7rc0pu8s7rc02424242424242venxve6xrhfk",
       "recipient": "string:iov1qgx6a33qvmkg9fdpksph3kr52lkc3e8uu9gftm",
       "multisig": [
@@ -167,13 +137,7 @@
   {
     "transaction": {
       "kind": "string:bcp/send",
-      "creator": {
-        "chainId": "string:iov-mainnet",
-        "pubkey": {
-          "algo": "string:ed25519",
-          "data": "bytes:34299fa3fe218a6210ace221f86597c800ecff3d27e1e6a7937248514a6784ee"
-        }
-      },
+      "chainId": "string:iov-mainnet",
       "sender": "string:iov1s7rc0pu8s7rc02424242424242venxve6xrhfk",
       "recipient": "string:iov1qgx6a33qvmkg9fdpksph3kr52lkc3e8uu9gftm",
       "multisig": [
