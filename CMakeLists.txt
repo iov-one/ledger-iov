@@ -40,10 +40,14 @@ file(GLOB_RECURSE LIB_SRC
         ${CMAKE_CURRENT_SOURCE_DIR}/src/ledger/src/lib/parser_txdef.c
         )
 
-add_library(app_lib STATIC ${LIB_SRC})
+add_library(app_lib STATIC
+        ${LIB_SRC}
+        )
+
 target_include_directories(app_lib PUBLIC
         ${CMAKE_CURRENT_SOURCE_DIR}/src/ledger/deps/ledger-zxlib/include
-        ${CMAKE_CURRENT_SOURCE_DIR}/src/ledger/lib
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/ledger/src
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/ledger/src/lib
         )
 
 ##############################################################
@@ -54,12 +58,12 @@ file(GLOB_RECURSE TESTS_SRC
 
 add_executable(unittests ${TESTS_SRC})
 target_include_directories(unittests PUBLIC
-        ${CMAKE_CURRENT_SOURCE_DIR}/src/ledger/src
-        ${CMAKE_CURRENT_SOURCE_DIR}/src/ledger/deps/ledger-zxlib/include
         ${gtest_SOURCE_DIR}/include
         ${gmock_SOURCE_DIR}/include
         ${CONAN_INCLUDE_DIRS_FMT}
         ${CONAN_INCLUDE_DIRS_JSONCPP}
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/ledger/src
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/ledger/deps/ledger-zxlib/include
         )
 
 target_link_libraries(unittests PRIVATE

@@ -113,6 +113,7 @@ std::vector<testcase_t> GetJsonTestCases(const std::string &filename) {
         auto v = (*obj)[i];
 
         auto description = std::string("");
+
         description = v["transaction"]["kind"].asString();
         description.erase(remove_if(description.begin(), description.end(), [](char v) -> bool {
             return v == ':' || v == ' ' || v == '/';
