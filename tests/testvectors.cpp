@@ -51,7 +51,7 @@ void check_testcase(const testcase_t &testcase) {
     }
 
     const bool_t isMainnet = tc.testnet ? bool_false : bool_true;
-    err = parser_validate(isMainnet);
+    err = parser_validate(&ctx, isMainnet);
     if (tc.valid) {
         EXPECT_EQ(err, parser_ok) << parser_getErrorDescription(err);
     } else {

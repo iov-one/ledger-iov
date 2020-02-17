@@ -167,7 +167,7 @@ TEST(Protobuf, Enumeration) {
 
     uint64_t v;
 
-    while (ctx.offset < ctx.bufferSize) {
+    while (ctx.offset < ctx.bufferLen) {
         err = _readRawVarint(&ctx, &v);
         EXPECT_EQ(err, parser_ok);
 
