@@ -1,0 +1,116 @@
+[
+  {
+    "transaction": {
+      "kind": "string:bns/vote",
+      "chainId": "string:iov-exchangenet",
+      "proposalId": 70,
+      "selection": "string:yes",
+      "voter": "string:tiov1c9eprq0gxdmwl9u25j568zj7ylqgc7ajyu8wxr",
+      "fee": {
+        "tokens": {
+          "quantity": "string:100000000",
+          "fractionalDigits": 9,
+          "tokenTicker": "string:CASH"
+        },
+        "payer": "string:tiov1c9eprq0gxdmwl9u25j568zj7ylqgc7ajyu8wxr"
+      }
+    },
+    "nonce": 69,
+    "bytes": "00cafe000f696f762d65786368616e67656e657400000000000000450a231214c1721181e83376ef978aa4a9a38a5e27c08c7bb21a0b1080c2d72f1a0443415348da04260a020801120800000000000000461a14c1721181e83376ef978aa4a9a38a5e27c08c7bb22001"
+  },
+  {
+    "transaction": {
+      "kind": "string:bns/vote",
+      "chainId": "string:iov-exchangenet",
+      "proposalId": 70,
+      "selection": "string:no",
+      "voter": "string:tiov1c9eprq0gxdmwl9u25j568zj7ylqgc7ajyu8wxr",
+      "fee": {
+        "tokens": {
+          "quantity": "string:100000000",
+          "fractionalDigits": 9,
+          "tokenTicker": "string:CASH"
+        },
+        "payer": "string:tiov1c9eprq0gxdmwl9u25j568zj7ylqgc7ajyu8wxr"
+      }
+    },
+    "nonce": 69,
+    "bytes": "00cafe000f696f762d65786368616e67656e657400000000000000450a231214c1721181e83376ef978aa4a9a38a5e27c08c7bb21a0b1080c2d72f1a0443415348da04260a020801120800000000000000461a14c1721181e83376ef978aa4a9a38a5e27c08c7bb22002"
+  },
+  {
+    "transaction": {
+      "kind": "string:bns/vote",
+      "chainId": "string:iov-exchangenet",
+      "proposalId": 70,
+      "selection": "string:abstain",
+      "voter": "string:tiov1c9eprq0gxdmwl9u25j568zj7ylqgc7ajyu8wxr",
+      "fee": {
+        "tokens": {
+          "quantity": "string:100000000",
+          "fractionalDigits": 9,
+          "tokenTicker": "string:CASH"
+        },
+        "payer": "string:tiov1c9eprq0gxdmwl9u25j568zj7ylqgc7ajyu8wxr"
+      }
+    },
+    "nonce": 69,
+    "bytes": "00cafe000f696f762d65786368616e67656e657400000000000000450a231214c1721181e83376ef978aa4a9a38a5e27c08c7bb21a0b1080c2d72f1a0443415348da04260a020801120800000000000000461a14c1721181e83376ef978aa4a9a38a5e27c08c7bb22003"
+  },
+  {
+    "transaction": {
+      "kind": "string:bns/vote",
+      "chainId": "string:iov-mainnet",
+      "proposalId": 70,
+      "selection": "string:yes",
+      "voter": "string:iov1htg9tcktel7xx0nacakuz9ydd6dzm6lak3hwfr",
+      "fee": {
+        "tokens": {
+          "quantity": "string:100000000",
+          "fractionalDigits": 9,
+          "tokenTicker": "string:CASH"
+        },
+        "payer": "string:iov1htg9tcktel7xx0nacakuz9ydd6dzm6lak3hwfr"
+      }
+    },
+    "nonce": 69,
+    "bytes": "00cafe000b696f762d6d61696e6e657400000000000000450a231214bad055e2cbcffc633e7dc76dc1148d6e9a2debfd1a0b1080c2d72f1a0443415348da04260a020801120800000000000000461a14bad055e2cbcffc633e7dc76dc1148d6e9a2debfd2001"
+  },
+  {
+    "transaction": {
+      "kind": "string:bns/vote",
+      "chainId": "string:iov-mainnet",
+      "proposalId": 70,
+      "selection": "string:no",
+      "voter": "string:iov1htg9tcktel7xx0nacakuz9ydd6dzm6lak3hwfr",
+      "fee": {
+        "tokens": {
+          "quantity": "string:100000000",
+          "fractionalDigits": 9,
+          "tokenTicker": "string:CASH"
+        },
+        "payer": "string:iov1htg9tcktel7xx0nacakuz9ydd6dzm6lak3hwfr"
+      }
+    },
+    "nonce": 69,
+    "bytes": "00cafe000b696f762d6d61696e6e657400000000000000450a231214bad055e2cbcffc633e7dc76dc1148d6e9a2debfd1a0b1080c2d72f1a0443415348da04260a020801120800000000000000461a14bad055e2cbcffc633e7dc76dc1148d6e9a2debfd2002"
+  },
+  {
+    "transaction": {
+      "kind": "string:bns/vote",
+      "chainId": "string:iov-mainnet",
+      "proposalId": 70,
+      "selection": "string:abstain",
+      "voter": "string:iov1htg9tcktel7xx0nacakuz9ydd6dzm6lak3hwfr",
+      "fee": {
+        "tokens": {
+          "quantity": "string:100000000",
+          "fractionalDigits": 9,
+          "tokenTicker": "string:CASH"
+        },
+        "payer": "string:iov1htg9tcktel7xx0nacakuz9ydd6dzm6lak3hwfr"
+      }
+    },
+    "nonce": 69,
+    "bytes": "00cafe000b696f762d6d61696e6e657400000000000000450a231214bad055e2cbcffc633e7dc76dc1148d6e9a2debfd1a0b1080c2d72f1a0443415348da04260a020801120800000000000000461a14bad055e2cbcffc633e7dc76dc1148d6e9a2debfd2003"
+  }
+]
