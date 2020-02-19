@@ -1,0 +1,134 @@
+[
+  {
+    "transaction": {
+      "kind": "string:bns/create_proposal",
+      "chainId": "string:iov-exchangenet",
+      "title": "string:Hello 0.303118290291134",
+      "description": "string:Hello 0.23847208324147773",
+      "author": "string:tiov1c9eprq0gxdmwl9u25j568zj7ylqgc7ajyu8wxr",
+      "electionRuleId": 2,
+      "action": {
+        "kind": "string:gov_update_electorate",
+        "electorateId": 1,
+        "diffElectors": {
+          "tiov1c9eprq0gxdmwl9u25j568zj7ylqgc7ajyu8wxr": {
+            "weight": 1
+          },
+          "tiov1qnpaklxv4n6cam7v99hl0tg0dkmu97sh56x6uz": {
+            "weight": 0
+          }
+        }
+      },
+      "startTime": 1581964488,
+      "fee": {
+        "tokens": {
+          "quantity": "string:100000000",
+          "fractionalDigits": 9,
+          "tokenTicker": "string:CASH"
+        },
+        "payer": "string:tiov1c9eprq0gxdmwl9u25j568zj7ylqgc7ajyu8wxr"
+      }
+    },
+    "nonce": 72,
+    "bytes": "00cafe000f696f762d65786368616e67656e657400000000000000480a231214c1721181e83376ef978aa4a9a38a5e27c08c7bb21a0b1080c2d72f1a0443415348ca04a5010a020801121748656c6c6f20302e3330333131383239303239313133341a45ea04420a020801120800000000000000011a180a14c1721181e83376ef978aa4a9a38a5e27c08c7bb210011a180a1404c3db7cccacf58eefcc296ff7ad0f6db7c2fa171000221948656c6c6f20302e32333834373230383332343134373737332a08000000000000000230c8b9abf2053a14c1721181e83376ef978aa4a9a38a5e27c08c7bb2"
+  },
+  {
+    "transaction": {
+      "kind": "string:bns/create_proposal",
+      "chainId": "string:iov-exchangenet",
+      "title": "string:Hello 0.303118290291134",
+      "description": "string:Hello 0.23847208324147773",
+      "author": "string:tiov1c9eprq0gxdmwl9u25j568zj7ylqgc7ajyu8wxr",
+      "electionRuleId": 2,
+      "action": {
+        "kind": "string:gov_update_electorate",
+        "electorateId": 1,
+        "diffElectors": {
+          "tiov1c9eprq0gxdmwl9u25j568zj7ylqgc7ajyu8wxr": {
+            "weight": 1
+          },
+          "tiov1qnpaklxv4n6cam7v99hl0tg0dkmu97sh56x6uz": {
+            "weight": 1
+          }
+        }
+      },
+      "startTime": 1581964488,
+      "fee": {
+        "tokens": {
+          "quantity": "string:100000000",
+          "fractionalDigits": 9,
+          "tokenTicker": "string:CASH"
+        },
+        "payer": "string:tiov1c9eprq0gxdmwl9u25j568zj7ylqgc7ajyu8wxr"
+      }
+    },
+    "nonce": 72,
+    "bytes": "00cafe000f696f762d65786368616e67656e657400000000000000480a231214c1721181e83376ef978aa4a9a38a5e27c08c7bb21a0b1080c2d72f1a0443415348ca04a5010a020801121748656c6c6f20302e3330333131383239303239313133341a45ea04420a020801120800000000000000011a180a14c1721181e83376ef978aa4a9a38a5e27c08c7bb210011a180a1404c3db7cccacf58eefcc296ff7ad0f6db7c2fa171001221948656c6c6f20302e32333834373230383332343134373737332a08000000000000000230c8b9abf2053a14c1721181e83376ef978aa4a9a38a5e27c08c7bb2"
+  },
+  {
+    "transaction": {
+      "kind": "string:bns/create_proposal",
+      "chainId": "string:iov-mainnet",
+      "title": "string:Hello 0.10865133035442076",
+      "description": "string:Hello 0.14731466929227177",
+      "author": "string:iov1htg9tcktel7xx0nacakuz9ydd6dzm6lak3hwfr",
+      "electionRuleId": 2,
+      "action": {
+        "kind": "string:gov_update_electorate",
+        "electorateId": 1,
+        "diffElectors": {
+          "iov1htg9tcktel7xx0nacakuz9ydd6dzm6lak3hwfr": {
+            "weight": 1
+          },
+          "iov1qnpaklxv4n6cam7v99hl0tg0dkmu97sh6007un": {
+            "weight": 0
+          }
+        }
+      },
+      "startTime": 1581964488,
+      "fee": {
+        "tokens": {
+          "quantity": "string:100000000",
+          "fractionalDigits": 9,
+          "tokenTicker": "string:CASH"
+        },
+        "payer": "string:iov1htg9tcktel7xx0nacakuz9ydd6dzm6lak3hwfr"
+      }
+    },
+    "nonce": 72,
+    "bytes": "00cafe000b696f762d6d61696e6e657400000000000000480a231214bad055e2cbcffc633e7dc76dc1148d6e9a2debfd1a0b1080c2d72f1a0443415348ca04a7010a020801121948656c6c6f20302e31303836353133333033353434323037361a45ea04420a020801120800000000000000011a180a14bad055e2cbcffc633e7dc76dc1148d6e9a2debfd10011a180a1404c3db7cccacf58eefcc296ff7ad0f6db7c2fa171000221948656c6c6f20302e31343733313436363932393232373137372a08000000000000000230c8b9abf2053a14bad055e2cbcffc633e7dc76dc1148d6e9a2debfd"
+  },
+  {
+    "transaction": {
+      "kind": "string:bns/create_proposal",
+      "chainId": "string:iov-mainnet",
+      "title": "string:Hello 0.10865133035442076",
+      "description": "string:Hello 0.14731466929227177",
+      "author": "string:iov1htg9tcktel7xx0nacakuz9ydd6dzm6lak3hwfr",
+      "electionRuleId": 2,
+      "action": {
+        "kind": "string:gov_update_electorate",
+        "electorateId": 1,
+        "diffElectors": {
+          "iov1htg9tcktel7xx0nacakuz9ydd6dzm6lak3hwfr": {
+            "weight": 1
+          },
+          "iov1qnpaklxv4n6cam7v99hl0tg0dkmu97sh6007un": {
+            "weight": 1
+          }
+        }
+      },
+      "startTime": 1581964488,
+      "fee": {
+        "tokens": {
+          "quantity": "string:100000000",
+          "fractionalDigits": 9,
+          "tokenTicker": "string:CASH"
+        },
+        "payer": "string:iov1htg9tcktel7xx0nacakuz9ydd6dzm6lak3hwfr"
+      }
+    },
+    "nonce": 72,
+    "bytes": "00cafe000b696f762d6d61696e6e657400000000000000480a231214bad055e2cbcffc633e7dc76dc1148d6e9a2debfd1a0b1080c2d72f1a0443415348ca04a7010a020801121948656c6c6f20302e31303836353133333033353434323037361a45ea04420a020801120800000000000000011a180a14bad055e2cbcffc633e7dc76dc1148d6e9a2debfd10011a180a1404c3db7cccacf58eefcc296ff7ad0f6db7c2fa171001221948656c6c6f20302e31343733313436363932393232373137372a08000000000000000230c8b9abf2053a14bad055e2cbcffc633e7dc76dc1148d6e9a2debfd"
+  }
+]
