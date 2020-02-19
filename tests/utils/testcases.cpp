@@ -33,8 +33,9 @@ testcaseData_t ReadRawTestCase(const std::shared_ptr<Json::Value> &jsonSource, i
     auto v = (*jsonSource)[index];
     auto description = std::string("");
 
-    description = v["kind"].asString();
+    description = v["transaction"]["kind"].asString();
     description.erase(remove_if(description.begin(), description.end(), isspace), description.end());
+    description = remove_prefix("string:", description);
 
     auto tx = v["transaction"];
 
@@ -43,7 +44,7 @@ testcaseData_t ReadRawTestCase(const std::shared_ptr<Json::Value> &jsonSource, i
     auto blob = std::vector<uint8_t>(v["bytes"].asString().size() / 2);
     parseHexString(blob.data(), blob.size(), bytes_hexstring.c_str());
 
-    auto chainid = remove_prefix("string:", tx["creator"]["chainId"]);
+    auto chainid = remove_prefix("string:", tx["chainId"]);
     bool testnet = false;
     if (chainid != "iov-mainnet") {
         testnet = true;
