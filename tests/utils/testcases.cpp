@@ -59,6 +59,10 @@ testcaseData_t ReadRawTestCase(const std::shared_ptr<Json::Value> &jsonSource, i
         }
     }
 
+    auto voter = tx["voter"];
+    auto proposalId = tx["proposalId"];
+    auto voteOption = tx["selection"];
+
     return {
             description,
             ////////
@@ -67,6 +71,9 @@ testcaseData_t ReadRawTestCase(const std::shared_ptr<Json::Value> &jsonSource, i
             remove_prefix("string:", tx["recipient"]),
             multisig,
             remove_prefix("string:", tx["memo"]),
+            remove_prefix("string:", voter),
+            proposalId.asUInt64(),
+            remove_prefix("string:", voteOption),
             remove_prefix("string:", tx["amount"]["quantity"]),
             tx["amount"]["fractionalDigits"].asUInt64(),
             remove_prefix("string:", tx["amount"]["tokenTicker"]),

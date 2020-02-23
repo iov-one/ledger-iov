@@ -26,6 +26,11 @@ typedef struct {
     std::string recipient;
     std::vector<uint64_t> multisig;
     std::string memo;
+    //VoteMsg related
+    std::string voter;
+    uint64_t proposalId;
+    std::string voteOption;
+    //
     token_amount_t amount;
     token_amount_t fee;
 } transaction_t;
