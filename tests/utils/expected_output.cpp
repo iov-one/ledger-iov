@@ -17,6 +17,7 @@
 #include <lib/coin.h>
 #include "testcases.h"
 #include "zxmacros.h"
+#include "expected_output.h"
 
 bool TestcaseIsValid(const Json::Value &tc) {
     return true;
@@ -62,6 +63,23 @@ std::vector<std::string> GenerateExpectedUIOutput(const testcaseData_t &tcd) {
         return answer;
     }
 
+    switch (getMsgType(tcd))
+    {
+        case Msg_Invalid:
+            answer.emplace_back("Test case is not valid!");
+            return answer;
+        case Msg_Send:
+            return GenerateExpectedSendMsgOutput(tcd);
+        case Msg_Vote:
+            return GenerateExpectedVoteMsgOutput(tcd);
+    }
+
+    return answer;
+}
+
+std::vector<std::string> GenerateExpectedSendMsgOutput(const testcaseData_t &tcd) {
+    auto answer = std::vector<std::string>();
+
     uint8_t dummy;
     char buffer[1000];
 
@@ -102,4 +120,30 @@ std::vector<std::string> GenerateExpectedUIOutput(const testcaseData_t &tcd) {
     }
 
     return answer;
+}
+
+std::vector<std::string> GenerateExpectedVoteMsgOutput(const testcaseData_t &tcd) {
+    auto answer = std::vector<std::string>();
+
+    uint8_t dummy;
+    char buffer[1000];
+
+    addTo(answer, "0 | ChainID : {}", tcd.chainId);
+    fpuint64_to_str(buffer, sizeof(buffer), tcd.transaction.proposalId, 0);
+    addTo(answer, "1 | ProposalId : {}", buffer);
+    addTo(answer, "2 | Selection : {}", tcd.transaction.voteOption);
+    addTo(answer, "3 | Voter : {}", FormatAddress(tcd.transaction.voter, 0, &dummy));
+    addTo(answer, "3 | Voter : {}", FormatAddress(tcd.transaction.voter, 1, &dummy));
+
+    return answer;
+}
+
+MsgType getMsgType(const testcaseData_t &tcd) {
+    std::string type = tcd.description;
+    if(type == MSG_TYPE_SEND_STR)
+        return Msg_Send;
+    if(type == MSG_TYPE_VOTE_STR)
+        return Msg_Vote;
+
+    return Msg_Invalid;
 }
