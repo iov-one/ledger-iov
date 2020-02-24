@@ -131,9 +131,9 @@ std::vector<std::string> GenerateExpectedVoteMsgOutput(const testcaseData_t &tcd
     addTo(answer, "0 | ChainID : {}", tcd.chainId);
     fpuint64_to_str(buffer, sizeof(buffer), tcd.transaction.proposalId, 0);
     addTo(answer, "1 | ProposalId : {}", buffer);
-    addTo(answer, "2 | Selection : {}", tcd.transaction.voteOption);
-    addTo(answer, "3 | Voter : {}", FormatAddress(tcd.transaction.voter, 0, &dummy));
-    addTo(answer, "3 | Voter : {}", FormatAddress(tcd.transaction.voter, 1, &dummy));
+    addTo(answer, "2 | Voter : {}", FormatAddress(tcd.transaction.voter, 0, &dummy));
+    addTo(answer, "2 | Voter : {}", FormatAddress(tcd.transaction.voter, 1, &dummy));
+    addTo(answer, "3 | Selection : {}", tcd.transaction.voteOption);
 
     return answer;
 }
