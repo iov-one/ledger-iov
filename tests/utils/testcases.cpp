@@ -63,29 +63,42 @@ testcaseData_t ReadRawTestCase(const std::shared_ptr<Json::Value> &jsonSource, i
     auto proposalId = tx["proposalId"];
     auto voteOption = tx["selection"];
 
-    return {
-            description,
-            ////////
-            chainid,
-            remove_prefix("string:", tx["sender"]),
-            remove_prefix("string:", tx["recipient"]),
-            multisig,
-            remove_prefix("string:", tx["memo"]),
-            remove_prefix("string:", voter),
-            proposalId.asUInt64(),
-            remove_prefix("string:", voteOption),
-            remove_prefix("string:", tx["amount"]["quantity"]),
-            tx["amount"]["fractionalDigits"].asUInt64(),
-            remove_prefix("string:", tx["amount"]["tokenTicker"]),
-            remove_prefix("string:", feeTokens["quantity"]),
-            feeTokens["fractionalDigits"].asUInt64(),
-            remove_prefix("string:", feeTokens["tokenTicker"]),
-            v["nonce"].asUInt64(),
-            bytes_hexstring,
-            true,
-            testnet,
-            blob,
-    };
+    auto contractId = tx["contractId"];
+    auto participants = std::vector<participant_t>();
+    if (tx["participants"].isArray()) {
+        for (int i; i < tx["participants"].size(); i++) {
+            participant_t p;
+            p.weight = tx["participants"][i]["weight"].asUInt();
+            p.signature = remove_prefix("string", tx["participants"][i]["address"]);
+            participants.push_back(p);
+        }
+    }
+
+    answer.description = description;
+    answer.chainId = chainid;
+    answer.nonce = v["nonce"].asUInt64();
+    answer.valid = true;
+    answer.testnet = testnet;
+    answer.blob = blob;
+    answer.transaction.sender = remove_prefix("string:", tx["sender"]);
+    answer.transaction.recipient = remove_prefix("string:", tx["recipient"]);
+    answer.transaction.multisig = multisig;
+    answer.transaction.memo = remove_prefix("string:", tx["memo"]);
+    answer.transaction.voter = remove_prefix("string:", voter);
+    answer.transaction.proposalId = proposalId.asUInt64();
+    answer.transaction.voteOption = remove_prefix("string:", voteOption);
+    answer.transaction.amount.quantity = remove_prefix("string:", tx["amount"]["quantity"]);
+    answer.transaction.amount.fractionalDigits = tx["amount"]["fractionalDigits"].asUInt64();
+    answer.transaction.amount.tockenTicker = remove_prefix("string:", tx["amount"]["tokenTicker"]);
+    answer.transaction.fee.quantity = remove_prefix("string:", feeTokens["quantity"]);
+    answer.transaction.fee.fractionalDigits = feeTokens["fractionalDigits"].asUInt64();
+    answer.transaction.fee.tockenTicker = remove_prefix("string:", feeTokens["tokenTicker"]);
+    answer.transaction.contractId = contractId.asUInt64();
+    answer.transaction.participant = participants;
+    answer.transaction.activation_th = tx["activationThreshold"].asUInt();
+    answer.transaction.admin_th = tx["adminThreshold"].asUInt();
+
+    return answer;
 }
 
 testcaseData_t ReadTestCaseData(const std::shared_ptr<Json::Value> &jsonSource, int index) {

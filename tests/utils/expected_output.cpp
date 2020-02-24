@@ -138,12 +138,54 @@ std::vector<std::string> GenerateExpectedVoteMsgOutput(const testcaseData_t &tcd
     return answer;
 }
 
+std::vector<std::string> GenerateExpectedUpdateMsgOutput(const testcaseData_t &tcd) {
+    auto answer = std::vector<std::string>();
+
+    uint8_t dummy;
+    char buffer[1000];
+
+    addTo(answer, "0 | ChainID : {}", tcd.chainId);
+    addTo(answer, "1 | ContractID : {}", tcd.transaction.contractId);
+    addTo(answer, "2 | Activation Threshold : {}", tcd.transaction.activation_th);
+    addTo(answer, "3 | Admin Threshold : {}", tcd.transaction.admin_th);
+
+    for (size_t i = 0; i < tcd.transaction.participant.size(); i++) {
+        auto answer_participant = GenerateExpectedParticipantMsgOutput(tcd, 1, i);
+        for (int j = 0; j < answer_participant.size(); ++j) {
+            answer.push_back(answer_participant[i]);
+        }
+    }
+
+
+
+    return answer;
+}
+
 MsgType getMsgType(const testcaseData_t &tcd) {
     std::string type = tcd.description;
     if(type == MSG_TYPE_SEND_STR)
         return Msg_Send;
     if(type == MSG_TYPE_VOTE_STR)
         return Msg_Vote;
+    if(type == MSG_TYPE_UPDATE_STR)
+        return Msg_Update;
 
     return Msg_Invalid;
 }
+
+std::vector<std::string> GenerateExpectedParticipantMsgOutput(const testcaseData_t &tcd, uint pos, uint index) {
+    auto answer = std::vector<std::string>();
+
+    addTo(answer, "{} | Participant [{}/{}] :",
+          pos + index, index + 1, tcd.transaction.participant.size());
+
+    addTo(answer, "{} | Participant [signature] : {}",
+          pos + index, tcd.transaction.participant[index].signature);
+
+    addTo(answer, "{} | Participant [weight] : {}",
+          pos + index, tcd.transaction.participant[index].weight);
+
+    return answer;
+}
+
+

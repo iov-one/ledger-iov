@@ -120,6 +120,14 @@ INSTANTIATE_TEST_SUITE_P(
         ::testing::ValuesIn(GetJsonTestCases("testvectors/votetx_tests.json")), VerifyTestVectors::PrintToStringParamName()
 );
 
+/*
+INSTANTIATE_TEST_SUITE_P(
+        Updatetx,
+        VerifyTestVectors,
+        ::testing::ValuesIn(GetJsonTestCases("testvectors/updatemultisigtx_tests.json")), VerifyTestVectors::PrintToStringParamName()
+);
+*/
+
 TEST_P(VerifyTestVectors, CheckUIOutput_Manual) { check_testcase(GetParam()); }
 
 #pragma clang diagnostic pop
