@@ -74,6 +74,7 @@ testcaseData_t ReadRawTestCase(const std::shared_ptr<Json::Value> &jsonSource, i
         }
     }
 
+    answer.bytes = bytes_hexstring;
     answer.description = description;
     answer.chainId = chainid;
     answer.nonce = v["nonce"].asUInt64();
