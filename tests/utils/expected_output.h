@@ -31,4 +31,4 @@ MsgType getMsgType(const testcaseData_t &tcd);
 std::vector<std::string> GenerateExpectedSendMsgOutput(const testcaseData_t &tcd);
 std::vector<std::string> GenerateExpectedVoteMsgOutput(const testcaseData_t &tcd);
 std::vector<std::string> GenerateExpectedUpdateMsgOutput(const testcaseData_t &tcd);
-std::vector<std::string> GenerateExpectedParticipantMsgOutput(const testcaseData_t &tcd, uint pos, uint index);
+std::vector<std::string> GenerateExpectedParticipantMsgOutput(const testcaseData_t &tcd, uint8_t& displayIdx, uint index);

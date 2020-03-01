@@ -72,6 +72,8 @@ std::vector<std::string> GenerateExpectedUIOutput(const testcaseData_t &tcd) {
             return GenerateExpectedSendMsgOutput(tcd);
         case Msg_Vote:
             return GenerateExpectedVoteMsgOutput(tcd);
+        case Msg_Update:
+            return GenerateExpectedUpdateMsgOutput(tcd);
     }
 
     return answer;
@@ -141,22 +143,21 @@ std::vector<std::string> GenerateExpectedVoteMsgOutput(const testcaseData_t &tcd
 std::vector<std::string> GenerateExpectedUpdateMsgOutput(const testcaseData_t &tcd) {
     auto answer = std::vector<std::string>();
 
-    uint8_t dummy;
-    char buffer[1000];
+    uint8_t index;
+    index = 0;
 
-    addTo(answer, "0 | ChainID : {}", tcd.chainId);
-    addTo(answer, "1 | ContractID : {}", tcd.transaction.contractId);
-    addTo(answer, "2 | Activation Threshold : {}", tcd.transaction.activation_th);
-    addTo(answer, "3 | Admin Threshold : {}", tcd.transaction.admin_th);
+    addTo(answer, "{} | ChainID : {}", index++, tcd.chainId);
+    addTo(answer, "{} | ContractId : {}", index++, tcd.transaction.contractId);
 
     for (size_t i = 0; i < tcd.transaction.participant.size(); i++) {
-        auto answer_participant = GenerateExpectedParticipantMsgOutput(tcd, 1, i);
+        auto answer_participant = GenerateExpectedParticipantMsgOutput(tcd, index, i);
         for (int j = 0; j < answer_participant.size(); ++j) {
-            answer.push_back(answer_participant[i]);
+            answer.push_back(answer_participant[j]);
         }
     }
 
-
+    addTo(answer, "{} | ActivationTh : {}", index++, tcd.transaction.activation_th);
+    addTo(answer, "{} | AdminTh : {}", index++, tcd.transaction.admin_th);
 
     return answer;
 }
@@ -173,17 +174,18 @@ MsgType getMsgType(const testcaseData_t &tcd) {
     return Msg_Invalid;
 }
 
-std::vector<std::string> GenerateExpectedParticipantMsgOutput(const testcaseData_t &tcd, uint pos, uint index) {
+std::vector<std::string> GenerateExpectedParticipantMsgOutput(const testcaseData_t &tcd, uint8_t& displayIdx, uint index) {
     auto answer = std::vector<std::string>();
+    uint8_t dummy;
 
-    addTo(answer, "{} | Participant [{}/{}] :",
-          pos + index, index + 1, tcd.transaction.participant.size());
+    addTo(answer, "{} | Participant [{}/{}] Signature : {}", displayIdx, index + 1, tcd.transaction.participant.size(),
+          FormatAddress(tcd.transaction.participant[index].signature, 0, &dummy));
+    addTo(answer, "{} | Participant [{}/{}] Signature : {}", displayIdx, index + 1, tcd.transaction.participant.size(),
+          FormatAddress(tcd.transaction.participant[index].signature, 1, &dummy));
 
-    addTo(answer, "{} | Participant [signature] : {}",
-          pos + index, tcd.transaction.participant[index].signature);
-
-    addTo(answer, "{} | Participant [weight] : {}",
-          pos + index, tcd.transaction.participant[index].weight);
+    displayIdx++;
+    addTo(answer, "{} | Participant [{}/{}] Weight : {}",
+          displayIdx ++, index + 1, tcd.transaction.participant.size(), tcd.transaction.participant[index].weight);
 
     return answer;
 }

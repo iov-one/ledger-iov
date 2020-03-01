@@ -66,10 +66,10 @@ testcaseData_t ReadRawTestCase(const std::shared_ptr<Json::Value> &jsonSource, i
     auto contractId = tx["contractId"];
     auto participants = std::vector<participant_t>();
     if (tx["participants"].isArray()) {
-        for (int i; i < tx["participants"].size(); i++) {
+        for (const auto &elem : tx["participants"]) {
             participant_t p;
-            p.weight = tx["participants"][i]["weight"].asUInt();
-            p.signature = remove_prefix("string", tx["participants"][i]["address"]);
+            p.weight = elem["weight"].asUInt();
+            p.signature = remove_prefix("string:", elem["address"]);
             participants.push_back(p);
         }
     }
