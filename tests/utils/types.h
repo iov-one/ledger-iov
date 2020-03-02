@@ -22,10 +22,25 @@ typedef struct {
 } token_amount_t;
 
 typedef struct {
+    std::string signature;
+    uint32_t weight;
+} participant_t;
+
+typedef struct {
     std::string sender;
     std::string recipient;
     std::vector<uint64_t> multisig;
     std::string memo;
+    //VoteMsg related
+    std::string voter;
+    uint64_t proposalId;
+    std::string voteOption;
+    //UpdateMsg related
+    uint64_t contractId;
+    std::vector<participant_t> participant;
+    uint32_t activation_th;
+    uint32_t admin_th;
+    //
     token_amount_t amount;
     token_amount_t fee;
 } transaction_t;

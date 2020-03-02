@@ -1,6 +1,6 @@
 [submodule "src/ledger"]
 	path = src/ledger
-	url = https://github.com/zondax/ledger-iov-app.git
+	url = https://github.com/Zondax/ledger-iov-app.git
 [submodule "deps/nanos-secure-sdk"]
 	path = deps/nanos-secure-sdk
 	url = https://github.com/LedgerHQ/nanos-secure-sdk.git

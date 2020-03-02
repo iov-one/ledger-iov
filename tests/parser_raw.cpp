@@ -238,10 +238,11 @@ TEST(Protobuf, SendMsg) {
     uint8_t buffer[200];
     uint16_t bufferSize = parseHexString(buffer, sizeof(buffer), pbtx);
     EXPECT_EQ(bufferSize, 56);
+    parser_context_t ctx {buffer, bufferSize, 0, 0};
 
     parser_sendmsg_t sendmsg;
     parser_sendmsgInit(&sendmsg);
-    parser_error_t err = parser_readPB_SendMsg(buffer, bufferSize, &sendmsg);
+    parser_error_t err = parser_readPB_SendMsg(&ctx, &sendmsg);
     ASSERT_EQ(err, parser_ok) << parser_getErrorDescription(err);
 
     ASSERT_EQ(sendmsg.metadataLen, 2);
@@ -287,7 +288,7 @@ TEST(Tx, Init) {
     EXPECT_EQ(tx.nonce, 0);
 
     EXPECT_EQ(tx.seen.fees, false);
-    EXPECT_EQ(tx.seen.sendmsg, false);
+    EXPECT_EQ(tx.seen.tx_message, false);
 
     //////
 
