@@ -287,7 +287,7 @@ TEST(Tx, Init) {
     EXPECT_EQ(tx.nonce, 0);
 
     EXPECT_EQ(tx.seen.fees, false);
-    EXPECT_EQ(tx.seen.sendmsg, false);
+    EXPECT_EQ(tx.seen.tx_message, false);
 
     //////
 
