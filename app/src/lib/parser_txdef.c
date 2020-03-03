@@ -123,6 +123,36 @@ void parser_ParticipantmsgInit(parser_participant_t *msg) {
     msg->weight = 0;
 }
 
+void parser_createProposalmsgInit(parser_createproposalmsg_t *msg) {
+    msg->seen.metadata = 0;
+    msg->seen.title = 0;
+    msg->seen.raw_option = 0;
+    msg->seen.description = 0;
+    msg->seen.election_rule_id = 0;
+    msg->seen.start_time = 0;
+    msg->seen.author = 0;
+
+    msg->metadataPtr = NULL;
+    msg->metadataLen = 0;
+    parser_metadataInit(&msg->metadata);
+
+    msg->titlePtr = NULL;
+    msg->titleLen = 0;
+
+    msg->rawOptionPtr = NULL;
+    msg->rawOptionLen = 0;
+
+    msg->descriptionPtr = NULL;
+    msg->descriptionLen = 0;
+
+    msg->electionRuleIdPtr = NULL;
+    msg->electionRuleIdLen = 0;
+
+    msg->startTime = -1;
+
+    msg->authorPtr = NULL;
+    msg->authorLen = 0;
+}
 
 void parser_txInit(parser_tx_t *tx) {
     tx->seen.fees = 0;
@@ -153,5 +183,9 @@ void parser_txInit(parser_tx_t *tx) {
     tx->updatemsgPtr = NULL;
     tx->updatemsgLen = 0;
     parser_updatemsgInit(&tx->updatemsg);
+
+    tx->createProposalmsgPtr = NULL;
+    tx->createProposalLen = 0;
+    parser_createProposalmsgInit(&tx->createProposalmsg);
 }
 

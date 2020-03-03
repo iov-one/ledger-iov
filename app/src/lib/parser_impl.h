@@ -64,6 +64,8 @@ parser_error_t parser_readPB_UpdateMultisigMsg(parser_context_t *ctx, parser_upd
 
 parser_error_t parser_readPB_Participant(parser_context_t *ctx, parser_participant_t *participant);
 
+parser_error_t parser_readPB_CreateProposalMsg(parser_context_t *ctx, parser_createproposalmsg_t *createProposal);
+
 parser_error_t parser_readPB_Root(parser_context_t *ctx);
 
 parser_error_t parser_readRoot(parser_context_t *ctx);

@@ -29,7 +29,7 @@ parser_tx_t parser_tx_obj;
     parser_error_t __err = parser_init_context(&__tmpctx, PTR, LEN); \
     if ( __err != parser_no_data) FAIL_ON_ERROR(CALL) }
 
-#define READ_NONNEGATIVE_INT64(FIELD) err = _readNonNegativeInt64(ctx, &FIELD); if (err!=parser_ok) return err;
+#define READ_NONNEGATIVE_INT64(FIELD) FAIL_ON_ERROR(_readNonNegativeInt64(ctx, &FIELD))
 #define READ_UINT32(FIELD) FAIL_ON_ERROR(_readUInt32(ctx, &FIELD))
 #define READ_UINT8(FIELD) FAIL_ON_ERROR(_readUInt8(ctx, &FIELD))
 #define READ_ARRAY(FIELD) FAIL_ON_ERROR(_readArray(ctx, &FIELD##Ptr, &FIELD##Len))
@@ -554,6 +554,56 @@ parser_error_t parser_readPB_Participant(parser_context_t *ctx, parser_participa
     return parser_ok;
 }
 
+parser_error_t parser_readPB_CreateProposalMsg(parser_context_t *ctx, parser_createproposalmsg_t *createProposal) {
+    uint64_t v;
+    while (ctx->offset < ctx->bufferLen) {
+        FAIL_ON_ERROR( _readRawVarint(ctx, &v))
+
+        switch (FIELD_NUM(v)) {
+            case PBIDX_CREATEPROPOSALMSG_METADATA: {
+                CHECK_NOT_DUPLICATED(createProposal->seen.metadata)
+                READ_ARRAY(createProposal->metadata)
+                break;
+            }
+            case PBIDX_CREATEPROPOSALMSG_TITLE: {
+                CHECK_NOT_DUPLICATED(createProposal->seen.title)
+                READ_ARRAY(createProposal->title)
+                break;
+            }
+            case PBIDX_CREATEPROPOSALMSG_OPTION: {
+                CHECK_NOT_DUPLICATED(createProposal->seen.raw_option)
+                READ_ARRAY(createProposal->rawOption)
+                break;
+            }
+            case PBIDX_CREATEPROPOSALMSG_DESCRIPTION: {
+                CHECK_NOT_DUPLICATED(createProposal->seen.description)
+                READ_ARRAY(createProposal->description)
+                break;
+            }
+            case PBIDX_CREATEPROPOSALMSG_RULEID: {
+                CHECK_NOT_DUPLICATED(createProposal->seen.election_rule_id)
+                READ_ARRAY(createProposal->electionRuleId)
+                break;
+            }
+            case PBIDX_CREATEPROPOSALMSG_STARTTIME: {
+                CHECK_NOT_DUPLICATED(createProposal->seen.start_time)
+                READ_NONNEGATIVE_INT64(createProposal->startTime)
+                break;
+            }
+            case PBIDX_CREATEPROPOSALMSG_AUTHOR: {
+                CHECK_NOT_DUPLICATED(createProposal->seen.author)
+                READ_ARRAY(createProposal->author)
+                break;
+            }
+            default:
+                // Unknown fields are rejected to avoid malleability
+                return parser_unexpected_field;
+        }
+    }
+
+    return parser_ok;
+}
+
 parser_error_t parser_readPB_Root(parser_context_t *ctx) {
     parser_error_t err = parser_ok;
     uint64_t v;
@@ -584,10 +634,16 @@ parser_error_t parser_readPB_Root(parser_context_t *ctx) {
                 parser_tx_obj.msgType = Msg_Vote;
                 break;
             }
-            case PBIDX_TX_UPDATEMSG: {
+            case PBIDX_TX_UPDATE_MULTISIGMSG: {
                 CHECK_NOT_DUPLICATED(parser_tx_obj.seen.tx_message)
                 err = _readArray(ctx, &parser_tx_obj.updatemsgPtr, &parser_tx_obj.updatemsgLen);
                 parser_tx_obj.msgType = Msg_Update;
+                break;
+            }
+            case PBIDX_TX_CREATEPROPOSALMSG: {
+                CHECK_NOT_DUPLICATED(parser_tx_obj.seen.tx_message)
+                err = _readArray(ctx, &parser_tx_obj.createProposalmsgPtr, &parser_tx_obj.createProposalLen);
+                parser_tx_obj.msgType = Msg_CreateProposal;
                 break;
             }
             default:
@@ -680,6 +736,11 @@ parser_error_t parser_Tx(parser_context_t *ctx) {
         case Msg_Update: {
             WITH_CONTEXT(parser_tx_obj.updatemsgPtr, parser_tx_obj.updatemsgLen,
                          parser_readPB_UpdateMultisigMsg(&__tmpctx, &parser_tx_obj.updatemsg))
+            break;
+        }
+        case Msg_CreateProposal: {
+            WITH_CONTEXT(parser_tx_obj.createProposalmsgPtr, parser_tx_obj.createProposalLen,
+                         parser_readPB_CreateProposalMsg(&__tmpctx, &parser_tx_obj.createProposalmsg))
             break;
         }
         default:
