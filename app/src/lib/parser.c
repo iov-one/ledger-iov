@@ -35,9 +35,11 @@ void __assert_fail(const char * assertion, const char * file, unsigned int line,
 #define FIELD_CHAINID 0
 #endif
 
-#define FIELD_TOTAL_FIXCOUNT_SENDMSG       (6 - OFFSET)
-#define FIELD_TOTAL_FIXCOUNT_VOTEMSG       (4 - OFFSET)
-#define FIELD_TOTAL_FIXCOUNT_UPDATEMSG     (5 - OFFSET)
+#define FIELD_TOTAL_FIXCOUNT_SENDMSG             (6 - OFFSET)
+#define FIELD_TOTAL_FIXCOUNT_VOTEMSG             (4 - OFFSET)
+#define FIELD_TOTAL_FIXCOUNT_UPDATEMSG           (5 - OFFSET)
+#define FIELD_TOTAL_FIXCOUNT_CREATEPROPOSALMSG   (7 - OFFSET)
+#define FIELD_TOTAL_FIXCOUNT_UPDATEELECTORATEMSG (3 - OFFSET)
 #define FIELD_TOTAL_FIXCOUNT_PARTICIPANTMSG 2
 
 #define FIELD_INVALID      (-100)
@@ -60,6 +62,16 @@ void __assert_fail(const char * assertion, const char * file, unsigned int line,
 //Fields for MsgParticipant
 #define FIELD_PARTICIPANT_ADDRESS 0
 #define FIELD_PARTICIPANT_WEIGHT  1
+//Fields for TxCreateProposal
+#define FIELD_TITLE            (1 - OFFSET)
+#define FIELD_RAW_OPTION       (2 - OFFSET)
+#define FIELD_DESCRIPTION      (3 - OFFSET)
+#define FIELD_RULE_ELECTION_ID (4 - OFFSET)
+#define FIELD_START_TIME       (5 - OFFSET)
+#define FIELD_AUTHOR           (6 - OFFSET)
+//Fields for TxUpdateElectorate
+#define FIELD_ELECTORATE_ID    (1 - OFFSET)
+#define FIELD_ELECTOR          (2 - OFFSET)
 
 // * optional chainid for testnet mode
 // 0  source
@@ -106,6 +118,14 @@ uint8_t parser_getNumItems(const parser_context_t *ctx) {
             fields = FIELD_TOTAL_FIXCOUNT_UPDATEMSG - 1;
             fields += parser_tx_obj.updatemsg.participantsCount * FIELD_TOTAL_FIXCOUNT_PARTICIPANTMSG;
             break;
+        case Msg_CreateProposal:
+            fields = FIELD_TOTAL_FIXCOUNT_CREATEPROPOSALMSG  - 1;
+            fields += parser_tx_obj.createProposalmsg.updateelectoratemsg.electorCount * FIELD_TOTAL_FIXCOUNT_PARTICIPANTMSG;
+            break;
+        case Msg_UpdateElectorate:
+            fields = FIELD_TOTAL_FIXCOUNT_UPDATEELECTORATEMSG - 1;
+            fields += parser_tx_obj.updateelectoratemsg.electorCount * FIELD_TOTAL_FIXCOUNT_PARTICIPANTMSG;
+            break;
         default:
             return fields;
     }
@@ -146,6 +166,39 @@ int8_t parser_mapDisplayIdx(const parser_context_t *ctx, int8_t displayIdx) {
         case Msg_Vote:
             // No changes
             break;
+        case Msg_CreateProposal: {
+            const uint8_t numItems = parser_tx_obj.createProposalmsg.updateelectoratemsg.electorCount * FIELD_TOTAL_FIXCOUNT_PARTICIPANTMSG;
+
+            if (displayIdx < FIELD_RAW_OPTION) {
+                return displayIdx;
+            }
+
+            if (displayIdx < (FIELD_RAW_OPTION + numItems)) {
+                return FIELD_RAW_OPTION;
+            }
+
+            if (displayIdx < FIELD_TOTAL_FIXCOUNT_CREATEPROPOSALMSG + numItems) {
+                return displayIdx - numItems + 1;
+            }
+
+            return (uint8_t) FIELD_INVALID;
+        }
+
+        case Msg_UpdateElectorate: {
+            const uint8_t numItems = parser_tx_obj.updateelectoratemsg.electorCount * FIELD_TOTAL_FIXCOUNT_PARTICIPANTMSG;
+
+            if (displayIdx < FIELD_ELECTOR) {
+                return displayIdx;
+            }
+            if (displayIdx < (FIELD_ELECTOR + numItems)) {
+                return FIELD_ELECTOR;
+            }
+            if (displayIdx < FIELD_TOTAL_FIXCOUNT_UPDATEELECTORATEMSG + numItems) {
+                return displayIdx - numItems + 1;
+            }
+
+            return (uint8_t) FIELD_INVALID;
+        }
         default:
             return FIELD_INVALID;
     }
@@ -176,6 +229,12 @@ parser_error_t parser_getItem(const parser_context_t *ctx,
         case Msg_Update:
             return parser_getItem_Update(ctx, displayIdx, outKey, outKeyLen,
                                          outValue, outValueLen, pageIdx, pageCount);
+        case Msg_CreateProposal:
+            return parser_getItem_CreateProposal(ctx, displayIdx, outKey, outKeyLen,
+                                                 outValue, outValueLen, pageIdx, pageCount);
+        case Msg_UpdateElectorate:
+            return parser_getItem_UpdateElectorate(ctx, displayIdx, outKey, outKeyLen,
+                                                 outValue, outValueLen, pageIdx, pageCount);
         case Msg_Invalid:
             return parser_unexpected_type;
     }
@@ -425,6 +484,137 @@ __Z_INLINE parser_error_t parser_getItem_Update(const parser_context_t *ctx, int
             break;
         default:
             return parser_unexepected_error;
+    }
+
+    return parser_ok;
+}
+
+__Z_INLINE parser_error_t parser_getItem_CreateProposal(const parser_context_t *ctx, int8_t displayIdx,
+                                                        char *outKey, uint16_t outKeyLen, char *outValue,
+                                                        uint16_t outValueLen, uint8_t pageIdx, uint8_t *pageCount) {
+    switch (parser_mapDisplayIdx(ctx, displayIdx)) {
+        case FIELD_CHAINID:
+            snprintf(outKey, outKeyLen, "ChainID");
+            return parser_arrayToString(outValue, outValueLen,
+                                        parser_tx_obj.chainID,
+                                        parser_tx_obj.chainIDLen,
+                                        pageIdx, pageCount);
+        case FIELD_TITLE:
+            snprintf(outKey, outKeyLen, "Title");
+            return parser_arrayToString(outValue, outValueLen,
+                                        parser_tx_obj.createProposalmsg.titlePtr,
+                                        parser_tx_obj.createProposalmsg.titleLen,
+                                        pageIdx, pageCount);
+        case FIELD_RAW_OPTION:   //Raw-option is encoded as UpdateElectorateMsg
+            return parser_getItem_UpdateElectorate(ctx, displayIdx,
+                                                   outKey, outKeyLen,
+                                                   outValue, outValueLen,
+                                                   pageIdx, pageCount);
+        case FIELD_DESCRIPTION:
+            snprintf(outKey, outKeyLen, "Description");
+            return parser_arrayToString(outValue, outValueLen,
+                                        parser_tx_obj.createProposalmsg.descriptionPtr,
+                                        parser_tx_obj.createProposalmsg.descriptionLen,
+                                        pageIdx, pageCount);
+        case FIELD_RULE_ELECTION_ID:
+            snprintf(outKey, outKeyLen, "ElectionRuleId");
+            uint8_t bcdOut[20]; //Must be  at most outValueLen/2
+            const uint16_t bcdOutLen = sizeof(bcdOut);
+            bignumBigEndian_to_bcd(bcdOut, bcdOutLen,
+                                   parser_tx_obj.createProposalmsg.electionRuleIdPtr,
+                                   parser_tx_obj.createProposalmsg.electionRuleIdLen);
+            if (!bignumBigEndian_bcdprint(outValue, outValueLen, bcdOut, bcdOutLen)) {
+                return parser_unexpected_buffer_end;
+            }
+            break;
+        case FIELD_START_TIME:
+            snprintf(outKey, outKeyLen, "StartTime");
+            int64_to_str(outValue, outValueLen, parser_tx_obj.createProposalmsg.startTime);
+            break;
+        case FIELD_AUTHOR:
+            snprintf(outKey, outKeyLen, "Author");
+            FAIL_ON_ERROR(parser_getAddress(parser_tx_obj.chainID, parser_tx_obj.chainIDLen,
+                                            (char *) UI_buffer, UI_BUFFER,
+                                            parser_tx_obj.createProposalmsg.authorPtr,
+                                            parser_tx_obj.createProposalmsg.authorLen))
+            // page it
+            parser_arrayToString(outValue, outValueLen, UI_buffer,
+                                 strlen((char *) UI_buffer), pageIdx, pageCount);
+            break;
+        default:
+            return parser_unexepected_error;
+    }
+
+    return parser_ok;
+}
+
+__Z_INLINE parser_error_t parser_getItem_UpdateElectorate(const parser_context_t *ctx, int8_t displayIdx, char *outKey, uint16_t outKeyLen,
+                                char *outValue, uint16_t outValueLen, uint8_t pageIdx, uint8_t *pageCount) {
+    switch (parser_mapDisplayIdx(ctx, displayIdx)) {
+        case FIELD_CHAINID:     // ChainID
+            snprintf(outKey, outKeyLen, "ChainID");
+            return parser_arrayToString(outValue, outValueLen,
+                                        parser_tx_obj.chainID,
+                                        parser_tx_obj.chainIDLen,
+                                        pageIdx, pageCount);
+        case FIELD_ELECTORATE_ID:
+            snprintf(outKey, outKeyLen, "ElectorateId");
+            return parser_arrayToString(outValue, outValueLen,
+                                        parser_tx_obj.chainID,
+                                        parser_tx_obj.chainIDLen,
+                                        pageIdx, pageCount);
+        case FIELD_ELECTOR:
+            return parser_getItem_Elector(ctx, displayIdx,
+                                              outKey, outKeyLen,
+                                              outValue, outValueLen,
+                                              pageIdx, pageCount);
+        default:
+            return parser_unexepected_error;
+    }
+
+    return parser_ok;
+}
+
+__Z_INLINE parser_error_t parser_getItem_Elector(const parser_context_t *ctx, int8_t displayIdx,
+                                                 char *outKey, uint16_t outKeyLen,
+                                                 char *outValue, uint16_t outValueLen,
+                                                 uint8_t pageIdx, uint8_t *pageCount) {
+    *pageCount = 1;
+    if (parser_tx_obj.createProposalmsg.updateelectoratemsg.electorCount == 0) {
+        return parser_no_data;
+    }
+
+    //Get on which participant index we are right now
+    const uint8_t electorIdx = (displayIdx - FIELD_ELECTOR) / FIELD_TOTAL_FIXCOUNT_PARTICIPANTMSG;
+    //Get Participants field index
+    const uint8_t fieldIdx = (displayIdx - FIELD_ELECTOR) % FIELD_TOTAL_FIXCOUNT_PARTICIPANTMSG;
+
+    if (electorIdx >= parser_tx_obj.createProposalmsg.updateelectoratemsg.electorCount) {
+        return parser_unexpected_field;
+    }
+
+    //Parse Elector that corresponds to participantIdx
+    //ElectorMSg has the same fields as ParticipantMsg
+    const parser_participant_t *p = &parser_tx_obj.createProposalmsg.updateelectoratemsg.elector_array[electorIdx];
+
+    switch (fieldIdx) {
+        case FIELD_PARTICIPANT_ADDRESS: {
+            FAIL_ON_ERROR(parser_getAddress(parser_tx_obj.chainID, parser_tx_obj.chainIDLen,
+                                            (char *) UI_buffer, UI_BUFFER,
+                                            p->signaturePtr, p->signatureLen))
+            // page it
+            snprintf(outKey, outKeyLen, "Elector [%d/%d] Signature",
+                     electorIdx + 1, parser_tx_obj.createProposalmsg.updateelectoratemsg.electorCount);
+            parser_arrayToString(outValue, outValueLen, UI_buffer, strlen((char *) UI_buffer), pageIdx, pageCount);
+            break;
+        }
+        case FIELD_PARTICIPANT_WEIGHT:
+            snprintf(outKey, outKeyLen, "Elector [%d/%d] Weight",
+                     electorIdx + 1, parser_tx_obj.createProposalmsg.updateelectoratemsg.electorCount);
+            int64_to_str(outValue, outValueLen, p->weight);
+            break;
+        default:
+            return parser_unexpected_field;
     }
 
     return parser_ok;

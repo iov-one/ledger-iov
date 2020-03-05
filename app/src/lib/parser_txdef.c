@@ -142,16 +142,34 @@ void parser_createProposalmsgInit(parser_createproposalmsg_t *msg) {
     msg->rawOptionPtr = NULL;
     msg->rawOptionLen = 0;
 
+    msg->updateelectoratemsgPtr = NULL;
+    msg->updateelectoratemsgLen = 0;
+    parser_updateElectoratemsgInit(&msg->updateelectoratemsg);
+
     msg->descriptionPtr = NULL;
     msg->descriptionLen = 0;
 
     msg->electionRuleIdPtr = NULL;
     msg->electionRuleIdLen = 0;
 
-    msg->startTime = -1;
+    msg->startTime = 0;
 
     msg->authorPtr = NULL;
     msg->authorLen = 0;
+}
+
+void parser_updateElectoratemsgInit(parser_updateelectorate_t *msg) {
+    msg->seen.metadata = 0;
+    msg->seen.electorate_id = 0;
+
+    msg->metadataPtr = NULL;
+    msg->metadataLen = 0;
+    parser_metadataInit(&msg->metadata);
+
+    msg->electorateIdPtr = NULL;
+    msg->electorateIdLen = 0;
+
+    msg->electorCount = 0;
 }
 
 void parser_txInit(parser_tx_t *tx) {
@@ -187,5 +205,9 @@ void parser_txInit(parser_tx_t *tx) {
     tx->createProposalmsgPtr = NULL;
     tx->createProposalLen = 0;
     parser_createProposalmsgInit(&tx->createProposalmsg);
+
+    tx->updateelectoratemsgPtr = NULL;
+    tx->updateelectoratemsgLen = 0;
+    parser_updateElectoratemsgInit(&tx->updateelectoratemsg);
 }
 

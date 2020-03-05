@@ -225,6 +225,30 @@ typedef struct {
     uint32_t admin_th;
 } parser_updatemultisigmsg_t;
 
+#define PBIDX_UPDATEELECTORATEMSG_METADATA      1
+#define PBIDX_UPDATEELECTORATEMSG_ELECTORATE_ID 2
+#define PBIDX_UPDATEELECTORATEMSG_ELECTOR       3
+
+#define PBIDX_UPDATEELECTORATEMSG_ELECTOR_MAX  16
+
+typedef struct {
+    struct {
+        unsigned int metadata : 1;
+        unsigned int electorate_id :1;
+    } seen;
+
+    const uint8_t *metadataPtr;
+    uint16_t metadataLen;
+    parser_metadata_t metadata;
+
+    const uint8_t *electorateIdPtr;
+    uint16_t electorateIdLen;
+
+    //Elector is a repeated field
+    uint8_t electorCount; //Total Electors fields in Tx
+    parser_participant_t elector_array[PBIDX_UPDATEELECTORATEMSG_ELECTOR_MAX];
+} parser_updateelectorate_t;
+
 #define PBIDX_CREATEPROPOSALMSG_METADATA    1
 #define PBIDX_CREATEPROPOSALMSG_TITLE       2
 #define PBIDX_CREATEPROPOSALMSG_OPTION      3
@@ -255,6 +279,11 @@ typedef struct {
     const uint8_t *rawOptionPtr;
     uint16_t rawOptionLen;
 
+    //UpdateElectorateMsg is encoded in raw_option field
+    const uint8_t *updateelectoratemsgPtr;
+    uint16_t updateelectoratemsgLen;
+    parser_updateelectorate_t updateelectoratemsg;
+
     const uint8_t *descriptionPtr;
     uint16_t descriptionLen;
 
@@ -268,12 +297,15 @@ typedef struct {
 } parser_createproposalmsg_t;
 
 
-#define PBIDX_TX_FEES               1
-#define PBIDX_TX_MULTISIG           4
-#define PBIDX_TX_SENDMSG            51
-#define PBIDX_TX_UPDATE_MULTISIGMSG 57
-#define PBIDX_TX_CREATEPROPOSALMSG  73
-#define PBIDX_TX_VOTEMSG            75
+
+
+#define PBIDX_TX_FEES                  1
+#define PBIDX_TX_MULTISIG              4
+#define PBIDX_TX_SENDMSG              51
+#define PBIDX_TX_UPDATE_MULTISIGMSG   57
+#define PBIDX_TX_CREATEPROPOSALMSG    73
+#define PBIDX_TX_VOTEMSG              75
+#define PBIDX_TX_UPDATEELECTORATEMSG  77
 
 typedef enum {
     Msg_Invalid = 0,
@@ -327,6 +359,11 @@ typedef struct {
             uint16_t votemsgLen;
             parser_votemsg_t votemsg;       // PB Field 75
         };
+        struct {
+            const uint8_t *updateelectoratemsgPtr;
+            uint16_t updateelectoratemsgLen;
+            parser_updateelectorate_t updateelectoratemsg;       // PB Field 77
+        };
         //
     };
 } parser_tx_t;
@@ -339,6 +376,7 @@ void parser_votemsgInit(parser_votemsg_t *msg);
 void parser_updatemsgInit(parser_updatemultisigmsg_t *msg);
 void parser_ParticipantmsgInit(parser_participant_t *msg);
 void parser_createProposalmsgInit(parser_createproposalmsg_t *msg);
+void parser_updateElectoratemsgInit(parser_updateelectorate_t *msg);
 void parser_txInit(parser_tx_t *tx);
 
 #ifdef __cplusplus
