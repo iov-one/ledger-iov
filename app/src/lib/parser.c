@@ -119,8 +119,8 @@ uint8_t parser_getNumItems(const parser_context_t *ctx) {
             fields += parser_tx_obj.updatemsg.participantsCount * FIELD_TOTAL_FIXCOUNT_PARTICIPANTMSG;
             break;
         case Msg_CreateProposal:
-            fields = FIELD_TOTAL_FIXCOUNT_CREATEPROPOSALMSG  - 1;
-            fields += parser_tx_obj.createProposalmsg.updateelectoratemsg.electorCount * FIELD_TOTAL_FIXCOUNT_PARTICIPANTMSG;
+            fields = FIELD_TOTAL_FIXCOUNT_CREATEPROPOSALMSG - 1;
+            fields += (parser_tx_obj.createProposalmsg.updateelectoratemsg.electorCount * FIELD_TOTAL_FIXCOUNT_PARTICIPANTMSG) + 1;
             break;
         case Msg_UpdateElectorate:
             fields = FIELD_TOTAL_FIXCOUNT_UPDATEELECTORATEMSG - 1;
@@ -167,7 +167,7 @@ int8_t parser_mapDisplayIdx(const parser_context_t *ctx, int8_t displayIdx) {
             // No changes
             break;
         case Msg_CreateProposal: {
-            const uint8_t numItems = parser_tx_obj.createProposalmsg.updateelectoratemsg.electorCount * FIELD_TOTAL_FIXCOUNT_PARTICIPANTMSG;
+            const uint8_t numItems = 1 + (parser_tx_obj.createProposalmsg.updateelectoratemsg.electorCount * FIELD_TOTAL_FIXCOUNT_PARTICIPANTMSG);
 
             if (displayIdx < FIELD_RAW_OPTION) {
                 return displayIdx;
@@ -550,7 +550,10 @@ __Z_INLINE parser_error_t parser_getItem_CreateProposal(const parser_context_t *
 
 __Z_INLINE parser_error_t parser_getItem_UpdateElectorate(const parser_context_t *ctx, int8_t displayIdx, char *outKey, uint16_t outKeyLen,
                                 char *outValue, uint16_t outValueLen, uint8_t pageIdx, uint8_t *pageCount) {
-    switch (parser_mapDisplayIdx(ctx, displayIdx)) {
+
+    const uint8_t fieldIdx = ((displayIdx - FIELD_RAW_OPTION) % FIELD_TOTAL_FIXCOUNT_UPDATEELECTORATEMSG) + 1;
+
+    switch (fieldIdx) {
         case FIELD_CHAINID:     // ChainID
             snprintf(outKey, outKeyLen, "ChainID");
             return parser_arrayToString(outValue, outValueLen,
@@ -560,8 +563,8 @@ __Z_INLINE parser_error_t parser_getItem_UpdateElectorate(const parser_context_t
         case FIELD_ELECTORATE_ID:
             snprintf(outKey, outKeyLen, "ElectorateId");
             return parser_arrayToString(outValue, outValueLen,
-                                        parser_tx_obj.chainID,
-                                        parser_tx_obj.chainIDLen,
+                                        parser_tx_obj.updateelectoratemsg.electorateIdPtr,
+                                        parser_tx_obj.updateelectoratemsg.electorateIdLen,
                                         pageIdx, pageCount);
         case FIELD_ELECTOR:
             return parser_getItem_Elector(ctx, displayIdx,
