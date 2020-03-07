@@ -552,15 +552,17 @@ __Z_INLINE parser_error_t parser_getItem_UpdateElectorate(const parser_context_t
                                 char *outValue, uint16_t outValueLen, uint8_t pageIdx, uint8_t *pageCount) {
 
     parser_error_t err = parser_unexpected_field;
-    const uint8_t _tmpMsgType = parser_tx_obj.msgType;
-    parser_tx_obj.msgType = Msg_UpdateElectorate;
-
-    uint8_t fieldIdx = parser_mapDisplayIdx(ctx, displayIdx - FIELD_RAW_OPTION);
-    if(_tmpMsgType == Msg_CreateProposal) { //We dont want CHAINID field be printed on this msg type
+    uint8_t fieldIdx;
+    if(parser_tx_obj.msgType == Msg_CreateProposal) {
+        parser_tx_obj.msgType = Msg_UpdateElectorate;
+        fieldIdx = parser_mapDisplayIdx(ctx, displayIdx - FIELD_RAW_OPTION);
+        parser_tx_obj.msgType = Msg_CreateProposal;
+        //We dont want CHAINID field be printed on this msg type
         fieldIdx ++;
-        if(fieldIdx > FIELD_ELECTOR) {
+        if(fieldIdx > FIELD_ELECTOR)
             fieldIdx = FIELD_ELECTOR;
-        }
+    } else {
+        fieldIdx = parser_mapDisplayIdx(ctx, displayIdx);
     }
 
     switch (fieldIdx) {
@@ -594,7 +596,6 @@ __Z_INLINE parser_error_t parser_getItem_UpdateElectorate(const parser_context_t
                 err = parser_unexepected_error;
         }
 
-    parser_tx_obj.msgType = _tmpMsgType;
     return err;
 }
 
