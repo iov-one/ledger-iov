@@ -48,6 +48,7 @@ typedef struct {
     uint64_t  startTime;
     //UpdateElectorate related
     uint64_t electorateId;
+    std::vector<participant_t> electors;
     //
     token_amount_t amount;
     token_amount_t fee;

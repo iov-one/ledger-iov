@@ -121,7 +121,7 @@ testcaseData_t ReadRawTestCase(const std::shared_ptr<Json::Value> &jsonSource, i
     answer.transaction.electionRuleId = electionRuleId;
     answer.transaction.startTime = proposalStartTime;
     answer.transaction.electorateId = electorateId;
-    answer.transaction.participant = electors;
+    answer.transaction.electors = electors;
 
     return answer;
 }

@@ -184,14 +184,14 @@ std::vector<std::string> GenerateExpectedElectorMsgOutput(const testcaseData_t &
     auto answer = std::vector<std::string>();
     uint8_t dummy;
 
-    addTo(answer, "{} | Elector [{}/{}] Signature : {}", displayIdx, index + 1, tcd.transaction.participant.size(),
-          FormatAddress(tcd.transaction.participant[index].signature, 0, &dummy));
-    addTo(answer, "{} | Elector [{}/{}] Signature : {}", displayIdx, index + 1, tcd.transaction.participant.size(),
-          FormatAddress(tcd.transaction.participant[index].signature, 1, &dummy));
+    addTo(answer, "{} | Elector [{}/{}] Signature : {}", displayIdx, index + 1, tcd.transaction.electors.size(),
+          FormatAddress(tcd.transaction.electors[index].signature, 0, &dummy));
+    addTo(answer, "{} | Elector [{}/{}] Signature : {}", displayIdx, index + 1, tcd.transaction.electors.size(),
+          FormatAddress(tcd.transaction.electors[index].signature, 1, &dummy));
 
     displayIdx++;
     addTo(answer, "{} | Elector [{}/{}] Weight : {}",
-          displayIdx ++, index + 1, tcd.transaction.participant.size(), tcd.transaction.participant[index].weight);
+          displayIdx ++, index + 1, tcd.transaction.electors.size(), tcd.transaction.electors[index].weight);
 
     return answer;
 }
@@ -213,7 +213,7 @@ GenerateExpectedCreatePorposalMsgOutput(const testcaseData_t &tcd) {
     addTo(answer, "{} | StartTime : {}", index++, tcd.transaction.startTime);
     addTo(answer, "{} | ElectorateId : {}", index++, tcd.transaction.electorateId);
 
-    for (size_t i = 0; i < tcd.transaction.participant.size(); i++) {
+    for (size_t i = 0; i < tcd.transaction.electors.size(); i++) {
         auto answer_participant = GenerateExpectedElectorMsgOutput(tcd, index, i);
         for (int j = 0; j < answer_participant.size(); ++j) {
             answer.push_back(answer_participant[j]);
