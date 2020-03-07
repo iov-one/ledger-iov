@@ -74,6 +74,23 @@ testcaseData_t ReadRawTestCase(const std::shared_ptr<Json::Value> &jsonSource, i
         }
     }
 
+    auto proposalTitle = remove_prefix("string:", tx["title"]);
+    auto proposalDescription= remove_prefix("string:", tx["description"]);
+    auto author = remove_prefix("string:", tx["author"]);
+    auto electionRuleId = tx["electionRuleId"].asUInt64();
+    auto proposalStartTime = tx["startTime"].asUInt64();
+    auto electorateId = tx["action"]["electorateId"].asUInt64();
+    auto action = tx["action"];
+    auto electors = std::vector<participant_t>();
+    for (auto it = action["diffElectors"].begin(); it != action["diffElectors"].end(); ++it)
+    {
+        participant_t p;
+        p.signature = it.key().asString();
+        p.weight = (*it)["weight"].asUInt();
+        electors.push_back(p);
+    }
+
+
     answer.bytes = bytes_hexstring;
     answer.description = description;
     answer.chainId = chainid;
@@ -98,6 +115,13 @@ testcaseData_t ReadRawTestCase(const std::shared_ptr<Json::Value> &jsonSource, i
     answer.transaction.participant = participants;
     answer.transaction.activation_th = tx["activationThreshold"].asUInt();
     answer.transaction.admin_th = tx["adminThreshold"].asUInt();
+    answer.transaction.proposalTitle = proposalTitle;
+    answer.transaction.proposalDescription =proposalDescription;
+    answer.transaction.proposalAuthor = author;
+    answer.transaction.electionRuleId = electionRuleId;
+    answer.transaction.startTime = proposalStartTime;
+    answer.transaction.electorateId = electorateId;
+    answer.transaction.participant = electors;
 
     return answer;
 }

@@ -74,6 +74,8 @@ std::vector<std::string> GenerateExpectedUIOutput(const testcaseData_t &tcd) {
             return GenerateExpectedVoteMsgOutput(tcd);
         case Msg_Update:
             return GenerateExpectedUpdateMsgOutput(tcd);
+        case Msg_CreateProposal:
+            return GenerateExpectedCreatePorposalMsgOutput(tcd);
     }
 
     return answer;
@@ -162,18 +164,6 @@ std::vector<std::string> GenerateExpectedUpdateMsgOutput(const testcaseData_t &t
     return answer;
 }
 
-MsgType getMsgType(const testcaseData_t &tcd) {
-    std::string type = tcd.description;
-    if(type == MSG_TYPE_SEND_STR)
-        return Msg_Send;
-    if(type == MSG_TYPE_VOTE_STR)
-        return Msg_Vote;
-    if(type == MSG_TYPE_UPDATE_STR)
-        return Msg_Update;
-
-    return Msg_Invalid;
-}
-
 std::vector<std::string> GenerateExpectedParticipantMsgOutput(const testcaseData_t &tcd, uint8_t& displayIdx, uint index) {
     auto answer = std::vector<std::string>();
     uint8_t dummy;
@@ -190,4 +180,59 @@ std::vector<std::string> GenerateExpectedParticipantMsgOutput(const testcaseData
     return answer;
 }
 
+std::vector<std::string> GenerateExpectedElectorMsgOutput(const testcaseData_t &tcd, uint8_t &displayIdx, uint index) {
+    auto answer = std::vector<std::string>();
+    uint8_t dummy;
 
+    addTo(answer, "{} | Elector [{}/{}] Signature : {}", displayIdx, index + 1, tcd.transaction.participant.size(),
+          FormatAddress(tcd.transaction.participant[index].signature, 0, &dummy));
+    addTo(answer, "{} | Elector [{}/{}] Signature : {}", displayIdx, index + 1, tcd.transaction.participant.size(),
+          FormatAddress(tcd.transaction.participant[index].signature, 1, &dummy));
+
+    displayIdx++;
+    addTo(answer, "{} | Elector [{}/{}] Weight : {}",
+          displayIdx ++, index + 1, tcd.transaction.participant.size(), tcd.transaction.participant[index].weight);
+
+    return answer;
+}
+
+
+std::vector<std::string>
+GenerateExpectedCreatePorposalMsgOutput(const testcaseData_t &tcd) {
+    auto answer = std::vector<std::string>();
+
+    uint8_t index, dummy;
+    index = 0;
+
+    addTo(answer, "{} | ChainID : {}", index++, tcd.chainId);
+    addTo(answer, "{} | Title : {}", index++, tcd.transaction.proposalTitle);
+    addTo(answer, "{} | Description : {}", index++, tcd.transaction.proposalDescription);
+    addTo(answer, "{} | Author : {}", index, FormatAddress(tcd.transaction.proposalAuthor, 0, &dummy));
+    addTo(answer, "{} | Author : {}", index++, FormatAddress(tcd.transaction.proposalAuthor, 1, &dummy));
+    addTo(answer, "{} | ElectionRuleId : {}", index++, tcd.transaction.electionRuleId);
+    addTo(answer, "{} | StartTime : {}", index++, tcd.transaction.startTime);
+    addTo(answer, "{} | ElectorateId : {}", index++, tcd.transaction.electorateId);
+
+    for (size_t i = 0; i < tcd.transaction.participant.size(); i++) {
+        auto answer_participant = GenerateExpectedElectorMsgOutput(tcd, index, i);
+        for (int j = 0; j < answer_participant.size(); ++j) {
+            answer.push_back(answer_participant[j]);
+        }
+    }
+
+    return answer;
+}
+
+MsgType getMsgType(const testcaseData_t &tcd) {
+    std::string type = tcd.description;
+    if(type == MSG_TYPE_SEND_STR)
+        return Msg_Send;
+    if(type == MSG_TYPE_VOTE_STR)
+        return Msg_Vote;
+    if(type == MSG_TYPE_UPDATE_STR)
+        return Msg_Update;
+    if(type == MSG_TYPE_CREATE_PROPOSAL_STR)
+        return Msg_CreateProposal;
+
+    return Msg_Invalid;
+}
