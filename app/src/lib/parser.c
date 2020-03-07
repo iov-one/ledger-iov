@@ -64,11 +64,11 @@ void __assert_fail(const char * assertion, const char * file, unsigned int line,
 #define FIELD_PARTICIPANT_WEIGHT  1
 //Fields for TxCreateProposal
 #define FIELD_TITLE            (1 - OFFSET)
-#define FIELD_RAW_OPTION       (2 - OFFSET)
-#define FIELD_DESCRIPTION      (3 - OFFSET)
+#define FIELD_DESCRIPTION      (2 - OFFSET)
+#define FIELD_AUTHOR           (3 - OFFSET)
 #define FIELD_RULE_ELECTION_ID (4 - OFFSET)
 #define FIELD_START_TIME       (5 - OFFSET)
-#define FIELD_AUTHOR           (6 - OFFSET)
+#define FIELD_RAW_OPTION       (6 - OFFSET)
 //Fields for TxUpdateElectorate
 #define FIELD_ELECTORATE_ID    (1 - OFFSET)
 #define FIELD_ELECTOR          (2 - OFFSET)
@@ -119,8 +119,8 @@ uint8_t parser_getNumItems(const parser_context_t *ctx) {
             fields += parser_tx_obj.updatemsg.participantsCount * FIELD_TOTAL_FIXCOUNT_PARTICIPANTMSG;
             break;
         case Msg_CreateProposal:
-            fields = FIELD_TOTAL_FIXCOUNT_CREATEPROPOSALMSG - 1;
-            fields += (parser_tx_obj.createProposalmsg.updateelectoratemsg.electorCount * FIELD_TOTAL_FIXCOUNT_PARTICIPANTMSG) + 1;
+            fields = FIELD_TOTAL_FIXCOUNT_CREATEPROPOSALMSG - 1 + FIELD_TOTAL_FIXCOUNT_UPDATEELECTORATEMSG - 2;//We subtract the metadata field also
+            fields += parser_tx_obj.createProposalmsg.updateelectoratemsg.electorCount * FIELD_TOTAL_FIXCOUNT_PARTICIPANTMSG;
             break;
         case Msg_UpdateElectorate:
             fields = FIELD_TOTAL_FIXCOUNT_UPDATEELECTORATEMSG - 1;
@@ -185,7 +185,7 @@ int8_t parser_mapDisplayIdx(const parser_context_t *ctx, int8_t displayIdx) {
         }
 
         case Msg_UpdateElectorate: {
-            const uint8_t numItems = parser_tx_obj.updateelectoratemsg.electorCount * FIELD_TOTAL_FIXCOUNT_PARTICIPANTMSG;
+            const uint8_t numItems = parser_tx_obj.createProposalmsg.updateelectoratemsg.electorCount * FIELD_TOTAL_FIXCOUNT_PARTICIPANTMSG;
 
             if (displayIdx < FIELD_ELECTOR) {
                 return displayIdx;
@@ -505,17 +505,22 @@ __Z_INLINE parser_error_t parser_getItem_CreateProposal(const parser_context_t *
                                         parser_tx_obj.createProposalmsg.titlePtr,
                                         parser_tx_obj.createProposalmsg.titleLen,
                                         pageIdx, pageCount);
-        case FIELD_RAW_OPTION:   //Raw-option is encoded as UpdateElectorateMsg
-            return parser_getItem_UpdateElectorate(ctx, displayIdx,
-                                                   outKey, outKeyLen,
-                                                   outValue, outValueLen,
-                                                   pageIdx, pageCount);
         case FIELD_DESCRIPTION:
             snprintf(outKey, outKeyLen, "Description");
             return parser_arrayToString(outValue, outValueLen,
                                         parser_tx_obj.createProposalmsg.descriptionPtr,
                                         parser_tx_obj.createProposalmsg.descriptionLen,
                                         pageIdx, pageCount);
+        case FIELD_AUTHOR:
+            snprintf(outKey, outKeyLen, "Author");
+            FAIL_ON_ERROR(parser_getAddress(parser_tx_obj.chainID, parser_tx_obj.chainIDLen,
+                                            (char *) UI_buffer, UI_BUFFER,
+                                            parser_tx_obj.createProposalmsg.authorPtr,
+                                            parser_tx_obj.createProposalmsg.authorLen))
+            // page it
+            parser_arrayToString(outValue, outValueLen, UI_buffer,
+                                 strlen((char *) UI_buffer), pageIdx, pageCount);
+            break;
         case FIELD_RULE_ELECTION_ID:
             snprintf(outKey, outKeyLen, "ElectionRuleId");
             uint8_t bcdOut[20]; //Must be  at most outValueLen/2
@@ -531,16 +536,11 @@ __Z_INLINE parser_error_t parser_getItem_CreateProposal(const parser_context_t *
             snprintf(outKey, outKeyLen, "StartTime");
             int64_to_str(outValue, outValueLen, parser_tx_obj.createProposalmsg.startTime);
             break;
-        case FIELD_AUTHOR:
-            snprintf(outKey, outKeyLen, "Author");
-            FAIL_ON_ERROR(parser_getAddress(parser_tx_obj.chainID, parser_tx_obj.chainIDLen,
-                                            (char *) UI_buffer, UI_BUFFER,
-                                            parser_tx_obj.createProposalmsg.authorPtr,
-                                            parser_tx_obj.createProposalmsg.authorLen))
-            // page it
-            parser_arrayToString(outValue, outValueLen, UI_buffer,
-                                 strlen((char *) UI_buffer), pageIdx, pageCount);
-            break;
+        case FIELD_RAW_OPTION:   //Raw-option is encoded as UpdateElectorateMsg
+            return parser_getItem_UpdateElectorate(ctx, displayIdx,
+                                                   outKey, outKeyLen,
+                                                   outValue, outValueLen,
+                                                   pageIdx, pageCount);
         default:
             return parser_unexepected_error;
     }
@@ -551,31 +551,51 @@ __Z_INLINE parser_error_t parser_getItem_CreateProposal(const parser_context_t *
 __Z_INLINE parser_error_t parser_getItem_UpdateElectorate(const parser_context_t *ctx, int8_t displayIdx, char *outKey, uint16_t outKeyLen,
                                 char *outValue, uint16_t outValueLen, uint8_t pageIdx, uint8_t *pageCount) {
 
-    const uint8_t fieldIdx = ((displayIdx - FIELD_RAW_OPTION) % FIELD_TOTAL_FIXCOUNT_UPDATEELECTORATEMSG) + 1;
+    parser_error_t err = parser_unexpected_field;
+    const uint8_t _tmpMsgType = parser_tx_obj.msgType;
+    parser_tx_obj.msgType = Msg_UpdateElectorate;
 
-    switch (fieldIdx) {
-        case FIELD_CHAINID:     // ChainID
-            snprintf(outKey, outKeyLen, "ChainID");
-            return parser_arrayToString(outValue, outValueLen,
-                                        parser_tx_obj.chainID,
-                                        parser_tx_obj.chainIDLen,
-                                        pageIdx, pageCount);
-        case FIELD_ELECTORATE_ID:
-            snprintf(outKey, outKeyLen, "ElectorateId");
-            return parser_arrayToString(outValue, outValueLen,
-                                        parser_tx_obj.updateelectoratemsg.electorateIdPtr,
-                                        parser_tx_obj.updateelectoratemsg.electorateIdLen,
-                                        pageIdx, pageCount);
-        case FIELD_ELECTOR:
-            return parser_getItem_Elector(ctx, displayIdx,
-                                              outKey, outKeyLen,
-                                              outValue, outValueLen,
-                                              pageIdx, pageCount);
-        default:
-            return parser_unexepected_error;
+    uint8_t fieldIdx = parser_mapDisplayIdx(ctx, displayIdx - FIELD_RAW_OPTION);
+    if(_tmpMsgType == Msg_CreateProposal) { //We dont want CHAINID field be printed on this msg type
+        fieldIdx ++;
+        if(fieldIdx > FIELD_ELECTOR) {
+            fieldIdx = FIELD_ELECTOR;
+        }
     }
 
-    return parser_ok;
+    switch (fieldIdx) {
+            case FIELD_CHAINID:     // ChainID
+                snprintf(outKey, outKeyLen, "ChainID");
+                err = parser_arrayToString(outValue, outValueLen,
+                        parser_tx_obj.chainID,
+                        parser_tx_obj.chainIDLen,
+                        pageIdx, pageCount);
+                break;
+            case FIELD_ELECTORATE_ID:
+                snprintf(outKey, outKeyLen, "ElectorateId");
+                uint8_t bcdOut[20]; //Must be  at most outValueLen/2
+                const uint16_t bcdOutLen = sizeof(bcdOut);
+                bignumBigEndian_to_bcd(bcdOut, bcdOutLen,
+                                       parser_tx_obj.createProposalmsg.updateelectoratemsg.electorateIdPtr,
+                                       parser_tx_obj.createProposalmsg.updateelectoratemsg.electorateIdLen);
+                if (!bignumBigEndian_bcdprint(outValue, outValueLen, bcdOut, bcdOutLen)) {
+                    err = parser_unexpected_buffer_end;
+                } else {
+                    err = parser_ok;
+                }
+                break;
+            case FIELD_ELECTOR:
+                err = parser_getItem_Elector(ctx, displayIdx - FIELD_RAW_OPTION,
+                            outKey, outKeyLen,
+                            outValue, outValueLen,
+                            pageIdx, pageCount);
+                break;
+            default:
+                err = parser_unexepected_error;
+        }
+
+    parser_tx_obj.msgType = _tmpMsgType;
+    return err;
 }
 
 __Z_INLINE parser_error_t parser_getItem_Elector(const parser_context_t *ctx, int8_t displayIdx,
@@ -588,9 +608,9 @@ __Z_INLINE parser_error_t parser_getItem_Elector(const parser_context_t *ctx, in
     }
 
     //Get on which participant index we are right now
-    const uint8_t electorIdx = (displayIdx - FIELD_ELECTOR) / FIELD_TOTAL_FIXCOUNT_PARTICIPANTMSG;
+    const uint8_t electorIdx = (displayIdx - FIELD_ELECTORATE_ID) / FIELD_TOTAL_FIXCOUNT_PARTICIPANTMSG;
     //Get Participants field index
-    const uint8_t fieldIdx = (displayIdx - FIELD_ELECTOR) % FIELD_TOTAL_FIXCOUNT_PARTICIPANTMSG;
+    const uint8_t fieldIdx = (displayIdx - FIELD_ELECTORATE_ID) % FIELD_TOTAL_FIXCOUNT_PARTICIPANTMSG;
 
     if (electorIdx >= parser_tx_obj.createProposalmsg.updateelectoratemsg.electorCount) {
         return parser_unexpected_field;
