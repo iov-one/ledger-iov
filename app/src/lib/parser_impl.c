@@ -703,7 +703,8 @@ parser_error_t parser_readPB_Root(parser_context_t *ctx) {
             }
             case PBIDX_TX_UPDATEELECTORATEMSG: {
                 CHECK_NOT_DUPLICATED(parser_tx_obj.seen.tx_message)
-                err = _readArray(ctx, &parser_tx_obj.updateelectoratemsgPtr, &parser_tx_obj.updateelectoratemsgLen);
+                err = _readArray(ctx, &parser_tx_obj.createProposalmsg.updateelectoratemsgPtr,
+                                      &parser_tx_obj.createProposalmsg.updateelectoratemsgLen);
                 parser_tx_obj.msgType = Msg_UpdateElectorate;
                 break;
             }
@@ -805,8 +806,9 @@ parser_error_t parser_Tx(parser_context_t *ctx) {
             break;
         }
         case Msg_UpdateElectorate: {
-            WITH_CONTEXT(parser_tx_obj.updateelectoratemsgPtr, parser_tx_obj.updateelectoratemsgLen,
-                         parser_readPB_UpdateElectorateMsg(&__tmpctx, &parser_tx_obj.updateelectoratemsg))
+            WITH_CONTEXT(parser_tx_obj.createProposalmsg.updateelectoratemsgPtr,
+                         parser_tx_obj.createProposalmsg.updateelectoratemsgLen,
+                         parser_readPB_UpdateElectorateMsg(&__tmpctx, &parser_tx_obj.createProposalmsg.updateelectoratemsg))
             break;
         }
         default:

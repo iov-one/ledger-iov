@@ -124,7 +124,7 @@ uint8_t parser_getNumItems(const parser_context_t *ctx) {
             break;
         case Msg_UpdateElectorate:
             fields = FIELD_TOTAL_FIXCOUNT_UPDATEELECTORATEMSG - 1;
-            fields += parser_tx_obj.updateelectoratemsg.electorCount * FIELD_TOTAL_FIXCOUNT_PARTICIPANTMSG;
+            fields += parser_tx_obj.createProposalmsg.updateelectoratemsg.electorCount * FIELD_TOTAL_FIXCOUNT_PARTICIPANTMSG;
             break;
         default:
             return fields;

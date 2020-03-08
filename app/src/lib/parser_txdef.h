@@ -359,11 +359,6 @@ typedef struct {
             uint16_t votemsgLen;
             parser_votemsg_t votemsg;       // PB Field 75
         };
-        struct {
-            const uint8_t *updateelectoratemsgPtr;
-            uint16_t updateelectoratemsgLen;
-            parser_updateelectorate_t updateelectoratemsg;       // PB Field 77
-        };
         //
     };
 } parser_tx_t;

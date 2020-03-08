@@ -205,9 +205,5 @@ void parser_txInit(parser_tx_t *tx) {
     tx->createProposalmsgPtr = NULL;
     tx->createProposalLen = 0;
     parser_createProposalmsgInit(&tx->createProposalmsg);
-
-    tx->updateelectoratemsgPtr = NULL;
-    tx->updateelectoratemsgLen = 0;
-    parser_updateElectoratemsgInit(&tx->updateelectoratemsg);
 }
 
