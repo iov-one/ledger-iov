@@ -524,7 +524,7 @@ __Z_INLINE parser_error_t parser_getItem_CreateProposal(const parser_context_t *
                                  strlen((char *) UI_buffer), pageIdx, pageCount);
             break;
         case FIELD_RULE_ELECTION_ID:
-            if(*pageCount > 1) return parser_unexpected_buffer_end;
+            if(pageIdx != 0) return parser_display_idx_out_of_range;
             snprintf(outKey, outKeyLen, "ElectionRuleId");
             uint8_t bcdOut[20]; //Must be  at most outValueLen/2
             const uint16_t bcdOutLen = sizeof(bcdOut);
