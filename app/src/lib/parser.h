@@ -67,6 +67,24 @@ __Z_INLINE parser_error_t parser_getItem_Participant(const parser_context_t *ctx
                                           char *outValue, uint16_t outValueLen,
                                           uint8_t pageIdx, uint8_t *pageCount);
 
+__Z_INLINE parser_error_t parser_getItem_Elector(const parser_context_t *ctx,
+                                                 int8_t displayIdx,
+                                                 char *outKey, uint16_t outKeyLen,
+                                                 char *outValue, uint16_t outValueLen,
+                                                 uint8_t pageIdx, uint8_t *pageCount);
+
+__Z_INLINE parser_error_t parser_getItem_CreateProposal(const parser_context_t *ctx,
+                                                        int8_t displayIdx,
+                                                        char *outKey, uint16_t outKeyLen,
+                                                        char *outValue, uint16_t outValueLen,
+                                                        uint8_t pageIdx, uint8_t *pageCount);
+
+__Z_INLINE parser_error_t parser_getItem_UpdateElectorate(const parser_context_t *ctx,
+                                                          int8_t displayIdx,
+                                                          char *outKey, uint16_t outKeyLen,
+                                                          char *outValue, uint16_t outValueLen,
+                                                          uint8_t pageIdx, uint8_t *pageCount);
+
 #ifdef __cplusplus
 }
 #endif

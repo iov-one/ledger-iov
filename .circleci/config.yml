@@ -13,7 +13,7 @@ jobs:
 
   build_ledger:
     docker:
-      - image: zondax/ledger-docker-bolos:latest
+      - image: zondax/ledger-docker-bolos:v1.0
     environment:
       - BOLOS_SDK=/home/zondax/project/deps/nanos-secure-sdk
       - BOLOS_ENV=/opt/bolos

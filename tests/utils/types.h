@@ -40,6 +40,15 @@ typedef struct {
     std::vector<participant_t> participant;
     uint32_t activation_th;
     uint32_t admin_th;
+    //CreateProposal related
+    std::string proposalTitle;
+    std::string proposalDescription;
+    std::string proposalAuthor;
+    uint64_t  electionRuleId;
+    uint64_t  startTime;
+    //UpdateElectorate related
+    uint64_t electorateId;
+    std::vector<participant_t> electors;
     //
     token_amount_t amount;
     token_amount_t fee;

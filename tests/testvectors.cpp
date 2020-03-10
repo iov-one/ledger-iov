@@ -126,6 +126,11 @@ INSTANTIATE_TEST_SUITE_P(
         ::testing::ValuesIn(GetJsonTestCases("testvectors/updatemultisigtx_tests.json")), VerifyTestVectors::PrintToStringParamName()
 );
 
+INSTANTIATE_TEST_SUITE_P(
+        CreateProposaltx,
+        VerifyTestVectors,
+        ::testing::ValuesIn(GetJsonTestCases("testvectors/updateelectoratetx_tests.json")), VerifyTestVectors::PrintToStringParamName()
+);
 
 TEST_P(VerifyTestVectors, CheckUIOutput_Manual) { check_testcase(GetParam()); }
 
