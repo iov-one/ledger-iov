@@ -23,6 +23,7 @@
 #define MSG_TYPE_SEND_STR "bcp/send"
 #define MSG_TYPE_VOTE_STR "bns/vote"
 #define MSG_TYPE_UPDATE_STR "bns/update_multisignature_contract"
+#define MSG_TYPE_CREATE_PROPOSAL_STR "bns/create_proposal"
 
 std::vector<std::string> GenerateExpectedUIOutput(const testcaseData_t &tcd);
 
@@ -32,3 +33,5 @@ std::vector<std::string> GenerateExpectedSendMsgOutput(const testcaseData_t &tcd
 std::vector<std::string> GenerateExpectedVoteMsgOutput(const testcaseData_t &tcd);
 std::vector<std::string> GenerateExpectedUpdateMsgOutput(const testcaseData_t &tcd);
 std::vector<std::string> GenerateExpectedParticipantMsgOutput(const testcaseData_t &tcd, uint8_t& displayIdx, uint index);
+std::vector<std::string> GenerateExpectedCreatePorposalMsgOutput(const testcaseData_t &tcd);
+std::vector<std::string> GenerateExpectedElectorMsgOutput(const testcaseData_t &tcd, uint8_t& displayIdx, uint index);

@@ -29,7 +29,7 @@ parser_tx_t parser_tx_obj;
     parser_error_t __err = parser_init_context(&__tmpctx, PTR, LEN); \
     if ( __err != parser_no_data) FAIL_ON_ERROR(CALL) }
 
-#define READ_NONNEGATIVE_INT64(FIELD) err = _readNonNegativeInt64(ctx, &FIELD); if (err!=parser_ok) return err;
+#define READ_NONNEGATIVE_INT64(FIELD) FAIL_ON_ERROR(_readNonNegativeInt64(ctx, &FIELD))
 #define READ_UINT32(FIELD) FAIL_ON_ERROR(_readUInt32(ctx, &FIELD))
 #define READ_UINT8(FIELD) FAIL_ON_ERROR(_readUInt8(ctx, &FIELD))
 #define READ_ARRAY(FIELD) FAIL_ON_ERROR(_readArray(ctx, &FIELD##Ptr, &FIELD##Len))
@@ -554,6 +554,111 @@ parser_error_t parser_readPB_Participant(parser_context_t *ctx, parser_participa
     return parser_ok;
 }
 
+parser_error_t parser_readPB_CreateProposalMsg(parser_context_t *ctx, parser_createproposalmsg_t *createProposal) {
+    uint64_t v;
+    while (ctx->offset < ctx->bufferLen) {
+        FAIL_ON_ERROR( _readRawVarint(ctx, &v))
+
+        switch (FIELD_NUM(v)) {
+            case PBIDX_CREATEPROPOSALMSG_METADATA: {
+                CHECK_NOT_DUPLICATED(createProposal->seen.metadata)
+                READ_ARRAY(createProposal->metadata)
+                break;
+            }
+            case PBIDX_CREATEPROPOSALMSG_TITLE: {
+                CHECK_NOT_DUPLICATED(createProposal->seen.title)
+                READ_ARRAY(createProposal->title)
+                break;
+            }
+            case PBIDX_CREATEPROPOSALMSG_OPTION: {
+                CHECK_NOT_DUPLICATED(createProposal->seen.raw_option)
+                READ_ARRAY(createProposal->rawOption)
+                break;
+            }
+            case PBIDX_CREATEPROPOSALMSG_DESCRIPTION: {
+                CHECK_NOT_DUPLICATED(createProposal->seen.description)
+                READ_ARRAY(createProposal->description)
+                break;
+            }
+            case PBIDX_CREATEPROPOSALMSG_RULEID: {
+                CHECK_NOT_DUPLICATED(createProposal->seen.election_rule_id)
+                READ_ARRAY(createProposal->electionRuleId)
+                break;
+            }
+            case PBIDX_CREATEPROPOSALMSG_STARTTIME: {
+                CHECK_NOT_DUPLICATED(createProposal->seen.start_time)
+                READ_NONNEGATIVE_INT64(createProposal->startTime)
+                break;
+            }
+            case PBIDX_CREATEPROPOSALMSG_AUTHOR: {
+                CHECK_NOT_DUPLICATED(createProposal->seen.author)
+                READ_ARRAY(createProposal->author)
+                break;
+            }
+            default:
+                // Unknown fields are rejected to avoid malleability
+                return parser_unexpected_field;
+        }
+    }
+
+    WITH_CONTEXT(createProposal->metadataPtr, createProposal->metadataLen,
+                 parser_readPB_Metadata(&__tmpctx, &createProposal->metadata))
+
+    WITH_CONTEXT(createProposal->rawOptionPtr, createProposal->rawOptionLen,
+                 _readArray(&__tmpctx, &createProposal->updateelectoratemsgPtr,
+                                             &createProposal->updateelectoratemsgLen))
+
+    WITH_CONTEXT(createProposal->updateelectoratemsgPtr, createProposal->updateelectoratemsgLen,
+                 parser_readPB_UpdateElectorateMsg(&__tmpctx, &createProposal->updateelectoratemsg))
+
+    return parser_ok;
+}
+
+parser_error_t parser_readPB_UpdateElectorateMsg(parser_context_t *ctx, parser_updateelectorate_t *updateElectorate) {
+    uint64_t v;
+    while (ctx->offset < ctx->bufferLen) {
+        FAIL_ON_ERROR(_readRawVarint(ctx, &v))
+
+        switch (FIELD_NUM(v)) {
+            case PBIDX_UPDATEELECTORATEMSG_METADATA: {
+                CHECK_NOT_DUPLICATED(updateElectorate->seen.metadata)
+                READ_ARRAY(updateElectorate->metadata)
+                break;
+            }
+            case PBIDX_UPDATEELECTORATEMSG_ELECTORATE_ID: {
+                CHECK_NOT_DUPLICATED(updateElectorate->seen.electorate_id)
+                READ_ARRAY(updateElectorate->electorateId)
+                break;
+            }
+            case PBIDX_UPDATEELECTORATEMSG_ELECTOR: {
+                if (updateElectorate->electorCount >= PBIDX_UPDATEELECTORATEMSG_ELECTOR_MAX){
+                    return parser_unexpected_number_items;
+                }
+
+                parser_context_t local_ctx;
+                FAIL_ON_ERROR(_readArray(ctx, &local_ctx.buffer, &local_ctx.bufferLen))
+                local_ctx.offset = 0;
+                local_ctx.lastConsumed = 0;
+
+                parser_participant_t* p = &updateElectorate->elector_array[updateElectorate->electorCount];
+                parser_ParticipantmsgInit(p);
+                FAIL_ON_ERROR(parser_readPB_Participant(&local_ctx, p))
+
+                updateElectorate->electorCount++;
+                break;
+            }
+            default:
+                // Unknown fields are rejected to avoid malleability
+                return parser_unexpected_field;
+        }
+    }
+
+    WITH_CONTEXT(updateElectorate->metadataPtr, updateElectorate->metadataLen,
+                 parser_readPB_Metadata(&__tmpctx, &updateElectorate->metadata))
+
+    return parser_ok;
+}
+
 parser_error_t parser_readPB_Root(parser_context_t *ctx) {
     parser_error_t err = parser_ok;
     uint64_t v;
@@ -584,10 +689,23 @@ parser_error_t parser_readPB_Root(parser_context_t *ctx) {
                 parser_tx_obj.msgType = Msg_Vote;
                 break;
             }
-            case PBIDX_TX_UPDATEMSG: {
+            case PBIDX_TX_UPDATE_MULTISIGMSG: {
                 CHECK_NOT_DUPLICATED(parser_tx_obj.seen.tx_message)
                 err = _readArray(ctx, &parser_tx_obj.updatemsgPtr, &parser_tx_obj.updatemsgLen);
                 parser_tx_obj.msgType = Msg_Update;
+                break;
+            }
+            case PBIDX_TX_CREATEPROPOSALMSG: {
+                CHECK_NOT_DUPLICATED(parser_tx_obj.seen.tx_message)
+                err = _readArray(ctx, &parser_tx_obj.createProposalmsgPtr, &parser_tx_obj.createProposalLen);
+                parser_tx_obj.msgType = Msg_CreateProposal;
+                break;
+            }
+            case PBIDX_TX_UPDATEELECTORATEMSG: {
+                CHECK_NOT_DUPLICATED(parser_tx_obj.seen.tx_message)
+                err = _readArray(ctx, &parser_tx_obj.createProposalmsg.updateelectoratemsgPtr,
+                                      &parser_tx_obj.createProposalmsg.updateelectoratemsgLen);
+                parser_tx_obj.msgType = Msg_UpdateElectorate;
                 break;
             }
             default:
@@ -680,6 +798,17 @@ parser_error_t parser_Tx(parser_context_t *ctx) {
         case Msg_Update: {
             WITH_CONTEXT(parser_tx_obj.updatemsgPtr, parser_tx_obj.updatemsgLen,
                          parser_readPB_UpdateMultisigMsg(&__tmpctx, &parser_tx_obj.updatemsg))
+            break;
+        }
+        case Msg_CreateProposal: {
+            WITH_CONTEXT(parser_tx_obj.createProposalmsgPtr, parser_tx_obj.createProposalLen,
+                         parser_readPB_CreateProposalMsg(&__tmpctx, &parser_tx_obj.createProposalmsg))
+            break;
+        }
+        case Msg_UpdateElectorate: {
+            WITH_CONTEXT(parser_tx_obj.createProposalmsg.updateelectoratemsgPtr,
+                         parser_tx_obj.createProposalmsg.updateelectoratemsgLen,
+                         parser_readPB_UpdateElectorateMsg(&__tmpctx, &parser_tx_obj.createProposalmsg.updateelectoratemsg))
             break;
         }
         default:
