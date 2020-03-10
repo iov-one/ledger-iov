@@ -404,7 +404,7 @@ __Z_INLINE parser_error_t parser_getItem_Vote(const parser_context_t *ctx, int8_
             break;
         }
         case FIELD_PROPOSAL_ID: { //Proposal Id
-            if(*pageCount > 1) return parser_unexpected_buffer_end;
+            if(pageIdx != 0) return parser_display_idx_out_of_range;
             snprintf(outKey, outKeyLen, "ProposalId");
             uint8_t bcdOut[20]; //Must be  at most outValueLen/2
             uint16_t bcdOutLen = sizeof(bcdOut);
