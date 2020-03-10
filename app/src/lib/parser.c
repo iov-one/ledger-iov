@@ -459,7 +459,7 @@ __Z_INLINE parser_error_t parser_getItem_Update(const parser_context_t *ctx, int
                                         parser_tx_obj.chainIDLen,
                                         pageIdx, pageCount);
         case FIELD_CONTRACT_ID: { //Contract Id
-            if(*pageCount > 1) return parser_unexpected_buffer_end;
+            if(pageIdx != 0) return parser_display_idx_out_of_range;
             snprintf(outKey, outKeyLen, "ContractId");
             uint8_t bcdOut[20]; //Must be  at most outValueLen/2
             const uint16_t bcdOutLen = sizeof(bcdOut);
