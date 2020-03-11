@@ -15,16 +15,16 @@
 #*  limitations under the License.
 #********************************************************************************
 
-SCRIPT_DIR=$(cd $(dirname $0) && pwd)
-
 os_string="$(uname -s)"
 case "${os_string}" in
 	Linux*)
 		pip install --user -U setuptools
 		pip install --user -U --no-cache ledgerblue ecpy
+		pip install --user -U conan
 		;;
 	Darwin*)
 		brew install libusb
+		pip install -U conan
 		pip install -U ledgerblue ecpy
 		;;
 	*)

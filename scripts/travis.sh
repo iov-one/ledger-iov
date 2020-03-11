@@ -67,7 +67,7 @@ if [[ "$MODE" == "unit" ]]; then
   # Build
   #
   fold_start "build"
-  cmake -DDISABLE_DOCKER_BUILDS=ON .
+  cmake -DDISABLE_DOCKER_BUILDS=ON -DCMAKE_BUILD_TYPE=Release .
   make
   fold_end
 
@@ -85,7 +85,7 @@ elif [[ "$MODE" == "ledger" ]]; then
   fold_start "build"
   make
   echo "Debug compile output..."
-  sha256sum src/ledger/bin/*
+  sha256sum app/bin/*
   fold_end
 
   #
