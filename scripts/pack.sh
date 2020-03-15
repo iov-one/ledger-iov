@@ -15,7 +15,8 @@ fi
 APP_FILENAME="iov-$NET.hex"
 APP_VERSION=$(echo "$VERSION" | cut -d "+" -f 1)
 APP_SHA256SUM=$(sha256sum app/bin/app.hex | cut -d " " -f 1)
-APP_DATA_SIZE=$(grep -F _nvram_data_size app/debug/app.map | tr -s ' ' | cut -f2 -d' ')
+APP_DATA_SIZE=$((0x$(< app/debug/app.map grep _envram_data | tr -s ' ' | cut -f2 -d' '|cut -f2 -d'x') - 
+                 0x$(< app/debug/app.map grep _nvram_data | tr -s ' ' | cut -f2 -d' '|cut -f2 -d'x')))
 
 rm -rf "out/iov-$NET-ledger"
 mkdir -p "out/iov-$NET-ledger"
