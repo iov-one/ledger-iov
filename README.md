@@ -5,7 +5,6 @@
 
 This repository contains the Ledger Nano S app for IOV (BOLOS app and unit tests).
 
-Source code for apps is linked as submodules to allow for Ledger's build infrastructure.
 For development purposes, this repo is recommended as it includes unit tests, tools, etc.
 
 ## Installing the release
