@@ -25,9 +25,9 @@ extern "C" {
 #define HDPATH_0_DEFAULT     (0x80000000u | 0x2cu)
 #define HDPATH_1_DEFAULT     (0x80000000u | 0xeau)
 
-#define APP_MAINNET_HRP          "iov"
-#define APP_MAINNET_CHAINID      "iov-mainnet"
-#define APP_MAINNET_CHAINID_LEN   11
+#define APP_MAINNET_HRP                "iov"
+#define APP_MAINNET_CHAINID_PREFIX     "iov-mainnet"
+#define APP_MAINNET_CHAINID_PREFIX_LEN  11
 
 #define APP_TESTNET_HRP          "tiov"
 
@@ -38,6 +38,16 @@ extern "C" {
 
 #define IOV_WHOLE_DIGITS   15
 #define IOV_FRAC_DIGITS    9
+
+#define MENU_MAIN_APP_LINE1 "IOV"
+
+#ifdef MAINNET_ENABLED
+#define MENU_MAIN_APP_LINE2 "Mainnet"
+#else
+#define MENU_MAIN_APP_LINE2 "Testnet"
+#endif
+
+#define VIEW_ADDRESS_BUFFER_OFFSET    (PK_LEN)
 
 #ifdef __cplusplus
 }

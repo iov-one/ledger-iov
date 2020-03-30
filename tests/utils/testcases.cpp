@@ -45,9 +45,11 @@ testcaseData_t ReadRawTestCase(const std::shared_ptr<Json::Value> &jsonSource, i
     parseHexString(blob.data(), blob.size(), bytes_hexstring.c_str());
 
     auto chainid = remove_prefix("string:", tx["chainId"]);
-    bool testnet = false;
-    if (chainid != "iov-mainnet") {
-        testnet = true;
+    bool testnet = true;
+
+    //Check if chainid starts with prefix "iov-mainnet"
+    if (chainid.rfind("iov-mainnet", 0) == 0) {
+        testnet = false;
     }
 
     auto feeTokens = tx["fee"]["tokens"];

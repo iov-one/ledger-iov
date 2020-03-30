@@ -18,7 +18,7 @@
 #include <vector>
 #include <json/json.h>
 #include "types.h"
-#include <lib/parser_txdef.h>
+#include <parser_txdef.h>
 
 #define MSG_TYPE_SEND_STR "bcp/send"
 #define MSG_TYPE_VOTE_STR "bns/vote"

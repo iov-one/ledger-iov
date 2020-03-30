@@ -1,5 +1,5 @@
 /*******************************************************************************
-*   (c) 2018 ZondaX GmbH
+*   (c) 2018 Zondax GmbH
 *
 *  Licensed under the Apache License, Version 2.0 (the "License");
 *  you may not use this file except in compliance with the License.
@@ -16,13 +16,7 @@
 
 #include "gmock/gmock.h"
 
-#include <cstdio>
-#include <iostream>
-#include <memory>
-#include <stdexcept>
 #include <string>
-#include <array>
-#include <cctype>
 
 #include "hexutils.h"
 

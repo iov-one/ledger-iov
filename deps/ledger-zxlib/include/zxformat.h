@@ -1,5 +1,5 @@
 /*******************************************************************************
-*   (c) 2018 ZondaX GmbH
+*   (c) 2018 Zondax GmbH
 *
 *  Licensed under the Apache License, Version 2.0 (the "License");
 *  you may not use this file except in compliance with the License.
@@ -45,17 +45,36 @@ NUM_TO_STR(int64)
 
 NUM_TO_STR(uint64)
 
+__Z_INLINE void bip32_to_str(char *s, uint32_t max, const uint32_t *path, uint8_t pathLen) {
+    if (pathLen == 0) {
+        snprintf(s, max, "EMPTY PATH");
+        return;
+    }
+
+    if (pathLen > 5) {
+        snprintf(s, max, "ERROR");
+        return;
+    }
+
+    uint32_t offset = 0;
+    for (int i = 0; i < pathLen; i++) {
+        uint32_t written = snprintf(s + offset, max - offset, "%d%s%s",
+                                    path[i] & 0x7FFFFFFFu,
+                                    (path[i] & 0x80000000u) != 0 ? "'" : "",
+                                    i == pathLen - 1 ? "" : "/");
+        if (written >= max - offset) {
+            snprintf(s, max, "ERROR");
+            return;
+        }
+        offset += written;
+    }
+}
+
 __Z_INLINE void bip44_to_str(char *s, uint32_t max, const uint32_t path[5]) {
-    snprintf(s, max, "%d%s%d%s%d%s%d%s%d%s",
-             path[0] & 0x7FFFFFFFu, (path[0] & 0x80000000u) != 0 ? "'/" : "/",
-             path[1] & 0x7FFFFFFFu, (path[1] & 0x80000000u) != 0 ? "'/" : "/",
-             path[2] & 0x7FFFFFFFu, (path[2] & 0x80000000u) != 0 ? "'/" : "/",
-             path[3] & 0x7FFFFFFFu, (path[3] & 0x80000000u) != 0 ? "'/" : "/",
-             path[4] & 0x7FFFFFFFu, (path[4] & 0x80000000u) != 0 ? "'" : "");
+    bip32_to_str(s, max, path, 5);
 }
 
 __Z_INLINE int8_t str_to_int8(const char *start, const char *end, char *error) {
-
     int sign = 1;
     if (*start == '-') {
         sign = -1;
@@ -88,7 +107,6 @@ __Z_INLINE int8_t str_to_int8(const char *start, const char *end, char *error) {
 }
 
 __Z_INLINE int64_t str_to_int64(const char *start, const char *end, char *error) {
-
     int sign = 1;
     if (*start == '-') {
         sign = -1;
@@ -169,7 +187,7 @@ __Z_INLINE uint64_t uint64_from_BEarray(const uint8_t data[8]) {
     return result;
 }
 
-__Z_INLINE uint16_t array_to_hexstr(char *dst, uint16_t dstLen, const uint8_t *src, uint8_t count) {
+__Z_INLINE uint32_t array_to_hexstr(char *dst, uint16_t dstLen, const uint8_t *src, uint8_t count) {
 
     if (dstLen < (count * 2 + 1)) {
         return 0;
@@ -189,6 +207,7 @@ __Z_INLINE void pageStringExt(char *outValue, uint16_t outValueLen,
                               const char *inValue, uint16_t inValueLen,
                               uint8_t pageIdx, uint8_t *pageCount) {
     MEMZERO(outValue, outValueLen);
+    *pageCount = 0;
 
     outValueLen--;  // leave space for NULL termination
     if (outValueLen == 0) {
@@ -196,7 +215,6 @@ __Z_INLINE void pageStringExt(char *outValue, uint16_t outValueLen,
     }
 
     if (inValueLen == 0) {
-        *pageCount = 0;
         return;
     }
 

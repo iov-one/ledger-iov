@@ -1,5 +1,5 @@
 /*******************************************************************************
-*   (c) 2018, 2019 ZondaX GmbH
+*   (c) 2018, 2019 Zondax GmbH
 *   (c) 2016 Ledger
 *
 *  Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,6 +16,7 @@
 ********************************************************************************/
 
 #include "view.h"
+#include "coin.h"
 #include "view_internal.h"
 #include "crypto.h"
 
@@ -124,13 +125,10 @@ view_error_t h_addr_update_item(uint8_t idx) {
     MEMZERO(viewdata.addr, MAX_CHARS_ADDR);
     switch (idx) {
         case 0:
-            snprintf(viewdata.addr, MAX_CHARS_ADDR, "%s", (char *) (G_io_apdu_buffer + PK_LEN));
+            snprintf(viewdata.addr, MAX_CHARS_ADDR, "%s", (char *) (G_io_apdu_buffer + VIEW_ADDRESS_BUFFER_OFFSET));
             break;
         case 1:
-            snprintf(viewdata.addr, MAX_CHARS_ADDR, "%d%s%d%s%d%s",
-                     hdPath[0] & 0x7FFFFFFFu, (hdPath[0] & 0x80000000u) != 0 ? "'/" : "/",
-                     hdPath[1] & 0x7FFFFFFFu, (hdPath[1] & 0x80000000u) != 0 ? "'/" : "/",
-                     hdPath[2] & 0x7FFFFFFFu, (hdPath[2] & 0x80000000u) != 0 ? "'" : "");
+            bip32_to_str(viewdata.addr, MAX_CHARS_ADDR, hdPath, HDPATH_LEN_DEFAULT);
             break;
     }
     return view_no_error;

@@ -20,8 +20,8 @@
 
 #include <iostream>
 #include "hexutils.h"
-#include <lib/parser.h>
-#include <lib/parser_txdef.h>
+#include <parser.h>
+#include <parser_txdef.h>
 
 using ::testing::TestWithParam;
 using ::testing::Values;
@@ -228,6 +228,29 @@ TEST(Protobuf, Header) {
 
     ASSERT_EQ(parser_tx_obj.sendmsgLen, 56);
     ASSERT_EQ((ptrdiff_t) (parser_tx_obj.sendmsgPtr - buffer), 27);
+}
+
+TEST(Message, ChainID) {
+
+    bool_t res;
+    std::string chainIdPrefix = APP_MAINNET_CHAINID_PREFIX;
+
+    std::string chainid_t1 = chainIdPrefix;
+    std::string chainid_t2 = chainIdPrefix + "-3";
+    std::string chainid_t3 = "some-net123" + chainIdPrefix;
+    std::string chainid_t4 = "some-net123";
+    std::string chainid_t5 = chainIdPrefix.substr(0, chainIdPrefix.size()-1);
+
+    res = parser_IsMainnet(reinterpret_cast<const uint8_t *>(chainid_t1.c_str()), chainid_t1.length());
+    ASSERT_EQ(res, bool_true);
+    res = parser_IsMainnet(reinterpret_cast<const uint8_t *>(chainid_t2.c_str()), chainid_t2.length());
+    ASSERT_EQ(res, bool_true);
+    res = parser_IsMainnet(reinterpret_cast<const uint8_t *>(chainid_t3.c_str()), chainid_t3.length());
+    ASSERT_EQ(res, bool_false);
+    res = parser_IsMainnet(reinterpret_cast<const uint8_t *>(chainid_t4.c_str()), chainid_t4.length());
+    ASSERT_EQ(res, bool_false);
+    res = parser_IsMainnet(reinterpret_cast<const uint8_t *>(chainid_t5.c_str()), chainid_t5.length());
+    ASSERT_EQ(res, bool_false);
 }
 
 TEST(Protobuf, SendMsg) {

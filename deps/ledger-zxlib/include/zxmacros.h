@@ -1,5 +1,5 @@
 /*******************************************************************************
-*   (c) 2018 ZondaX GmbH
+*   (c) 2018 Zondax GmbH
 *
 *  Licensed under the Apache License, Version 2.0 (the "License");
 *  you may not use this file except in compliance with the License.
@@ -38,11 +38,12 @@ extern void explicit_bzero(void *__s, size_t __n) __THROW __nonnull ((1));
 #if defined(TARGET_NANOX)
 #define NV_CONST const
 #define NV_VOL volatile
-#define SAFE_HEARTBEAT(X)  io_seproxyhal_io_heartbeat(); X; io_seproxyhal_io_heartbeat();
+#define SAFE_HEARTBEAT(X)  X;
 #else
 #define NV_CONST
 #define NV_VOL
-#define SAFE_HEARTBEAT(X)  X;
+// Disabling heartbeat (this was a Nano S workaround for U2F)
+#define SAFE_HEARTBEAT(X)  X; /*io_seproxyhal_io_heartbeat(); X; io_seproxyhal_io_heartbeat();*/
 #endif
 
 #ifndef PIC
@@ -134,6 +135,12 @@ __Z_INLINE void __memzero(void *buffer, size_t s) { memset(buffer, 0, s); }
 #endif
 
 #define sizeof_field(type, member) sizeof(((type *)0)->member)
+#define array_length(array) (sizeof(array) / sizeof(array[0]))
+
+__Z_INLINE void strncpy_s(char *dst, const char *src, size_t dstSize) {
+    MEMZERO(dst, dstSize);
+    strncpy(dst, src, dstSize - 1);
+}
 
 #ifdef __cplusplus
 }

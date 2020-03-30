@@ -819,12 +819,12 @@ parser_error_t parser_Tx(parser_context_t *ctx) {
 }
 
 bool_t parser_IsMainnet(const uint8_t *chainID, uint16_t chainIDLen) {
-    if (chainIDLen != APP_MAINNET_CHAINID_LEN)
+    if (chainIDLen < APP_MAINNET_CHAINID_PREFIX_LEN)
         return bool_false;
 
-    const char *expectedChainID = APP_MAINNET_CHAINID;
-    for (uint16_t i = 0; i < chainIDLen; i++) {
-        if (chainID[i] != expectedChainID[i]) {
+    const char *expectedChainIDPrefix = APP_MAINNET_CHAINID_PREFIX;
+    for (uint16_t i = 0; i < APP_MAINNET_CHAINID_PREFIX_LEN; i++) {
+        if (chainID[i] != expectedChainIDPrefix[i]) {
             return bool_false;
         }
     }
