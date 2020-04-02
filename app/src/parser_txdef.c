@@ -117,8 +117,8 @@ void parser_ParticipantmsgInit(parser_participant_t *msg) {
     msg->seen.weight = 0;
     msg->seen.signature = 0;
 
-    msg->signatureLen = 0;
-    msg->signaturePtr = NULL;
+    msg->addressLen = 0;
+    msg->addressPtr = NULL;
 
     msg->weight = 0;
 }

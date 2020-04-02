@@ -71,7 +71,7 @@ testcaseData_t ReadRawTestCase(const std::shared_ptr<Json::Value> &jsonSource, i
         for (const auto &elem : tx["participants"]) {
             participant_t p;
             p.weight = elem["weight"].asUInt();
-            p.signature = remove_prefix("string:", elem["address"]);
+            p.address = remove_prefix("string:", elem["address"]);
             participants.push_back(p);
         }
     }
@@ -87,7 +87,7 @@ testcaseData_t ReadRawTestCase(const std::shared_ptr<Json::Value> &jsonSource, i
     for (auto it = action["diffElectors"].begin(); it != action["diffElectors"].end(); ++it)
     {
         participant_t p;
-        p.signature = it.key().asString();
+        p.address = it.key().asString();
         p.weight = (*it)["weight"].asUInt();
         electors.push_back(p);
     }

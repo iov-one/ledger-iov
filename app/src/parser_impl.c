@@ -535,9 +535,9 @@ parser_error_t parser_readPB_Participant(parser_context_t *ctx, parser_participa
         FAIL_ON_ERROR( _readRawVarint(ctx, &v))
 
         switch (FIELD_NUM(v)) {
-            case PBIDX_PARTICIPANTMSG_SIGNATURE: {
+            case PBIDX_PARTICIPANTMSG_ADDRESS: {
                 CHECK_NOT_DUPLICATED(participant->seen.signature)
-                READ_ARRAY(participant->signature)
+                READ_ARRAY(participant->address)
                 break;
             }
             case PBIDX_PARTICIPANTMSG_WEIGHT: {
@@ -840,14 +840,17 @@ const char *parser_getHRP(const uint8_t *chainID, uint16_t chainIDLen) {
 }
 
 parser_error_t parser_getAddress(const uint8_t *chainID, uint16_t chainIDLen,
-                                 char *addr, uint16_t addrLen,
+                                 char *outAddr, uint16_t outLen,
                                  const uint8_t *ptr, uint16_t len) {
-    if (addrLen < IOV_ADDR_MAXLEN) {
+    if (outLen < IOV_ADDR_MAXLEN) {
         return parser_unexpected_buffer_end;
     }
 
     const char *hrp = parser_getHRP(chainID, chainIDLen);
-    bech32EncodeFromBytes(addr, hrp, ptr, len);
+    zxerr_t err = bech32EncodeFromBytes(outAddr, outLen, hrp, ptr, len);
+    if (err != zxerr_ok) {
+        return parser_invalid_address;
+    }
 
     return parser_ok;
 }

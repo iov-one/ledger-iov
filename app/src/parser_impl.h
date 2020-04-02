@@ -79,7 +79,7 @@ bool_t parser_IsMainnet(const uint8_t *chainID, uint16_t chainIDLen);
 const char *parser_getHRP(const uint8_t *chainID, uint16_t chainIDLen);
 
 parser_error_t parser_getAddress(const uint8_t *chainID, uint16_t chainIDLen,
-                                 char *addr, uint16_t addrLen,
+                                 char *outAddr, uint16_t outLen,
                                  const uint8_t *ptr, uint16_t len);
 
 parser_error_t parser_arrayToString(char *out, uint16_t outLen,

@@ -168,10 +168,10 @@ std::vector<std::string> GenerateExpectedParticipantMsgOutput(const testcaseData
     auto answer = std::vector<std::string>();
     uint8_t dummy;
 
-    addTo(answer, "{} | Participant [{}/{}] Signature : {}", displayIdx, index + 1, tcd.transaction.participant.size(),
-          FormatAddress(tcd.transaction.participant[index].signature, 0, &dummy));
-    addTo(answer, "{} | Participant [{}/{}] Signature : {}", displayIdx, index + 1, tcd.transaction.participant.size(),
-          FormatAddress(tcd.transaction.participant[index].signature, 1, &dummy));
+    addTo(answer, "{} | Participant [{}/{}] Address : {}", displayIdx, index + 1, tcd.transaction.participant.size(),
+          FormatAddress(tcd.transaction.participant[index].address, 0, &dummy));
+    addTo(answer, "{} | Participant [{}/{}] Address : {}", displayIdx, index + 1, tcd.transaction.participant.size(),
+          FormatAddress(tcd.transaction.participant[index].address, 1, &dummy));
 
     displayIdx++;
     addTo(answer, "{} | Participant [{}/{}] Weight : {}",
@@ -184,10 +184,10 @@ std::vector<std::string> GenerateExpectedElectorMsgOutput(const testcaseData_t &
     auto answer = std::vector<std::string>();
     uint8_t dummy;
 
-    addTo(answer, "{} | Elector [{}/{}] Signature : {}", displayIdx, index + 1, tcd.transaction.electors.size(),
-          FormatAddress(tcd.transaction.electors[index].signature, 0, &dummy));
-    addTo(answer, "{} | Elector [{}/{}] Signature : {}", displayIdx, index + 1, tcd.transaction.electors.size(),
-          FormatAddress(tcd.transaction.electors[index].signature, 1, &dummy));
+    addTo(answer, "{} | Elector [{}/{}] Address : {}", displayIdx, index + 1, tcd.transaction.electors.size(),
+          FormatAddress(tcd.transaction.electors[index].address, 0, &dummy));
+    addTo(answer, "{} | Elector [{}/{}] Address : {}", displayIdx, index + 1, tcd.transaction.electors.size(),
+          FormatAddress(tcd.transaction.electors[index].address, 1, &dummy));
 
     displayIdx++;
     addTo(answer, "{} | Elector [{}/{}] Weight : {}",

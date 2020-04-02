@@ -22,7 +22,7 @@ typedef struct {
 } token_amount_t;
 
 typedef struct {
-    std::string signature;
+    std::string address;
     uint32_t weight;
 } participant_t;
 

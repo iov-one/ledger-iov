@@ -172,6 +172,12 @@ uint16_t crypto_fillAddress(uint8_t *buffer, uint16_t buffer_len) {
     uint8_t hash[CX_SHA256_SIZE];
     cx_hash_sha256((uint8_t *) tmp, IOV_PK_PREFIX_LEN + ED25519_PK_LEN, hash, CX_SHA256_SIZE);
 
-    bech32EncodeFromBytes(answer->addrStr, hrp, hash, 20);
+    if (bech32EncodeFromBytes(answer->addrStr,
+                              sizeof_field(answer_t, addrStr),
+                              hrp,
+                              hash, 20) != zxerr_ok) {
+        return 0;
+    };
+
     return ED25519_PK_LEN + strlen(answer->addrStr);
 }

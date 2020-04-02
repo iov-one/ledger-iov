@@ -183,7 +183,7 @@ typedef struct {
 #define PBIDX_UPDATEMSG_ACTIVATION_TH     4
 #define PBIDX_UPDATEMSG_ADMIN_TH          5
 
-#define PBIDX_PARTICIPANTMSG_SIGNATURE    1
+#define PBIDX_PARTICIPANTMSG_ADDRESS      1
 #define PBIDX_PARTICIPANTMSG_WEIGHT       2
 
 #define PBIDX_UPDATEMSG_PARTICIPANTS_MAX 16
@@ -195,8 +195,9 @@ typedef struct {
         unsigned int weight : 1;
     } seen;
 
-    const uint8_t *signaturePtr;
-    uint16_t signatureLen;
+    // On .proto file this field is named as "signature" but is intended to encode an address
+    const uint8_t *addressPtr;
+    uint16_t addressLen;
 
     uint32_t weight;
 } parser_participant_t;

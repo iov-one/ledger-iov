@@ -37,11 +37,20 @@ void app_set_hrp(char *p) {
 uint8_t app_fill_address() {
     // Put data directly in the apdu buffer
     MEMZERO(G_io_apdu_buffer, IO_APDU_BUFFER_SIZE);
-    return crypto_fillAddress(G_io_apdu_buffer, IO_APDU_BUFFER_SIZE - 2);
+    const uint8_t replyLen = crypto_fillAddress(G_io_apdu_buffer, IO_APDU_BUFFER_SIZE - 2);
+
+    if (replyLen == 0) {
+        THROW(APDU_CODE_EXECUTION_ERROR);
+    }
+
+    return replyLen;
 }
 
 void app_reply_address() {
     const uint8_t replyLen = app_fill_address();
+    if (replyLen == 0) {
+        THROW(APDU_CODE_EXECUTION_ERROR);
+    }
     set_code(G_io_apdu_buffer, replyLen, APDU_CODE_OK);
     io_exchange(CHANNEL_APDU | IO_RETURN_AFTER_TX, replyLen + 2);
 }

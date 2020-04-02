@@ -267,9 +267,9 @@ __Z_INLINE parser_error_t parser_getItem_Participant(const parser_context_t *ctx
         case FIELD_PARTICIPANT_ADDRESS: {
             FAIL_ON_ERROR(parser_getAddress(parser_tx_obj.chainID, parser_tx_obj.chainIDLen,
                                             (char *) UI_buffer, UI_BUFFER,
-                                            p->signaturePtr, p->signatureLen))
+                                            p->addressPtr, p->addressLen))
             // page it
-            snprintf(outKey, outKeyLen, "Participant [%d/%d] Signature",
+            snprintf(outKey, outKeyLen, "Participant [%d/%d] Address",
                      participantIdx + 1, parser_tx_obj.updatemsg.participantsCount);
             parser_arrayToString(outValue, outValueLen, UI_buffer, strlen((char *) UI_buffer), pageIdx, pageCount);
             break;
@@ -630,9 +630,9 @@ __Z_INLINE parser_error_t parser_getItem_Elector(const parser_context_t *ctx, in
         case FIELD_PARTICIPANT_ADDRESS: {
             FAIL_ON_ERROR(parser_getAddress(parser_tx_obj.chainID, parser_tx_obj.chainIDLen,
                                             (char *) UI_buffer, UI_BUFFER,
-                                            p->signaturePtr, p->signatureLen))
+                                            p->addressPtr, p->addressLen))
             // page it
-            snprintf(outKey, outKeyLen, "Elector [%d/%d] Signature",
+            snprintf(outKey, outKeyLen, "Elector [%d/%d] Address",
                      electorIdx + 1, parser_tx_obj.createProposalmsg.updateelectoratemsg.electorCount);
             parser_arrayToString(outValue, outValueLen, UI_buffer, strlen((char *) UI_buffer), pageIdx, pageCount);
             break;

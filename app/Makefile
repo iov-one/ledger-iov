@@ -33,7 +33,7 @@ endif
 # Main app configuration
 APPVERSION_M=0
 APPVERSION_N=12
-APPVERSION_P=1
+APPVERSION_P=2
 
 APPPATH = "44'/234'"
 APP_LOAD_PARAMS = --appFlags 0x200 --delete $(COMMON_LOAD_PARAMS) --path ${APPPATH}
