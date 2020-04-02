@@ -1,3 +1,5 @@
+#pragma clang diagnostic push
+#pragma ide diagnostic ignored "cert-err58-cpp"
 /*******************************************************************************
 *   (c) 2019 ZondaX GmbH
 *
@@ -17,16 +19,12 @@
 #include "gmock/gmock.h"
 
 #include <iostream>
-#include <hexutils.h>
-#include <nlohmann/json.hpp>
-#include <lib/parser.h>
-#include <bech32.h>
-#include <lib/parser_txdef.h>
-#include "lib/parser_impl.h"
+#include "hexutils.h"
+#include <parser.h>
+#include <parser_txdef.h>
 
 using ::testing::TestWithParam;
 using ::testing::Values;
-using json = nlohmann::json;
 
 TEST(Protobuf, RawVarint) {
     uint8_t buffer[] = {0x08, 0x96, 0x01};
@@ -160,7 +158,7 @@ TEST(Protobuf, Nested) {
 TEST(Protobuf, Enumeration) {
     char pbtx[] = "0a020801121473f16e71d0878f6ad26531e174452aec9161e8d41a14000000000000000000000000000000000000000022061a0443415348";
     uint8_t buffer[200];
-    uint16_t bufferSize = parseHexString(pbtx, buffer);
+    uint16_t bufferSize = parseHexString(buffer, sizeof(buffer), pbtx);
     EXPECT_EQ(bufferSize, 56);
 
     parser_context_t ctx;
@@ -169,7 +167,7 @@ TEST(Protobuf, Enumeration) {
 
     uint64_t v;
 
-    while (ctx.offset < ctx.bufferSize) {
+    while (ctx.offset < ctx.bufferLen) {
         err = _readRawVarint(&ctx, &v);
         EXPECT_EQ(err, parser_ok);
 
@@ -203,7 +201,7 @@ TEST(Protobuf, Header) {
                   "000000000022061a0443415348";
 
     uint8_t buffer[200];
-    uint16_t bufferSize = parseHexString(pbtx, buffer);
+    uint16_t bufferSize = parseHexString(buffer, sizeof(buffer), pbtx);
     EXPECT_EQ(bufferSize, 83);
 
     parser_context_t ctx;
@@ -232,18 +230,42 @@ TEST(Protobuf, Header) {
     ASSERT_EQ((ptrdiff_t) (parser_tx_obj.sendmsgPtr - buffer), 27);
 }
 
+TEST(Message, ChainID) {
+
+    bool_t res;
+    std::string chainIdPrefix = APP_MAINNET_CHAINID_PREFIX;
+
+    std::string chainid_t1 = chainIdPrefix;
+    std::string chainid_t2 = chainIdPrefix + "-3";
+    std::string chainid_t3 = "some-net123" + chainIdPrefix;
+    std::string chainid_t4 = "some-net123";
+    std::string chainid_t5 = chainIdPrefix.substr(0, chainIdPrefix.size()-1);
+
+    res = parser_IsMainnet(reinterpret_cast<const uint8_t *>(chainid_t1.c_str()), chainid_t1.length());
+    ASSERT_EQ(res, bool_true);
+    res = parser_IsMainnet(reinterpret_cast<const uint8_t *>(chainid_t2.c_str()), chainid_t2.length());
+    ASSERT_EQ(res, bool_true);
+    res = parser_IsMainnet(reinterpret_cast<const uint8_t *>(chainid_t3.c_str()), chainid_t3.length());
+    ASSERT_EQ(res, bool_false);
+    res = parser_IsMainnet(reinterpret_cast<const uint8_t *>(chainid_t4.c_str()), chainid_t4.length());
+    ASSERT_EQ(res, bool_false);
+    res = parser_IsMainnet(reinterpret_cast<const uint8_t *>(chainid_t5.c_str()), chainid_t5.length());
+    ASSERT_EQ(res, bool_false);
+}
+
 TEST(Protobuf, SendMsg) {
     char pbtx[] = "0a020801"
                   "121473f16e71d0878f6ad26531e174452aec9161e8d4"
                   "1a14000000000000000000000000000000000000000022061a0443415348";
 
     uint8_t buffer[200];
-    uint16_t bufferSize = parseHexString(pbtx, buffer);
+    uint16_t bufferSize = parseHexString(buffer, sizeof(buffer), pbtx);
     EXPECT_EQ(bufferSize, 56);
+    parser_context_t ctx {buffer, bufferSize, 0, 0};
 
     parser_sendmsg_t sendmsg;
     parser_sendmsgInit(&sendmsg);
-    parser_error_t err = parser_readPB_SendMsg(buffer, bufferSize, &sendmsg);
+    parser_error_t err = parser_readPB_SendMsg(&ctx, &sendmsg);
     ASSERT_EQ(err, parser_ok) << parser_getErrorDescription(err);
 
     ASSERT_EQ(sendmsg.metadataLen, 2);
@@ -289,7 +311,7 @@ TEST(Tx, Init) {
     EXPECT_EQ(tx.nonce, 0);
 
     EXPECT_EQ(tx.seen.fees, false);
-    EXPECT_EQ(tx.seen.sendmsg, false);
+    EXPECT_EQ(tx.seen.tx_message, false);
 
     //////
 
@@ -356,3 +378,5 @@ TEST(Tx, Init) {
     EXPECT_EQ(tx.sendmsg.refLen, 0);
 
 }
+
+#pragma clang diagnostic pop

@@ -14,12 +14,13 @@ else
 fi
 APP_FILENAME="iov-$NET.hex"
 APP_VERSION=$(echo "$VERSION" | cut -d "+" -f 1)
-APP_SHA256SUM=$(sha256sum src/ledger/bin/app.hex | cut -d " " -f 1)
-APP_DATA_SIZE=$(grep -F _nvram_data_size src/ledger/debug/app.map | tr -s ' ' | cut -f2 -d' ')
+APP_SHA256SUM=$(sha256sum app/bin/app.hex | cut -d " " -f 1)
+APP_DATA_SIZE=$((0x$(< app/debug/app.map grep _envram_data | tr -s ' ' | cut -f2 -d' '|cut -f2 -d'x') - 
+                 0x$(< app/debug/app.map grep _nvram_data | tr -s ' ' | cut -f2 -d' '|cut -f2 -d'x')))
 
 rm -rf "out/iov-$NET-ledger"
 mkdir -p "out/iov-$NET-ledger"
-cp src/ledger/bin/app.hex "out/iov-$NET-ledger/$APP_FILENAME"
+cp app/bin/app.hex "out/iov-$NET-ledger/$APP_FILENAME"
 
 sed \
   -e "s|APP_ICON=.*|APP_ICON=\"$APP_ICON\"|" \

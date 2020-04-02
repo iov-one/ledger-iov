@@ -66,9 +66,13 @@ CMakeFiles/
 CMakeCache.txt
 unittests
 *.cmake
-cmake/
 Testing/
+cmake-build-fuzz/
 
-# Exports
-out/
-exports/
+# Others
+/cmake-build-debug/
+/cmake-build-fuzz/
+\.idea
+/app/bin/
+/app/debug/
+/app/obj/
